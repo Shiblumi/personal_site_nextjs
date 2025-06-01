@@ -1,7 +1,17 @@
+'use client';
+
 import Image from "next/image";
 import styles from "./page.module.css";
+import { useEffect } from "react";
+import Navbar from "$/Navbar/Navbar";
 
 export default function Home() {
+  
+  useEffect(() => {
+    console.log('WEBFLOW_SITE_ID:', process.env.NEXT_PUBLIC_WEBFLOW_SITE_ID);
+    console.log('WEBFLOW_SITE_API_TOKEN:', process.env.NEXT_PUBLIC_WEBFLOW_SITE_API_TOKEN);
+  }, []);
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -15,7 +25,7 @@ export default function Home() {
         />
         <ol>
           <li>
-            Get started by editing <code>src/app/page.js</code>.
+            Yahoooo! <code>src/app/page.js</code>.
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
@@ -46,6 +56,7 @@ export default function Home() {
           </a>
         </div>
       </main>
+      <Navbar/>
       <footer className={styles.footer}>
         <a
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
