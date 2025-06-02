@@ -2,20 +2,31 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import logo from "/public/vercel.svg";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   return (
     <nav className={styles["navbar"]}>
-      <div className={styles["navbarDiv"]}>
-        <Link href="/">
-          <Image src={logo} alt="Logo" width={40} height={40} />
+      <div className={`${styles["navbar-content"]} glass`}>
+        <Link className={styles["navbar-logo"]} href="/">
+          <Image
+            src="/images/logoipsum-360.svg"
+            alt="Site logo"
+            width={200}
+            height={200}
+            
+          />
         </Link>
-        <div>
-          <Link href="/" className={styles["navbarLinks"]}>Home</Link>
-          <Link href="/resume" className={styles["navbarLinks"]}>Resume</Link>
-          <Link href="/contact" className={styles["navbarLinks"]}>Contact</Link>
+        <div className={styles["navbar-link-container"]}>
+          <Link href="/" className={styles["navbar-link"]}>
+            Home
+          </Link>
+          <Link href="/resume" className={styles["navbar-link"]}>
+            Resume
+          </Link>
+          <Link href="/contact" className={styles["navbar-link"]}>
+            Contact
+          </Link>
         </div>
       </div>
     </nav>

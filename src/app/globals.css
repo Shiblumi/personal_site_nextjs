@@ -1,4 +1,4 @@
-@import "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css";
+@import url("https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css");
 
 :root {
   --background: #ffffff;
@@ -37,8 +37,41 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+}
+
+/* General Custom Styles */
+
+.glass {
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.3)
+    rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: radial-gradient(
+      circle at 75% 96%,
+      rgba(10, 3, 40, 0.57),
+      rgba(10, 3, 40, 0.15)
+    ),
+    linear-gradient(
+      186deg,
+      rgba(255, 255, 255, 0.17),
+      rgba(255, 255, 255, 0.33)
+    );
+  backdrop-filter: blur(6px);
+}
+
+
+* {
+  /* Layout Debug */
+  outline: 1px solid greenyellow;
+  outline: none;
 }

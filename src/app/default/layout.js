@@ -3,6 +3,8 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/app/globals.css";
 
+import Navbar from "$/Navbar/Navbar";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -22,6 +24,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <section>
+          <div className="container is-fluid">
+            <Navbar />
+          </div>
+        </section>
         <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
       </body>
     </html>
