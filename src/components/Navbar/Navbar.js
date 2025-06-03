@@ -6,8 +6,8 @@ import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   return (
-    <nav className={styles["navbar"]}>
-      <div className={`${styles["navbar-content"]} glass`}>
+    <nav className={`${styles["navbar"]}`}>
+      <div className={styles["navbar-content"]}>
         <Link className={styles["navbar-logo"]} href="/">
           <Image
             src="/images/logoipsum-360.svg"

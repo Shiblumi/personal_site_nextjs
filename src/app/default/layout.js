@@ -25,9 +25,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <section>
-          <div className="container is-fluid">
-            <Navbar />
-          </div>
+          <Navbar />
         </section>
         <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
       </body>
