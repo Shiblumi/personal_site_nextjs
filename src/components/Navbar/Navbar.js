@@ -3,8 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
+import { useNavbarContext } from "./NavbarContext";
 
 export default function Navbar() {
+  const { activeSection } = useNavbarContext();
+
   return (
     <nav className={`${styles["navbar"]}`}>
       <div className={styles["navbar-content"]}>
@@ -14,17 +17,47 @@ export default function Navbar() {
             alt="Site logo"
             width={200}
             height={200}
-            
           />
         </Link>
         <div className={styles["navbar-link-container"]}>
-          <Link href="/" className={styles["navbar-link"]}>
+          <Link
+            href="#section1"
+            className={`${styles["navbar-link"]} ${
+              activeSection === "section1" ? styles["active"] : ""
+            }`}
+          >
             Home
           </Link>
-          <Link href="/resume" className={styles["navbar-link"]}>
-            Resume
+          <Link
+            href="#section2"
+            className={`${styles["navbar-link"]} ${
+              activeSection === "section2" ? styles["active"] : ""
+            }`}
+          >
+            Skills
           </Link>
-          <Link href="/contact" className={styles["navbar-link"]}>
+          <Link
+            href="#section3"
+            className={`${styles["navbar-link"]} ${
+              activeSection === "section3" ? styles["active"] : ""
+            }`}
+          >
+            Exp
+          </Link>
+          <Link
+            href="#section4"
+            className={`${styles["navbar-link"]} ${
+              activeSection === "section4" ? styles["active"] : ""
+            }`}
+          >
+            Projects
+          </Link>
+          <Link
+            href="#section5"
+            className={`${styles["navbar-link"]} ${
+              activeSection === "section5" ? styles["active"] : ""
+            }`}
+          >
             Contact
           </Link>
         </div>

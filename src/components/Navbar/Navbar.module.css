@@ -45,6 +45,11 @@
   transition: color 0.25s ease-out, text-shadow 0.25s ease-out;
 }
 
+.navbar-link.active {
+  color: greenyellow;
+  text-shadow: 0 0 6px rgba(172, 255, 47, 0.5), 0 0 10px rgba(172, 255, 47, 0.5);
+}
+
 .navbar-link:hover {
   color: greenyellow;
   text-shadow: 0 0 6px rgba(172, 255, 47, 0.5), 0 0 10px rgba(172, 255, 47, 0.5);
