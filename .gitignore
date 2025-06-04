@@ -42,5 +42,5 @@ next-env.d.ts
 
 # others
 webflow.json
-
 .sfdx
+misc/
