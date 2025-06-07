@@ -2,6 +2,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/app/globals.css";
 import NavbarContext from "@/components/Navbar/NavbarContext";
+import PlayStation from "@/components/Scenes/PlayStation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,6 +24,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <AppRouterCacheProvider>
+          <div className="background-scene">
+            <PlayStation/>
+          </div>
           <NavbarContext>{children}</NavbarContext>
         </AppRouterCacheProvider>
       </body>

@@ -7,7 +7,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #07061e;
+    --background: none;
     --foreground: #ededed;
   }
 }
@@ -30,6 +30,21 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.background-scene {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  /* pointer-events: none; */
+}
+
+.background-scene canvas {
+  width: 100vw !important;
+  height: 100vh !important;
 }
 
 a {

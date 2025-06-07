@@ -4,6 +4,8 @@ import styles from "./page.module.css";
 import { useEffect } from "react";
 import { useNavbarContext } from "@/components/Navbar/NavbarContext";
 import Footer from "$/Footer/Footer"
+import PlayStation from "@/components/Scenes/PlayStation";
+import { Play } from "next/font/google";
 
 export default function Home() {
 
