@@ -1,4 +1,4 @@
-import styles from "@/app/default/page.module.css";
+import styles from "@/app/page.module.css";
 import Image from "next/image";
 
 export default function Footer() {

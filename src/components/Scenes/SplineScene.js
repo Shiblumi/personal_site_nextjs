@@ -2,7 +2,7 @@
 
 import { useNavbarContext } from "@/components/Navbar/NavbarContext";
 import Spline from "@splinetool/react-spline";
-import { useRef, useEffect, useCallback } from "react";
+import { useRef, useEffect} from "react";
 
 export default function SplineScene() {
   const { activeSection } = useNavbarContext();
