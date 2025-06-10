@@ -16,7 +16,7 @@ export const useNavbarContext = () => {
 
 // Sets context provider above Navbar and Page components.
 export default function NavbarContext({ children }) {
-  const [activeSection, setActiveSection] = useState('section1');
+  const [activeSection, setActiveSection] = useState(1);
   
   return (
     <ActiveSectionContext.Provider value={{ activeSection, setActiveSection }}>

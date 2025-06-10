@@ -14,11 +14,25 @@
   min-height: 0;
 }
 
+.background-scene {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  /* pointer-events: none; */
+}
+
+.background-scene canvas {
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
 .scroll-wrapper {
   margin-top: 104px;
   height: 100vh;
   scroll-snap-type: y mandatory;
-  /* background-color: #777; */
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
@@ -28,10 +42,6 @@
   scroll-snap-align: start;
   height: 100%;
   background: none;
-
-  /* &:nth-child(even) {
-    background: none;
-  } */
 }
 
 /* .scroll-section.active {
