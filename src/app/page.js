@@ -9,15 +9,15 @@ import SplineScene from "@/components/Scenes/SplineScene";
 export default function Home() {
   const { setActiveSection } = useNavbarContext();
 
-  const sectionNameID = {
-    "Home": 1,
-    "Exp": 2,
-    "Skills": 3,
-    "Projects": 4,
-    "Contact": 5,
-  }
-
   useEffect(() => {
+    const sectionNameID = {
+      "home": 1,
+      "exp": 2,
+      "skills": 3,
+      "projects": 4,
+      "contact": 5,
+    }
+
     // Callback for observer; called each time a new section comes into view.
     const observer = new IntersectionObserver(
       (entries) => {
@@ -51,19 +51,19 @@ export default function Home() {
         <SplineScene />
       </div>
       <div className={styles["scroll-wrapper"]}>
-        <section id="Home" className={styles["scroll-section"]}>
+        <section id="home" className={styles["scroll-section"]}>
           <h1>Section 1</h1>
         </section>
-        <section id="Exp" className={styles["scroll-section"]}>
+        <section id="exp" className={styles["scroll-section"]}>
           <h1>Section 2</h1>
         </section>
-        <section id="Skills" className={styles["scroll-section"]}>
+        <section id="skills" className={styles["scroll-section"]}>
           <h1>Section 3</h1>
         </section>
-        <section id="Projects" className={styles["scroll-section"]}>
+        <section id="projects" className={styles["scroll-section"]}>
           <h1>Section 4</h1>
         </section>
-        <section id="Contact" className={styles["scroll-section"]}>
+        <section id="contact" className={styles["scroll-section"]}>
           <h1>Section 5</h1>
         </section>
         <Footer />

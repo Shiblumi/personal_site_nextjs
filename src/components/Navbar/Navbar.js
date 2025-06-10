@@ -21,7 +21,7 @@ export default function Navbar() {
         </Link>
         <div className={styles["navbar-link-container"]}>
           <Link
-            href="#section1"
+            href="#home"
             className={`${styles["navbar-link"]} ${
               activeSection === 1 ? styles["active"] : ""
             }`}
@@ -29,23 +29,23 @@ export default function Navbar() {
             Home
           </Link>
           <Link
-            href="#section2"
+            href="#exp"
             className={`${styles["navbar-link"]} ${
               activeSection === 2 ? styles["active"] : ""
-            }`}
-          >
-            Skills
-          </Link>
-          <Link
-            href="#section3"
-            className={`${styles["navbar-link"]} ${
-              activeSection === 3 ? styles["active"] : ""
             }`}
           >
             Exp
           </Link>
           <Link
-            href="#section4"
+            href="#skills"
+            className={`${styles["navbar-link"]} ${
+              activeSection === 3 ? styles["active"] : ""
+            }`}
+          >
+            Skills
+          </Link>
+          <Link
+            href="#projects"
             className={`${styles["navbar-link"]} ${
               activeSection === 4 ? styles["active"] : ""
             }`}
@@ -53,7 +53,7 @@ export default function Navbar() {
             Projects
           </Link>
           <Link
-            href="#section5"
+            href="#contact"
             className={`${styles["navbar-link"]} ${
               activeSection === 5 ? styles["active"] : ""
             }`}
