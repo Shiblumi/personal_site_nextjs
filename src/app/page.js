@@ -9,16 +9,22 @@ import SplineScene from "@/components/Scenes/SplineScene";
 export default function Home() {
   const { setActiveSection } = useNavbarContext();
 
+  const sectionNameID = {
+    "Home": 1,
+    "Exp": 2,
+    "Skills": 3,
+    "Projects": 4,
+    "Contact": 5,
+  }
+
   useEffect(() => {
     // Callback for observer; called each time a new section comes into view.
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            let id = entry.target.id;
-            // Trim section names (section1, ...) to just the number (1, ...)
-            let sceneNum = parseInt(entry.target.id[id.length - 1])
-            console.log(`page: Setting active scene to ${entry.target.id[id.length - 1]}`);
+            let sceneNum = sectionNameID[entry.target.id];
+            console.log(`page: Setting active scene to ${sceneNum}`);
             setActiveSection(sceneNum);
           }
         });
@@ -45,19 +51,19 @@ export default function Home() {
         <SplineScene />
       </div>
       <div className={styles["scroll-wrapper"]}>
-        <section id="section1" className={styles["scroll-section"]}>
+        <section id="Home" className={styles["scroll-section"]}>
           <h1>Section 1</h1>
         </section>
-        <section id="section2" className={styles["scroll-section"]}>
+        <section id="Exp" className={styles["scroll-section"]}>
           <h1>Section 2</h1>
         </section>
-        <section id="section3" className={styles["scroll-section"]}>
+        <section id="Skills" className={styles["scroll-section"]}>
           <h1>Section 3</h1>
         </section>
-        <section id="section4" className={styles["scroll-section"]}>
+        <section id="Projects" className={styles["scroll-section"]}>
           <h1>Section 4</h1>
         </section>
-        <section id="section5" className={styles["scroll-section"]}>
+        <section id="Contact" className={styles["scroll-section"]}>
           <h1>Section 5</h1>
         </section>
         <Footer />
