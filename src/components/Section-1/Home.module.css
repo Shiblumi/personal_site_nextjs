@@ -8,27 +8,23 @@
 }
 
 .name-container {
-  filter: blur(0.4px);
   font-family: "Jura", "Montserrat", sans-serif;
   font-size: 12rem;
   font-weight: 500;
+  color: rgba(148, 200, 255, 0.65);
   letter-spacing: 0.11em;
   text-align: left;
-  line-height: 1.1;
+  line-height: 1.075em;
   user-select: none;
-  text-shadow: 0px 0px 18px rgba(5, 0, 16, 0.2),
-    0px 0px 24px rgba(5, 0, 16, 0.8);
-  filter: blur(0.3px);
+  text-shadow: 0px 0px 18px rgba(5, 0, 16, 0.3),
+    0px 0px 24px rgba(5, 0, 16, 0.6);
 }
 
 .dirk {
-  color: rgba(146, 255, 230, 0.55);
-  /* letter-spacing: 0.13em; */
   mask: linear-gradient(-90deg, transparent 0%, black 20%, black 100%);
 }
 
 .wilson {
-  color: rgba(146, 255, 230, 0.55);
   padding-left: 0.075em;
   mask: linear-gradient(-90deg, transparent 0%, black 11%, black 100%);
 }
@@ -36,12 +32,37 @@
 .di {
   color: rgb(146, 255, 230);
   filter: blur(1.1px);
-
-  /* mask: linear-gradient(90deg, transparent 0%, black 20%, black 100%); */
 }
 
 .wi {
   color: rgb(146, 255, 230);
   filter: blur(1.1px);
-  /* mask: linear-gradient(90deg, transparent 0%, black 20%, black 90%); */
+}
+
+@keyframes fadeInText {
+  from {
+    filter: blur(10px);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+/* Tied to fadeInText Animation */
+.dirk,
+.wilson {
+  opacity: 0;
+  filter: blur(10px);
+}
+
+.dirk.animate {
+  animation: fadeInText 2s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.wilson.animate {
+  animation: fadeInText 2s ease-out forwards;
+  animation-delay: 0.65s;
 }

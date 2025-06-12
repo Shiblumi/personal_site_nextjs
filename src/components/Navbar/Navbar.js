@@ -19,7 +19,7 @@ export default function Navbar() {
             height={200}
           />
         </Link>
-        <div className={styles["navbar-link-container"]}>
+        <div className={`${styles["navbar-link-container"]}`}>
           <Link
             href="#home"
             className={`${styles["navbar-link"]} ${
