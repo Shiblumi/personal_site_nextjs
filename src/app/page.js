@@ -5,25 +5,28 @@ import { useEffect } from "react";
 import { useNavbarContext } from "@/components/Navbar/NavbarContext";
 import Footer from "$/Footer/Footer";
 import SplineScene from "@/components/Scenes/SplineScene";
+import Home from "@/components/Section-1/Home";
 
-export default function Home() {
+export default function Page() {
   const { setActiveSection } = useNavbarContext();
 
   useEffect(() => {
+    // Spline takes an int for identifying scenes.
     const sectionNameID = {
-      "home": 1,
-      "exp": 2,
-      "skills": 3,
-      "projects": 4,
-      "contact": 5,
-    }
+      home: 1,
+      exp: 2,
+      skills: 3,
+      projects: 4,
+      contact: 5,
+    };
 
     // Callback for observer; called each time a new section comes into view.
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            let sceneNum = sectionNameID[entry.target.id];
+            let sectionID = entry.target.id;
+            let sceneNum = sectionNameID[sectionID];
             console.log(`page: Setting active scene to ${sceneNum}`);
             setActiveSection(sceneNum);
           }
@@ -52,10 +55,13 @@ export default function Home() {
       </div>
       <div className={styles["scroll-wrapper"]}>
         <section id="home" className={styles["scroll-section"]}>
-          <h1>Section 1</h1>
+          {/* <h1>Section 1</h1> */}
+          <div className="container">
+            <Home />
+          </div>
         </section>
         <section id="exp" className={styles["scroll-section"]}>
-          <h1>Section 2</h1>
+          {/* <h1>Section 2</h1> */}
         </section>
         <section id="skills" className={styles["scroll-section"]}>
           <h1>Section 3</h1>

@@ -1,16 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
-
 .navbar {
-  width: 90%;
-  height: 80px;
-  max-width: 1200px;
-  margin-top: 12px;
-  padding: 0px 40px 0px 40px;
-  justify-content: center;
-  font-family: "Montserrat", sans-serif;
   position: fixed;
-  left: 50%;
   transform: translateX(-50%);
+  left: 50%;
+  width: 100vw;
+  height: 80px;
+  max-width: 2300px;
+  margin-top: 12px;
+  padding: 0px 80px 0px 80px;
+  justify-content: center;
+  font-family: "Montserrat", "Jura", sans-serif;
+  font-size: larger;
+  text-shadow: 0px 0px 20px rgb(5, 0, 16, 0.7);
   z-index: 2;
 }
 
@@ -47,11 +47,11 @@
 }
 
 .navbar-link.active {
-  color: greenyellow;
-  text-shadow: 0 0 6px rgba(172, 255, 47, 0.5), 0 0 10px rgba(172, 255, 47, 0.5);
+  color: rgb(47, 255, 206);
+  text-shadow: 0 0 6px rgba(47, 255, 206, 0.5), 0 0 10px rgba(47, 255, 206, 0.5);
 }
 
 .navbar-link:hover {
-  color: greenyellow;
-  text-shadow: 0 0 6px rgba(172, 255, 47, 0.5), 0 0 10px rgba(172, 255, 47, 0.5);
+  color: rgb(47, 255, 206);
+  text-shadow: 0 0 6px rgba(47, 255, 206, 0.5), 0 0 10px rgba(47, 255, 206, 0.5);
 }
