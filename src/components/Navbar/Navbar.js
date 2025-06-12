@@ -23,7 +23,7 @@ export default function Navbar() {
           <Link
             href="#home"
             className={`${styles["navbar-link"]} ${
-              activeSection === 1 ? styles["active"] : ""
+              (activeSection === 1) ? styles["active"] : ""
             }`}
           >
             Home
@@ -31,7 +31,7 @@ export default function Navbar() {
           <Link
             href="#exp"
             className={`${styles["navbar-link"]} ${
-              activeSection === 2 ? styles["active"] : ""
+              (activeSection === 2) ? styles["active"] : ""
             }`}
           >
             Exp
@@ -39,7 +39,7 @@ export default function Navbar() {
           <Link
             href="#skills"
             className={`${styles["navbar-link"]} ${
-              activeSection === 3 ? styles["active"] : ""
+              (activeSection === 3) ? styles["active"] : ""
             }`}
           >
             Skills
@@ -47,7 +47,7 @@ export default function Navbar() {
           <Link
             href="#projects"
             className={`${styles["navbar-link"]} ${
-              activeSection === 4 ? styles["active"] : ""
+              (activeSection === 4) ? styles["active"] : ""
             }`}
           >
             Projects
@@ -55,7 +55,7 @@ export default function Navbar() {
           <Link
             href="#contact"
             className={`${styles["navbar-link"]} ${
-              activeSection === 5 ? styles["active"] : ""
+              (activeSection === 5) ? styles["active"] : ""
             }`}
           >
             Contact
