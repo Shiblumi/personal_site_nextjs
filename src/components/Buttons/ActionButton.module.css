@@ -1,5 +1,5 @@
 .action-button {
-  user-select: none;
+  user-select: auto;
   font-family: "Jura", sans-serif;
   color: rgb(202, 255, 243);
   font-size: 30px;
