@@ -27,7 +27,6 @@
   user-select: none;
   text-shadow: 0px 0px 18px rgba(5, 0, 16, 0.3),
     0px 0px 24px rgba(5, 0, 16, 0.6);
-  /* color: rgba(148, 200, 255, 0.65); */
 }
 
 .dirk {
@@ -35,7 +34,7 @@
 }
 
 .wilson {
-  padding-left: 0.075em;
+  padding-left: 0.095em;
   mask: linear-gradient(-90deg, transparent 0%, black 11%, black 100%);
 }
 

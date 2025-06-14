@@ -1,8 +1,7 @@
 import styles from "@/components/Section-1/Home.module.css";
 import { useNavbarContext } from "@/components/Navbar/NavbarContext";
-import ActionButton from "../Buttons/ActionButton";
-import Image from "next/image";
-
+import ActionButton from "@/components/Buttons/ActionButton";
+import DownArrow from "@/components/Icons/DownArrow";
 export default function Home(props) {
   const { activeSection } = useNavbarContext();
 
@@ -43,17 +42,7 @@ export default function Home(props) {
           fadeIn={true}
           animDelay={"0.95s"}
           animDuration={"1.5s"}
-        />
-        <Image
-          src="/images/down-arrow.svg"
-          alt="Learn More Arrow"
-          width={36}
-          height={36}
-          style={{
-            filter: "invert(1)",
-            marginLeft: "-65px",
-            marginTop: "4.5px",
-          }}
+          icon={DownArrow}
         />
       </div>
     </div>

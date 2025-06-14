@@ -13,11 +13,19 @@ export default function ActionButton(props) {
       }
     : {};
 
+  const buttonStyle = {
+    ...animationStyle,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "5px",
+  };
+
   return (
     <button
       type="button"
       className={`${styles["action-button"]} ${props.class}`}
-      style={animationStyle}
+      style={buttonStyle}
       onClick={() => {
         if (props.routeTo) {
           // Scroll to passed-in sectionID.
@@ -28,7 +36,7 @@ export default function ActionButton(props) {
       }}
     >
       {props.text}
-      {props.icon && props.icon}
+      {props.icon && <props.icon />}
     </button>
   );
 }
