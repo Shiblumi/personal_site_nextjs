@@ -3,18 +3,18 @@ import { useNavbarContext } from "@/components/Navbar/NavbarContext";
 
 export default function ActionButton(props) {
   const { activeSection } = useNavbarContext();
-  const shouldAnimate = (props.sectionNum === activeSection) & props.fadeIn;
-  const animationDelay = props.animDelay || "0.2s";
-  const animationDuration = props.animDuration || "1.5s";
-  const animationStyle = shouldAnimate
+  const shouldFadeIn = (props.sectionNum === activeSection) & props.fadeIn;
+  const fadeDelay = props.animDelay || "0.2s";
+  const fadeDuration = props.animDuration || "1.5s";
+  const fadeStyle = shouldFadeIn
     ? {
-        animation: `${styles.fadeInText} ${animationDuration} ease-out forwards`,
-        animationDelay: animationDelay,
+        animation: `${styles.fadeInText} ${fadeDuration} ease-out forwards`,
+        animationDelay: fadeDelay,
       }
     : {};
 
   const buttonStyle = {
-    ...animationStyle,
+    ...fadeStyle,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",

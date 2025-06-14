@@ -47,7 +47,7 @@ ul {
   }
 }
 
-/* Formatting Classes */
+/* ------ Formatting Classes ------ */
 .section {
   padding: 3rem 0;
   margin: 3rem 0;
@@ -63,7 +63,9 @@ ul {
   }
 }
 
-/* General Custom Styles */
+/* ------ General Custom Styles ------ */
+
+/* --- glass --- */
 .glass {
   position: relative;
   border-style: solid;
@@ -86,6 +88,7 @@ ul {
   z-index: 1;
 }
 
+/* --- glass-alt --- */
 .glass-alt {
   position: relative;
   border-style: solid;
@@ -104,6 +107,7 @@ ul {
   z-index: 1;
 }
 
+/* --- glass-dark-primary --- */
 .glass-dark-primary {
   position: relative;
   border-style: solid;
@@ -143,7 +147,7 @@ ul {
   border-radius: 18px;
   background: linear-gradient(200deg, rgba(67, 183, 187, 0), rgba(31, 217, 224, 0.2));
   opacity: 0;
-  transition: opacity 0.5s ease-out;
+  transition: opacity 0.4s ease-out;
 }
 
 .glass-dark-primary:hover::after {
@@ -154,27 +158,19 @@ ul {
   backdrop-filter: blur(6px);
 }
 
+/* --- glass-dark-secondary --- */
 .glass-dark-secondary {
   position: relative;
   border-style: solid;
   border-width: 1px 1px 1px 1px;
   border-color: rgba(148, 200, 255, 0.65) rgba(148, 200, 255, 0.65)
     rgba(148, 200, 255, 0.65) rgba(148, 200, 255, 0.65);
-  /* background-image: radial-gradient(
-      circle at 80% 10%,
-      rgba(186, 194, 141, 0.05) 10%,
-      rgba(170, 144, 255, 0) 55%
-    ),
-    linear-gradient(
-      270deg,
-      rgba(148, 171, 255, 0.05),
-      rgba(90, 30, 255, 0)
-    ); */
   border-radius: 18px;
-  /* backdrop-filter: blur(5px); */
+  backdrop-filter: blur(5px);
   z-index: 1;
 }
 
+/* --- full-dropshadow --- */
 .full-dropshadow {
   position: relative;
 }
@@ -198,6 +194,38 @@ ul {
 
   z-index: -1;
   pointer-events: none;
+}
+
+/* --- full-dropshadow-hoverable --- */
+.full-dropshadow-hoverable {
+  position: relative;
+}
+
+.full-dropshadow-hoverable::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  /* Radial gradient mask against background */
+  -webkit-mask: radial-gradient(ellipse 75% 60%, black 35%, transparent 70%);
+  mask: radial-gradient(
+    ellipse 75% 60%,
+    rgba(5, 0, 16, 0.8) 35%,
+    transparent 70%
+  );
+  background-color: rgba(5, 0, 16, 0.25);
+
+  z-index: -1;
+  pointer-events: none;
+
+  transition: background-color 0.3s ease-out;
+}
+
+.full-dropshadow-hoverable:hover::before {
+  background-color: rgba(148, 200, 255, 0.15);
 }
 
 /* Layout Debug */

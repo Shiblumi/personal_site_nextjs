@@ -36,7 +36,7 @@ export default function Home(props) {
         />
         <ActionButton
           text="Learn More"
-          class="full-dropshadow"
+          class="full-dropshadow-hoverable"
           routeTo="exp"
           sectionNum={1}
           fadeIn={true}
