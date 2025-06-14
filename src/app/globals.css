@@ -112,31 +112,37 @@ ul {
   position: relative;
   border-style: solid;
   border-width: 1px 1px 1px 1px;
-  border-color: rgba(146, 255, 230, 0.2) rgba(146, 255, 230, 0.1)
-  rgba(146, 255, 230, 0.1);
+  border-color: rgba(146, 255, 230, 0.2) rgba(146, 255, 230, 0.2)
+  rgba(146, 255, 230, 0.1) rgba(255, 255, 255, 0.1);
   box-shadow: inset 0px 0px 14px 4px rgba(40, 31, 68, 0.25);
   background-image: radial-gradient(
-      circle at 80% 10%,
-      rgba(186, 194, 141, 0.15) 10%,
-      rgba(170, 144, 255, 0) 55%
+      circle at 100% 10%,
+      rgba(77, 30, 208, 0.15) 20%,
+      rgba(170, 144, 255, 0) 45%
+    ),
+    radial-gradient(
+      circle at 10% 100%,
+      rgba(38, 133, 181, 0.1) 10%,
+      rgba(170, 144, 255, 0) 35%
     ),
     linear-gradient(
-      270deg,
-      rgba(148, 171, 255, 0.1),
-      rgba(90, 30, 255, 0.15)
+      190deg,
+      rgba(106, 138, 255, 0.1),
+      rgba(67, 183, 187, 0.15)
+      /* 67, 183, 187, */
     );
-  border-radius: 8px;
-  backdrop-filter: blur(5px);
+  border-radius: 18px;
+  backdrop-filter: blur(4.5px);
   z-index: 1;
 }
 
 .glass-dark-secondary {
   position: relative;
-  border-style: none;
+  border-style: solid;
   border-width: 1px 1px 1px 1px;
-  border-color: rgba(146, 255, 230, 0.1) rgba(146, 255, 230, 0.05)
-  rgba(146, 255, 230, 0.05);
-  background-image: radial-gradient(
+  border-color: rgba(148, 200, 255, 0.65) rgba(148, 200, 255, 0.65)
+  rgba(148, 200, 255, 0.65) rgba(148, 200, 255, 0.65);
+  /* background-image: radial-gradient(
       circle at 80% 10%,
       rgba(186, 194, 141, 0.05) 10%,
       rgba(170, 144, 255, 0) 55%
@@ -145,15 +151,15 @@ ul {
       270deg,
       rgba(148, 171, 255, 0.05),
       rgba(90, 30, 255, 0)
-    );
-  border-radius: 8px;
-  backdrop-filter: blur(5px);
+    ); */
+  border-radius: 18px;
+  /* backdrop-filter: blur(5px); */
   z-index: 1;
 }
 
+
 .full-dropshadow {
   position: relative;
-  border-radius: 20px;
 }
 
 .full-dropshadow::before {
@@ -169,7 +175,6 @@ ul {
   mask: radial-gradient(ellipse 75% 60%, rgba(5, 0, 16, 0.8) 35%, transparent 70%);
   background-color: rgba(5, 0, 16, 0.25);
   
-  border-radius: 20px;
   z-index: -1;
   pointer-events: none;
 }

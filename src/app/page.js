@@ -6,6 +6,7 @@ import { useNavbarContext } from "@/components/Navbar/NavbarContext";
 import Footer from "$/Footer/Footer";
 import SplineScene from "@/components/Scenes/SplineScene";
 import Home from "@/components/Section-1/Home";
+import ActionButton from "@/components/Buttons/ActionButton";
 
 export default function Page() {
   const { setActiveSection } = useNavbarContext();
@@ -55,13 +56,12 @@ export default function Page() {
       </div>
       <div className={styles["scroll-wrapper"]}>
         <section id="home" className={styles["scroll-section"]}>
-          {/* <h1>Section 1</h1> */}
           <div className="container">
             <Home />
           </div>
         </section>
         <section id="exp" className={styles["scroll-section"]}>
-          {/* <h1>Section 2</h1> */}
+          <ActionButton text="Contact" class="glass-dark-primary" section="contact"/>
         </section>
         <section id="skills" className={styles["scroll-section"]}>
           <h1>Section 3</h1>
