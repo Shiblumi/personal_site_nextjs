@@ -2,6 +2,7 @@
   user-select: auto;
   font-family: "Jura", sans-serif;
   color: rgb(202, 255, 243);
+
   font-size: 30px;
   font-weight: 650;
   width: auto;
@@ -11,6 +12,13 @@
 
   filter: blur(10px);
   opacity: 0;
+
+  transition: color 0.2s ease-out;
+}
+
+.action-button:hover {
+  color: rgb(225, 255, 248);
+
 }
 
 @keyframes fadeInText {

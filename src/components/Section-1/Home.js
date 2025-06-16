@@ -1,7 +1,9 @@
 import styles from "@/components/Section-1/Home.module.css";
 import { useNavbarContext } from "@/components/Navbar/NavbarContext";
 import ActionButton from "@/components/Buttons/ActionButton";
+import DynamicText from "../DynamicText/DynamicText";
 import DownArrow from "@/components/Icons/DownArrow";
+
 export default function Home(props) {
   const { activeSection } = useNavbarContext();
 
@@ -24,6 +26,7 @@ export default function Home(props) {
           <span className={styles["wi"]}>WI</span>LSON
         </span>
       </div>
+      <DynamicText />
       <div className={styles["buttons-wrapper"]}>
         <ActionButton
           text="Contact"

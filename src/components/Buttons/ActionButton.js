@@ -3,7 +3,7 @@ import { useNavbarContext } from "@/components/Navbar/NavbarContext";
 
 export default function ActionButton(props) {
   const { activeSection } = useNavbarContext();
-  const shouldFadeIn = (props.sectionNum === activeSection) & props.fadeIn;
+  const shouldFadeIn = (props.sectionNum === activeSection) && props.fadeIn;
   const fadeDelay = props.animDelay || "0.2s";
   const fadeDuration = props.animDuration || "1.5s";
   const fadeStyle = shouldFadeIn

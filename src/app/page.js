@@ -3,7 +3,7 @@
 import styles from "./page.module.css";
 import { useEffect } from "react";
 import { useNavbarContext } from "@/components/Navbar/NavbarContext";
-import Footer from "$/Footer/Footer";
+import Footer from "@/components/Footer/Footer";
 import SplineScene from "@/components/Scenes/SplineScene";
 import Home from "@/components/Section-1/Home";
 import ActionButton from "@/components/Buttons/ActionButton";
