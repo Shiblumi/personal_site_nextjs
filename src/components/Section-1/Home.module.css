@@ -5,6 +5,7 @@
   align-items: center;
   height: 100vh;
   padding-bottom: 40vh;
+  padding-top: 300px;
 }
 
 .buttons-wrapper {
@@ -29,10 +30,12 @@
 }
 
 .dirk {
+  opacity: 0;
   mask: linear-gradient(-90deg, transparent 0%, black 20%, black 100%);
 }
 
 .wilson {
+  opacity: 0;
   padding-left: 0.093em;
   mask: linear-gradient(-90deg, transparent 0%, black 11%, black 100%);
 }

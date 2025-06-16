@@ -19,7 +19,11 @@ export default function DynamicText(props) {
     if (!shouldFadeIn) {
       // Reset to first role when leaving section
       setIndex(0);
+      setVisible(false);
       return;
+    }
+    else {
+        setVisible(true);
     }
 
     // (1) Timeout till section fade-in is complete

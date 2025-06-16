@@ -30,7 +30,7 @@
 }
 
 .scroll-wrapper {
-  margin-top: 104px;
+  /* margin-top: 104px; */
   height: 100vh;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
