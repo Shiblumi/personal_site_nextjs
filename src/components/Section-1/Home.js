@@ -12,21 +12,36 @@ export default function Home(props) {
       <div className={styles["name-wrapper"]}>
         <span
           className={`${styles["dirk"]} full-dropshadow ${
-            activeSection === 1 ? styles.animate : ""
+            activeSection === 1 ? "fade-in" : ""
           }`}
+          style={{
+            "--fade-delay": "0.2s", // 0.2s
+            "--fade-duration": "1.5s",
+          }}
         >
           <span className={styles["di"]}>DI</span>RK
         </span>
         <br />
         <span
           className={`${styles["wilson"]} full-dropshadow ${
-            activeSection === 1 ? styles.animate : ""
+            activeSection === 1 ? "fade-in" : ""
           }`}
+          style={{
+            "--fade-delay": "0.6s", // 0.6s
+            "--fade-duration": "1.5s",
+          }}
         >
           <span className={styles["wi"]}>WI</span>LSON
         </span>
       </div>
-      <DynamicText />
+      <DynamicText
+        class={`${activeSection === 1 ? "fade-in" : ""}`}
+        fadeDelay="1.0s"
+        style={{
+          "--fade-delay": "1.0s",
+          "--fade-duration": "1.5s",
+        }}
+      />
       <div className={styles["buttons-wrapper"]}>
         <ActionButton
           text="Contact"
@@ -34,7 +49,7 @@ export default function Home(props) {
           routeTo="contact"
           sectionNum={1}
           fadeIn={true}
-          animDelay={"0.7s"}
+          animDelay={"1.3s"}
           animDuration={"1.5s"}
         />
         <ActionButton
@@ -43,7 +58,7 @@ export default function Home(props) {
           routeTo="exp"
           sectionNum={1}
           fadeIn={true}
-          animDelay={"0.95s"}
+          animDelay={"1.4s"}
           animDuration={"1.5s"}
           icon={DownArrow}
         />

@@ -6,25 +6,22 @@ export default function ActionButton(props) {
   const shouldFadeIn = (props.sectionNum === activeSection) && props.fadeIn;
   const fadeDelay = props.animDelay || "0.2s";
   const fadeDuration = props.animDuration || "1.5s";
-  const fadeStyle = shouldFadeIn
-    ? {
-        animation: `${styles.fadeInText} ${fadeDuration} ease-out forwards`,
-        animationDelay: fadeDelay,
-      }
-    : {};
 
   const buttonStyle = {
-    ...fadeStyle,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     gap: "5px",
+    ...(shouldFadeIn && {
+      '--fade-delay': fadeDelay,
+      '--fade-duration': fadeDuration,
+    })
   };
 
   return (
     <button
       type="button"
-      className={`${styles["action-button"]} ${props.class}`}
+      className={`${styles["action-button"]} ${props.class} ${shouldFadeIn ? 'fade-in' : ''}`}
       style={buttonStyle}
       onClick={() => {
         if (props.routeTo) {

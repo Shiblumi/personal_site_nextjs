@@ -1,5 +1,6 @@
 /* @import url("https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"); */
-@import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Hubballi&family=Jura:wght@300..700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Hubballi&family=Jura:wght@300..700&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Audiowide&family=Doto:wght@100..900&family=Hubballi&family=Jura:wght@300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Orbitron:wght@400..900&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
 :root {
   --background: #ffffff;
@@ -239,6 +240,25 @@ button:focus {
 
 .full-dropshadow-hoverable:hover::before {
   background-color: rgba(148, 200, 255, 0.15);
+}
+
+/* --- Fade-In Animation --- */
+.fade-in {
+  opacity: 0;
+  filter: blur(10px);
+  animation: fadeInText var(--fade-duration, 1.5s) ease-out forwards;
+  animation-delay: var(--fade-delay, 0.2s);
+}
+
+@keyframes fadeInText {
+  from {
+    filter: blur(10px);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0px);
+    opacity: 1;
+  }
 }
 
 /* Layout Debug */
