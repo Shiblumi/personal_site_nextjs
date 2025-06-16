@@ -11,20 +11,7 @@ export default function Navbar() {
   return (
     <nav className={`${styles["navbar"]}`}>
       <div className={styles["navbar-content"]}>
-        <Link className={styles["navbar-logo"]} href="/">
-          <Image
-            src="/images/logoipsum-360.svg"
-            alt="Site logo"
-            width={0}
-            height={0}
-            style={{
-              width: "auto",
-              height: "auto",
-              maxWidth: "200px",
-              maxHeight: "200px",
-            }}
-          />
-        </Link>
+        <Link href="#home" className={`${styles["navbar-logo-text"]} full-dropshadow`}>DIWI</Link>
         <div className={`${styles["navbar-link-container"]}`}>
           <Link
             href="#home"
@@ -70,4 +57,21 @@ export default function Navbar() {
       </div>
     </nav>
   );
+}
+
+{
+  /* <Link className={styles["navbar-logo"]} href="/">
+          <Image
+            src="/images/logoipsum-360.svg"
+            alt="Site logo"
+            width={0}
+            height={0}
+            style={{
+              width: "auto",
+              height: "auto",
+              maxWidth: "200px",
+              maxHeight: "200px",
+            }}
+          />
+        </Link> */
 }
