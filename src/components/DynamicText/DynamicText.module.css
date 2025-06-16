@@ -7,14 +7,18 @@
 }
 
 .dynamic-text {
-  user-select: none;
   font-family: "Audiowide", sans-serif;
+  color: rgba(148, 200, 255, 0.8);
+  user-select: none;
   font-size: 3.6rem;
   font-weight: 400;
   letter-spacing: 0.05em;
   text-shadow: 0px 0px 18px rgba(5, 0, 16, 0.2),
-    0px 0px 24px rgba(5, 0, 16, 0.4);
-  color: rgba(148, 200, 255, 0.8);
+  0px 0px 24px rgba(5, 0, 16, 0.4);
+
+  opacity: 0;
+  filter: blur(10px);
+  
   transition: filter var(--fade-duration, 0.3s) ease-out,
     opacity var(--fade-duration, 0.3s) ease-out;
 }

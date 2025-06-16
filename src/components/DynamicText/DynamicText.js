@@ -5,14 +5,16 @@ import { useNavbarContext } from "@/components/Navbar/NavbarContext";
 const roles = ["Full Stack Developer", "A.I. Integrator", "3D Artist", "Video Editor", "Photographer", "Gaming Enthusiast",];
 const FADE_DURATION = 300;
 const CYCLE_INTERVAL = 3000;
+const INITIAL_TIMEOUT_DELAY = 200;
 
 export default function DynamicText(props) {
   const [index, setIndex] = useState(0);
   const [isVisible, setVisible] = useState(true);
   const { activeSection } = useNavbarContext();
   const shouldFadeIn = activeSection === 1;
-  const fadeDelay = props.fadeDelay * 1000; // Convert to ms
-
+  const fadeDelay = parseFloat(props.fadeDelay || "0.6s") * 1000;
+  const cycleDelay = fadeDelay + INITIAL_TIMEOUT_DELAY;
+  
   useEffect(() => {
     if (!shouldFadeIn) {
       // Reset to first role when leaving section
@@ -32,7 +34,7 @@ export default function DynamicText(props) {
           setVisible(true);
         }, FADE_DURATION);
       }, CYCLE_INTERVAL);
-    }, fadeDelay);
+    }, cycleDelay);
 
     // Define clean up for timeout() and interval() references
     return () => {
@@ -41,7 +43,7 @@ export default function DynamicText(props) {
         clearInterval(intervalId);
       }
     };
-  }, [shouldFadeIn, fadeDelay]);
+  }, [shouldFadeIn, cycleDelay]);
 
   return (
     <div
