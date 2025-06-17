@@ -60,7 +60,7 @@ export default function DynamicText(props) {
       }}
     >
       <span
-        className={`${styles["dynamic-text"]} full-dropshadow ${
+        className={`${styles["dynamic-text"]} full-dropshadow-light ${
           isVisible ? styles["visible"] : styles["hidden"]
         }`}
         style={{

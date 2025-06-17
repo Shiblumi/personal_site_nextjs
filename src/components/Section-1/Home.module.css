@@ -12,7 +12,7 @@
   margin-top: 50px;
   display: flex;
   align-items: center;
-  width: 63%;
+  width: 53%;
   gap: 30px;
 }
 
@@ -21,12 +21,12 @@
   font-size: 12rem;
   font-weight: 500;
   color: rgba(148, 200, 255, 0.65);
-  letter-spacing: 0.11em;
+  /* letter-spacing: 0.11em; */
   text-align: left;
   line-height: 1.075em;
   user-select: none;
-  text-shadow: 0px 0px 18px rgba(5, 0, 16, 0.3),
-    0px 0px 24px rgba(5, 0, 16, 0.6);
+  text-shadow: 0px 0px 18px rgba(5, 0, 16, 0.2),
+    0px 0px 24px rgba(5, 0, 16, 0.4);
 }
 
 .dirk {
