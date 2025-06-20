@@ -1,12 +1,13 @@
 "use client";
 
 import styles from "./page.module.css";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useNavbarContext } from "@/components/Navbar/NavbarContext";
 import Footer from "@/components/Footer/Footer";
 import SplineScene from "@/components/Scenes/SplineScene";
 import Home from "@/components/Section-1/Home";
 import ActionButton from "@/components/Buttons/ActionButton";
+import SectionTimeline from "@/components/SectionTimeline/SectionTimeline";
 
 export default function Page() {
   const { setActiveSection } = useNavbarContext();
@@ -48,13 +49,14 @@ export default function Page() {
       sections.forEach((section) => observer.unobserve(section));
     };
   }, [setActiveSection]);
-
+  
   return (
     <main className={styles["main"]}>
       <div className={styles["background-scene"]}>
         <SplineScene />
       </div>
       <div className={styles["scroll-wrapper"]}>
+        <SectionTimeline/>
         <section id="home" className={styles["scroll-section"]}>
           <div className="container">
             <Home />
