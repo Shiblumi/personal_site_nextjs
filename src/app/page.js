@@ -1,13 +1,13 @@
 "use client";
 
 import styles from "./page.module.css";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useNavbarContext } from "@/components/Navbar/NavbarContext";
-import Footer from "@/components/Footer/Footer";
 import SplineScene from "@/components/Scenes/SplineScene";
-import Home from "@/components/Section-1/Home";
-import ActionButton from "@/components/Buttons/ActionButton";
 import SectionTimeline from "@/components/SectionTimeline/SectionTimeline";
+import Footer from "@/components/Footer/Footer";
+import Home from "@/components/Section-1/Home";
+import Experience from "@/components/Section-2/Experience";
 
 export default function Page() {
   const { setActiveSection } = useNavbarContext();
@@ -49,21 +49,23 @@ export default function Page() {
       sections.forEach((section) => observer.unobserve(section));
     };
   }, [setActiveSection]);
-  
+
   return (
     <main className={styles["main"]}>
       <div className={styles["background-scene"]}>
         <SplineScene />
       </div>
       <div className={styles["scroll-wrapper"]}>
-        <SectionTimeline/>
+        <SectionTimeline />
         <section id="home" className={styles["scroll-section"]}>
           <div className="container">
             <Home />
           </div>
         </section>
         <section id="exp" className={styles["scroll-section"]}>
-          <ActionButton text="Contact" class="glass-dark-primary" section="contact"/>
+          <div className="container">
+            <Experience />
+          </div>
         </section>
         <section id="skills" className={styles["scroll-section"]}>
           <h1>Section 3</h1>

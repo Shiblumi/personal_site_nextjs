@@ -12,7 +12,7 @@ export default function SectionTimeline() {
     { id: 4, name: "projects" },
     { id: 5, name: "contact" },
   ];
-  
+
 // FIXME: 5th dot flickers when navigating between sections 3-4 due to Framer Motion re-evaluating all animate props
   return (
     <div className={`${styles["section-timeline-wrapper"]}`}>

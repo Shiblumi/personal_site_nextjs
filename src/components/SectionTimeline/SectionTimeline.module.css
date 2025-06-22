@@ -14,7 +14,7 @@
   height: 14px;
   border-radius: 50%;
   background-color: none;
-  border: 2px solid rgba(146, 255, 230, 0.4);
+  border: 2px solid rgba(146, 255, 230, 0.6);
   transition: all 0.3s ease-out;
 }
 
