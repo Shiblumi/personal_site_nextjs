@@ -6,7 +6,7 @@ import DateLine from "../ExperienceBar/ExpBarDateLine";
 export default function Experience(props) {
   const { activeSection } = useNavbarContext();
   const shouldAnimate = activeSection === 2;
-  const dotVariants = {
+  const trailingDotVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: { opacity: 1, scale: 1 },
   };
@@ -34,15 +34,15 @@ export default function Experience(props) {
             originX: 0,
           }}
         />
-        <DateLine positionLeft='20%'/>
-        <DateLine positionLeft='50%'/>
-        <DateLine positionLeft='80%'/>
+        <DateLine positionLeft='20%' delay='1.1'/>
+        <DateLine positionLeft='50%' delay='1.6'/>
+        <DateLine positionLeft='80%' delay='2.1'/>
 
         {/* <motion.div className={`${styles["checkpoint"]}`} /> */}
 
         <motion.div
           className={`${styles["exp-bar-trailing-dots"]}`}
-          variants={dotVariants}
+          variants={trailingDotVariants}
           initial="hidden"
           animate={shouldAnimate ? "visible" : "hidden"}
           transition={{
@@ -53,7 +53,7 @@ export default function Experience(props) {
         />
         <motion.div
           className={`${styles["exp-bar-trailing-dots"]}`}
-          variants={dotVariants}
+          variants={trailingDotVariants}
           initial="hidden"
           animate={shouldAnimate ? "visible" : "hidden"}
           transition={{
@@ -64,7 +64,7 @@ export default function Experience(props) {
         />
         <motion.div
           className={`${styles["exp-bar-trailing-dots"]}`}
-          variants={dotVariants}
+          variants={trailingDotVariants}
           initial="hidden"
           animate={shouldAnimate ? "visible" : "hidden"}
           transition={{
