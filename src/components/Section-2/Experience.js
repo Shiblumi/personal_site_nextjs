@@ -1,6 +1,7 @@
 import styles from "./Experience.module.css";
 import { motion } from "motion/react";
 import { useNavbarContext } from "@/components/Navbar/NavbarContext";
+import DateLine from "../ExperienceBar/ExpBarDateLine";
 
 export default function Experience(props) {
   const { activeSection } = useNavbarContext();
@@ -10,6 +11,11 @@ export default function Experience(props) {
     visible: { opacity: 1, scale: 1 },
   };
 
+// Ted AI: Oct 2023
+// PediBeat: Nov 2023
+// Sitegeist: Jan 2024
+// SyncQ: Jul 2024
+// Graduate: Dec 2024
   return (
     <div className={`${styles["exp-container"]}`}>
       <div className={styles["exp-bar-container"]}>
@@ -28,24 +34,9 @@ export default function Experience(props) {
             originX: 0,
           }}
         />
-        <motion.div
-          className={`${styles["exp-bar-date-line"]}`}
-          style={{
-            "--position-left": "25%",
-          }}
-        />
-        <motion.div
-          className={`${styles["exp-bar-date-line"]}`}
-          style={{
-            "--position-left": "50%",
-          }}
-        />
-        <motion.div
-          className={`${styles["exp-bar-date-line"]}`}
-          style={{
-            "--position-left": "75%",
-          }}
-        />
+        <DateLine positionLeft='20%'/>
+        <DateLine positionLeft='50%'/>
+        <DateLine positionLeft='80%'/>
 
         {/* <motion.div className={`${styles["checkpoint"]}`} /> */}
 
