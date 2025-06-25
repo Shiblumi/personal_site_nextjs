@@ -1,26 +1,26 @@
 .main {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  height: 100vh;
   padding: 0px 32px;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .main code {
-  font-family: inherit;
+  border-radius: 4px;
   background: var(--gray-alpha-100);
   padding: 2px 4px;
-  border-radius: 4px;
   min-height: 0;
+  font-family: inherit;
 }
 
 .background-scene {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: -1;
   width: 100vw;
   height: 100vh;
-  z-index: -1;
   /* pointer-events: none; */
 }
 
@@ -32,22 +32,22 @@
 .scroll-wrapper {
   /* margin-top: 104px; */
   height: 100vh;
-  scroll-snap-type: y mandatory;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
 .scroll-section {
   position: relative;
-  scroll-snap-stop: always;
-  scroll-snap-align: start;
-  height: 100%;
   background: none;
+  height: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .footer {
-  scroll-snap-align: end;
   height: 100px;
+  scroll-snap-align: end;
 }
 
 /* Scrollbar Disable */

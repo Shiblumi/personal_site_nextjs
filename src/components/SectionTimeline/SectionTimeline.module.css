@@ -1,28 +1,28 @@
 .section-timeline-wrapper {
-  position: fixed;
-  left: 50px;
-  top: 50%;
-  transform: translateY(-50%);
   display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50px;
   flex-direction: column;
   gap: 22px;
+  transform: translateY(-50%);
   pointer-events: none;
 }
 
 .timeline-dot {
-  width: 14px;
-  height: 14px;
+  transition: all 0.3s ease-out;
+  border: 2px solid rgba(146, 255, 230, 0.6);
   border-radius: 50%;
   background-color: none;
-  border: 2px solid rgba(146, 255, 230, 0.6);
-  transition: all 0.3s ease-out;
+  width: 14px;
+  height: 14px;
 }
 
 .timeline-dot.active {
-  background-color: rgb(146, 255, 230);
-  border-color: rgb(146, 255, 230);
   box-shadow: 
     0 0 10px rgba(146, 255, 230, 0.6),
     0 0 20px rgba(146, 255, 230, 0.4),
     0 0 30px rgba(146, 255, 230, 0.2);
+  border-color: rgb(146, 255, 230);
+  background-color: rgb(146, 255, 230);
 }

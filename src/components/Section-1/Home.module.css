@@ -3,28 +3,28 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  padding-bottom: 40vh;
   padding-top: 300px;
+  padding-bottom: 40vh;
+  height: 100vh;
 }
 
 .buttons-wrapper {
-  margin-top: 50px;
   display: flex;
   align-items: center;
-  width: 53%;
   gap: 30px;
+  margin-top: 50px;
+  width: 53%;
 }
 
 .name-wrapper {
-  font-family: "Jura", "Montserrat", sans-serif;
-  font-size: 12rem;
-  font-weight: 500;
   color: rgba(148, 200, 255, 0.65);
+  font-weight: 500;
+  font-size: 12rem;
+  line-height: 1.075em;
+  font-family: "Jura", "Montserrat", sans-serif;
+  user-select: none;
   /* letter-spacing: 0.11em; */
   text-align: left;
-  line-height: 1.075em;
-  user-select: none;
   text-shadow: 0px 0px 18px rgba(5, 0, 16, 0.2),
     0px 0px 24px rgba(5, 0, 16, 0.4);
 }
@@ -36,16 +36,16 @@
 
 .wilson {
   opacity: 0;
-  padding-left: 0.093em;
   mask: linear-gradient(-90deg, transparent 0%, black 11%, black 100%);
+  padding-left: 0.093em;
 }
 
 .di {
-  color: rgb(146, 255, 230);
   filter: blur(1.1px);
+  color: rgb(146, 255, 230);
 }
 
 .wi {
-  color: rgb(146, 255, 230);
   filter: blur(1.1px);
+  color: rgb(146, 255, 230);
 }

@@ -1,7 +1,40 @@
 import styles from './Experience.module.css';
 import { motion } from 'motion/react';
 import { useNavbarContext } from '@/components/Navbar/NavbarContext';
-import DateLine from '../ExperienceBar/ExpBarDateLine';
+import Popup from '../ExperienceBar/PopupBox';
+// import DateLine from '../ExperienceBar/ExpBarDateLine';
+
+function DateLine({ positionLeft, delay }) {
+	const { activeSection } = useNavbarContext();
+	const shouldAnimate = activeSection === 2;
+
+	const dateLineVariants = {
+		hidden: { opacity: 0, scale: 0.9, height: 0 },
+		visible: { opacity: 1, scale: 1, height: 28 },
+	};
+
+	return (
+		<motion.div
+			style={{
+				position: 'absolute',
+				left: positionLeft,
+				width: '2px',
+				height: '28px',
+				borderRadius: '3px',
+				background: 'rgba(148, 200, 255, 1)',
+				filter: 'blur(1px)',
+			}}
+			variants={dateLineVariants}
+			initial='hidden'
+			animate={shouldAnimate ? 'visible' : 'hidden'}
+			transition={{
+				duration: 0.3,
+				delay: shouldAnimate ? delay : 0,
+				ease: 'easeOut',
+			}}
+		/>
+	);
+}
 
 export default function Experience(props) {
 	const { activeSection } = useNavbarContext();
@@ -12,14 +45,17 @@ export default function Experience(props) {
 	};
 
 	/* Ted AI: Oct 2023
- PediBeat: Nov 2023
- Sitegeist: Jan 2024
- SyncQ: Jul 2024
- Graduate: Dec 2024 */
+ 	PediBeat: Nov 2023
+ 	Sitegeist: Jan 2024
+ 	SyncQ: Jul 2024
+ 	Graduate: Dec 2024 */
 	return (
 		<div className={`${styles['exp-container']}`}>
 			<div className={styles['exp-bar-container']}>
 				<div className={`${styles['exp-bar-wrapper']}`}>
+					<Popup isVisible={true} position={{ top: '100%', left: '0%' }} />
+					<Popup isVisible={true} position={{ top: '-200%', left: '30%' }}/>
+					<Popup isVisible={true} position={{ top: '100%', left: '60%' }} />
 					<motion.div
 						className={styles['exp-bar']}
 						initial={{ scaleX: 0 }}
