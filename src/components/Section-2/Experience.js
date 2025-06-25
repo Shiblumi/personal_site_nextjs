@@ -44,18 +44,53 @@ export default function Experience(props) {
 		visible: { opacity: 1, scale: 1 },
 	};
 
-	/* Ted AI: Oct 2023
- 	PediBeat: Nov 2023
- 	Sitegeist: Jan 2024
- 	SyncQ: Jul 2024
- 	Graduate: Dec 2024 */
+	/* 	
+		Ted AI: Oct 2023
+		PediBeat: Nov 2023
+		SlugMeter: Dec 2023
+		Sitegeist: Jan 2024
+		SyncQ: Jul 2024
+		Graduate: Dec 2024
+	*/
 	return (
 		<div className={`${styles['exp-container']}`}>
 			<div className={styles['exp-bar-container']}>
 				<div className={`${styles['exp-bar-wrapper']}`}>
-					<Popup isVisible={true} position={{ top: '100%', left: '0%' }} />
-					<Popup isVisible={true} position={{ top: '-200%', left: '30%' }}/>
-					<Popup isVisible={true} position={{ top: '100%', left: '60%' }} />
+					{/* <Popup 
+                        isVisible={shouldAnimate} 
+                        position={{ top: '-200%', left: '10%' }} 
+                        triangle='bottom'
+                    />
+                    
+                    <Popup 
+                        isVisible={shouldAnimate} 
+                        position={{ top: '100%', left: '15%' }} 
+                        triangle='top'
+                    />
+                    
+                    <Popup 
+                        isVisible={shouldAnimate} 
+                        position={{ top: '-200%', left: '20%' }} 
+                        triangle='bottom'
+                    />
+                    
+                    <Popup 
+                        isVisible={shouldAnimate} 
+                        position={{ top: '100%', left: '22.5%' }} 
+                        triangle='top'
+                    />
+                    
+                    <Popup 
+                        isVisible={shouldAnimate} 
+                        position={{ top: '-200%', left: '35%' }} 
+                        triangle='bottom'
+                    />
+                    
+                    <Popup 
+                        isVisible={shouldAnimate} 
+                        position={{ top: '100%', left: '50%' }} 
+                        triangle='top'
+                    /> */}
 					<motion.div
 						className={styles['exp-bar']}
 						initial={{ scaleX: 0 }}
@@ -71,9 +106,8 @@ export default function Experience(props) {
 							originX: 0,
 						}}
 					/>
-					<DateLine positionLeft='20%' delay='1.1' />
-					<DateLine positionLeft='50%' delay='1.6' />
-					<DateLine positionLeft='80%' delay='2.1' />
+					<DateLine positionLeft='27.27%' delay='1.2' />
+					<DateLine positionLeft='81.81%' delay='2.0' />
 				</div>
 
 				{/* <motion.div className={`${styles["checkpoint"]}`} /> */}

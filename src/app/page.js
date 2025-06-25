@@ -52,11 +52,11 @@ export default function Page() {
 
 	return (
 		<main className={styles['main']}>
+			<SectionTimeline />
 			<div className={styles['background-scene']}>
 				<SplineScene />
 			</div>
 			<div className={styles['scroll-wrapper']}>
-				<SectionTimeline />
 				<section id='home' className={styles['scroll-section']}>
 					<div className='container'>
 						<Home />

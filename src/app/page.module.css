@@ -1,7 +1,6 @@
 .main {
   display: flex;
   flex-direction: column;
-  padding: 0px 32px;
   height: 100vh;
   overflow: hidden;
 }

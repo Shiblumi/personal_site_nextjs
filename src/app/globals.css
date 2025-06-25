@@ -93,8 +93,9 @@ button:focus {
 
 .container {
 	margin: 0 auto;
-	padding: 0 2rem;
-	max-width: 1345px;
+	padding: 0 4rem;
+	width: 100vw;
+	max-width: 2300px;
 
 	/* @media (max-width: 640px) {
     padding: 0 1rem;
