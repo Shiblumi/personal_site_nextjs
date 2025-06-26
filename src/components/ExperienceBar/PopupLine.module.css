@@ -1,0 +1,38 @@
+.popup-line-container {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+    /* left: 27.27%; */
+    /* bottom: 50% */
+	z-index: -10;
+
+}
+
+.popup-line {
+	position: absolute;
+	width: 2px;
+	height: 200px;
+    border-radius: 3px;
+    filter: blur(1px);
+	z-index: -10;
+}
+
+.popup-line.up {
+	background: linear-gradient(
+		0deg,
+		rgba(148, 200, 255, 0) 0%,
+		rgba(148, 200, 255, 0.3) 35%,
+		rgba(148, 200, 255, 0.6) 80%,
+		rgba(146, 255, 253, 0.8) 100%
+	);
+}
+
+.popup-line.down {
+	background: linear-gradient(
+		180deg,
+		rgba(148, 200, 255, 0) 0%,
+		rgba(148, 200, 255, 0.3) 35%,
+		rgba(148, 200, 255, 0.6) 80%,
+		rgba(146, 255, 253, 0.8) 100%
+	);
+}

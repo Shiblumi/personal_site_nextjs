@@ -7,8 +7,9 @@
 	margin-right: auto;
 	margin-left: auto;
 	width: 75%;
-	/* max-width: 1600px; */
+	max-width: 1500px;
 	height: 100vh;
+	min-height: 800px;
 }
 
 .exp-bar-container {

@@ -1,0 +1,127 @@
+/* Create a new file: src/components/Popup/Popup.module.css */
+.popup-container {
+	position: absolute;
+	/* z-index: 1000; */
+	pointer-events: none;
+}
+
+.popup-content {
+	position: relative;
+	border-radius: 8px;
+	padding: 20px;
+	min-width: 250px;
+	min-height: 150px;
+	font-family: 'Jura';
+}
+
+.triangle-top {
+	position: absolute;
+	top: -9px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: -1;
+	filter: drop-shadow(0 0 8px rgba(118, 255, 223, 1));
+	filter: drop-shadow(0 0 12px rgba(79, 32, 220, 0.8));
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid rgba(146, 255, 230, 0.6);
+	border-left: 10px solid transparent;
+    border-radius: 12px;
+	width: 0;
+	height: 0;
+}
+
+.triangle-top::before {
+	position: absolute;
+	top: 1px;
+	left: -9px;
+	border-right: 8px solid transparent;
+	border-bottom: 8px solid rgba(104, 60, 237, 0.3);
+	border-left: 8px solid transparent;
+	width: 0;
+	height: 0;
+	content: '';
+}
+
+.triangle-bottom {
+    position: absolute;
+    bottom: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    filter: drop-shadow(0 0 8px rgba(118, 255, 223, 1));
+    filter: drop-shadow(0 0 12px rgba(79, 32, 220, 0.8));
+    border-top: 10px solid rgba(146, 255, 230, 0.6);
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-radius: 12px;
+    width: 0;
+    height: 0;
+}
+
+.triangle-bottom::before {
+    position: absolute;
+    bottom: 1px;
+    left: -9px;
+    border-top: 8px solid rgba(104, 60, 237, 0.3);
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    width: 0;
+    height: 0;
+    content: '';
+}
+
+.triangle-left {
+    position: absolute;
+    top: 50%;
+    left: -9px;
+    transform: translateY(-50%);
+    z-index: -1;
+    filter: drop-shadow(0 0 8px rgba(118, 255, 223, 1));
+    filter: drop-shadow(0 0 12px rgba(79, 32, 220, 0.8));
+    border-top: 10px solid transparent;
+    border-right: 10px solid rgba(146, 255, 230, 0.6);
+    border-bottom: 10px solid transparent;
+    border-radius: 12px;
+    width: 0;
+    height: 0;
+}
+
+.triangle-left::before {
+    position: absolute;
+    top: -9px;
+    left: 1px;
+    border-top: 8px solid transparent;
+    border-right: 8px solid rgba(104, 60, 237, 0.3);
+    border-bottom: 8px solid transparent;
+    width: 0;
+    height: 0;
+    content: '';
+}
+
+.triangle-right {
+    position: absolute;
+    top: 50%;
+    right: -9px;
+    transform: translateY(-50%);
+    z-index: -1;
+    filter: drop-shadow(0 0 8px rgba(118, 255, 223, 1));
+    filter: drop-shadow(0 0 12px rgba(79, 32, 220, 0.8));
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid rgba(146, 255, 230, 0.6);
+    border-radius: 12px;
+    width: 0;
+    height: 0;
+}
+
+.triangle-right::before {
+    position: absolute;
+    top: -9px;
+    right: 1px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid rgba(104, 60, 237, 0.3);
+    width: 0;
+    height: 0;
+    content: '';
+}

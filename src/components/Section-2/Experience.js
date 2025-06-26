@@ -2,6 +2,7 @@ import styles from './Experience.module.css';
 import { motion } from 'motion/react';
 import { useNavbarContext } from '@/components/Navbar/NavbarContext';
 import Popup from '../ExperienceBar/PopupBox';
+import PopupLine from '../ExperienceBar/PopupLine';
 // import DateLine from '../ExperienceBar/ExpBarDateLine';
 
 function DateLine({ positionLeft, delay }) {
@@ -45,17 +46,23 @@ export default function Experience(props) {
 	};
 
 	/* 	
-		Ted AI: Oct 2023
-		PediBeat: Nov 2023
-		SlugMeter: Dec 2023
-		Sitegeist: Jan 2024
-		SyncQ: Jul 2024
-		Graduate: Dec 2024
+		13.6% Ted AI: Oct 2023
+		18.2% PediBeat: Nov 2023
+		22.7% SlugMeter: Dec 2023 
+		27.2% Sitegeist: Jan 2024
+		54.54% SyncQ: Jul 2024
+		77.3% Graduate: Dec 2024
 	*/
 	return (
 		<div className={`${styles['exp-container']}`}>
 			<div className={styles['exp-bar-container']}>
 				<div className={`${styles['exp-bar-wrapper']}`}>
+					<PopupLine positionLeft='13.6%' lineDirection='up'/>
+					<PopupLine positionLeft='18.2%' lineDirection='down'/>
+					<PopupLine positionLeft='22.7%' lineDirection='up'/>
+					<PopupLine positionLeft='27.2%' lineDirection='down'/>
+					<PopupLine positionLeft='54.54%' lineDirection='up'/>
+					<PopupLine positionLeft='77.3%' lineDirection='down'/>
 					{/* <Popup 
                         isVisible={shouldAnimate} 
                         position={{ top: '-200%', left: '10%' }} 
