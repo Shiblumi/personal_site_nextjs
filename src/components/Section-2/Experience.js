@@ -50,19 +50,84 @@ export default function Experience(props) {
 		18.2% PediBeat: Nov 2023
 		22.7% SlugMeter: Dec 2023 
 		27.2% Sitegeist: Jan 2024
-		54.54% SyncQ: Jul 2024
+		54.5% SyncQ: Jul 2024
 		77.3% Graduate: Dec 2024
+		86.4% SyncQ Chatbot: Feb 2025
 	*/
 	return (
 		<div className={`${styles['exp-container']}`}>
 			<div className={styles['exp-bar-container']}>
 				<div className={`${styles['exp-bar-wrapper']}`}>
-					<PopupLine positionLeft='13.6%' lineDirection='up'/>
-					<PopupLine positionLeft='18.2%' lineDirection='down'/>
-					<PopupLine positionLeft='22.7%' lineDirection='up'/>
-					<PopupLine positionLeft='27.2%' lineDirection='down'/>
-					<PopupLine positionLeft='54.54%' lineDirection='up'/>
-					<PopupLine positionLeft='77.3%' lineDirection='down'/>
+					<PopupLine
+						positionLeft='13.6%'
+						lineDirection='up'
+						textDirection='left'
+					>
+						<strong>Ted AI Hackathon</strong>
+						Project: Maptodon
+						<br />
+						Oct 2023
+					</PopupLine>
+					<PopupLine
+						positionLeft='18.2%'
+						lineDirection='down'
+						textDirection='left'
+					>
+						<strong>CalHacks 10.0</strong>
+						Project: PediBeat
+						<br />
+						Nov 2023
+					</PopupLine>
+					<PopupLine
+						positionLeft='22.7%'
+						lineDirection='up'
+						textDirection='right'
+					>
+						<strong>Project: Slug Meter</strong>
+						Lead Front-End Developer
+						<br />
+						Dec 2023
+					</PopupLine>
+					<PopupLine
+						positionLeft='27.2%'
+						lineDirection='down'
+						textDirection='right'
+					>
+						<strong>CruzHacks</strong>
+						Project: Sitegeist
+						<br />
+						Jan 2024
+					</PopupLine>
+					<PopupLine
+						positionLeft='54.54%'
+						lineDirection='up'
+						textDirection='right'
+					>
+						<strong>Company: SyncQ</strong>
+						Software Developer
+						<br />
+						Jul 2024 - Present
+					</PopupLine>
+					<PopupLine
+						positionLeft='77.3%'
+						lineDirection='down'
+						textDirection='left'
+					>
+						<strong>Graduate: UC Santa Cruz</strong>
+						B.S. Computer Science
+						<br />
+						Dec 2024
+					</PopupLine>
+					<PopupLine
+						positionLeft='86.4%'
+						lineDirection='up'
+						textDirection='right'
+					>
+						<strong>SyncQ Chatbot</strong>
+						Feature Development
+						<br />
+						Feb 2025
+					</PopupLine>
 					{/* <Popup 
                         isVisible={shouldAnimate} 
                         position={{ top: '-200%', left: '10%' }} 

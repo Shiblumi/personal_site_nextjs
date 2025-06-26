@@ -1,28 +1,79 @@
 .popup-line-container {
-	width: 200px;
-	height: 200px;
 	position: absolute;
-    /* left: 27.27%; */
-    /* bottom: 50% */
-	z-index: -10;
+	height: 150px;
+}
+
+.text-container {
+    width: auto;
+    border-radius: 6px;
+    padding: 8px 12px;
+    line-height: 22px;
+    white-space: nowrap;
 
 }
 
+.text-container > strong:first-child {
+    display: block;
+    font-weight: 600;
+    color: rgba(var(--primary-rgb), 0.8);
+    text-shadow: 0 0 8px rgba(var(--primary-rgb), 0.7);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 22px;
+}
+
+/* --- Text RIGHT of line --- */
+.text-container.right {
+	position: absolute;
+}
+
+.text-container.up.right {
+	position: absolute;
+	left: 10px;
+	top: 0;
+}
+
+.text-container.down.right {
+	position: absolute;
+	left: 10px;
+	bottom: 0;
+}
+
+/* --- Text LEFT of line --- */
+.text-container.left {
+    position: absolute;
+    text-align: right;
+}
+
+.text-container.up.left {
+    top: 0;
+    right: 10px;
+}
+
+.text-container.down.left {
+    bottom: 0;
+    right: 10px;
+}
+
+
+/* --- Line Variants --- */
 .popup-line {
 	position: absolute;
-	width: 2px;
-	height: 200px;
-    border-radius: 3px;
-    filter: blur(1px);
 	z-index: -10;
+	filter: blur(1px);
+	border-radius: 6px;
+	width: 3px;
+	height: 150px;
+	box-shadow: 0 0 10px rgba(146, 255, 230, 0.1),
+		0 0 20px rgba(146, 255, 230, 0.3);
 }
 
 .popup-line.up {
 	background: linear-gradient(
 		0deg,
 		rgba(148, 200, 255, 0) 0%,
-		rgba(148, 200, 255, 0.3) 35%,
-		rgba(148, 200, 255, 0.6) 80%,
+		rgba(148, 200, 255, 0.3) 25%,
+		rgba(148, 200, 255, 0.6) 75%,
 		rgba(146, 255, 253, 0.8) 100%
 	);
 }
@@ -31,8 +82,8 @@
 	background: linear-gradient(
 		180deg,
 		rgba(148, 200, 255, 0) 0%,
-		rgba(148, 200, 255, 0.3) 35%,
-		rgba(148, 200, 255, 0.6) 80%,
+		rgba(148, 200, 255, 0.3) 25%,
+		rgba(148, 200, 255, 0.6) 75%,
 		rgba(146, 255, 253, 0.8) 100%
 	);
 }
