@@ -21,9 +21,27 @@ export default function PopupLine({
 		>
 			<motion.div
 				className={`${styles['popup-line']} ${styles[lineDirection]}`}
+				initial={{ scaleY: 0 }}
+				animate={{ scaleY: isVisible ? 1 : 0 }}
+				transition={{
+					duration: isVisible ? 1.0 : 0,
+					delay: isVisible ? delay : 0,
+					ease: 'easeOut',
+				}}
+				style={{
+					originY: lineDirection === 'up' ? 1 : 0,
+				}}
 			/>
+
 			<motion.div
 				className={`${styles['text-container']} ${styles[lineDirection]} ${styles[textDirection]} glass-dark-soft`}
+				initial={{ opacity: 0, y: 20 , filter: 'blur(5px)'}}
+				animate={isVisible ? { opacity: 1, y: 0, filter: 'blur(0px)'} : { opacity: 0, y: lineDirection === 'up' ? 20 : -20}}
+				transition={{
+					duration: isVisible ? 0.42 : 0,
+					delay: isVisible ? Number(delay) + 0.6 : 0,
+					ease: 'easeOut',
+				}}
 			>
 				{children}
 			</motion.div>

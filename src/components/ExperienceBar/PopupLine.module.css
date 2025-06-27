@@ -3,10 +3,13 @@
 	height: 150px;
 }
 
+/* --- Text Container --- */
+
 .text-container {
-    width: auto;
+    font-family: 'Jura';
     border-radius: 6px;
     padding: 8px 12px;
+    width: auto;
     line-height: 22px;
     white-space: nowrap;
 
@@ -14,12 +17,12 @@
 
 .text-container > strong:first-child {
     display: block;
-    font-weight: 600;
     color: rgba(var(--primary-rgb), 0.8);
-    text-shadow: 0 0 8px rgba(var(--primary-rgb), 0.7);
+    font-weight: 600;
     font-weight: 600;
     font-size: 20px;
     line-height: 22px;
+    text-shadow: 0 0 8px rgba(var(--primary-rgb), 0.7);
 }
 
 /* --- Text RIGHT of line --- */
@@ -29,14 +32,14 @@
 
 .text-container.up.right {
 	position: absolute;
-	left: 10px;
 	top: 0;
+	left: 10px;
 }
 
 .text-container.down.right {
 	position: absolute;
-	left: 10px;
 	bottom: 0;
+	left: 10px;
 }
 
 /* --- Text LEFT of line --- */
@@ -51,8 +54,8 @@
 }
 
 .text-container.down.left {
-    bottom: 0;
     right: 10px;
+    bottom: 0;
 }
 
 
@@ -61,11 +64,11 @@
 	position: absolute;
 	z-index: -10;
 	filter: blur(1px);
+	box-shadow: 0 0 10px rgba(146, 255, 230, 0.1),
+		0 0 20px rgba(146, 255, 230, 0.3);
 	border-radius: 6px;
 	width: 3px;
 	height: 150px;
-	box-shadow: 0 0 10px rgba(146, 255, 230, 0.1),
-		0 0 20px rgba(146, 255, 230, 0.3);
 }
 
 .popup-line.up {

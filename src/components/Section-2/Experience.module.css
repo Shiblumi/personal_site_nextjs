@@ -66,32 +66,3 @@
 	/* position: absolute;
     right: var(--position-right); */
 }
-
-.checkpoint {
-	position: absolute;
-	left: 10%;
-	filter: blur(5px);
-	box-shadow: 0 0 10px rgba(146, 255, 230, 0.4),
-		0 0 20px rgba(146, 255, 230, 0.3), 0 0 20px rgba(148, 255, 178, 0.2);
-	border-radius: 50%;
-	background: rgb(185, 235, 252);
-	width: 31px;
-	height: 31px;
-	user-select: none;
-}
-
-.gradient-background {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	clip-path: var(--clip-path, none);
-	background: linear-gradient(
-		135deg,
-		rgba(146, 255, 230, 0.4) 0%,
-		rgba(148, 200, 255, 0.6) 50%,
-		rgba(106, 138, 255, 0.4) 100%
-	);
-	width: 100%;
-	height: 100%;
-}
