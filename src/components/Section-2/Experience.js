@@ -30,7 +30,7 @@ export default function Experience(props) {
 						lineDirection='up'
 						textDirection='left'
 						isVisible={shouldAnimate}
-						delay='0.9'
+						delay='0.93'
 					>
 						<strong>Ted AI Hackathon</strong>
 						Project: Maptodon
@@ -42,7 +42,7 @@ export default function Experience(props) {
 						lineDirection='down'
 						textDirection='left'
 						isVisible={shouldAnimate}
-						delay='1.1'
+						delay='1.07'
 					>
 						<strong>CalHacks 10.0</strong>
 						Project: PediBeat
@@ -54,7 +54,7 @@ export default function Experience(props) {
 						lineDirection='up'
 						textDirection='right'
 						isVisible={shouldAnimate}
-						delay='1.2'
+						delay='1.15'
 					>
 						<strong>Project: Slug Meter</strong>
 						Lead Front-End Developer
@@ -78,7 +78,7 @@ export default function Experience(props) {
 						lineDirection='up'
 						textDirection='right'
 						isVisible={shouldAnimate}
-						delay='1.6'
+						delay='1.58'
 					>
 						<strong>Company: SyncQ</strong>
 						Software Developer
@@ -90,7 +90,7 @@ export default function Experience(props) {
 						lineDirection='down'
 						textDirection='left'
 						isVisible={shouldAnimate}
-						delay='1.95'
+						delay='1.92'
 
 					>
 						<strong>Graduate: UC Santa Cruz</strong>
@@ -103,7 +103,7 @@ export default function Experience(props) {
 						lineDirection='up'
 						textDirection='right'
 						isVisible={shouldAnimate}
-						delay='2.22'
+						delay='2.2'
 
 					>
 						<strong>SyncQ Chatbot</strong>
