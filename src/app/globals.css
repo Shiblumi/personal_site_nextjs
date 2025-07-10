@@ -334,6 +334,47 @@ button:focus {
 	}
 }
 
+/* Backgrounds */
+.spline-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1000;
+}
+
+.fullscreen-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -999;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fullscreen-video.visible {
+  opacity: 1;
+}
+
+.loading-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: rgba(146, 255, 253, 0.8);
+  font-size: 2rem;
+  z-index: 1000;
+}
+
 /* Layout Debug */
 * {
 	outline: 1px solid greenyellow;

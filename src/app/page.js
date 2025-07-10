@@ -68,7 +68,7 @@ export default function Page() {
 					</div>
 				</section>
 				<section id='skills' className={styles['scroll-section']}>
-					<h1>Section 3</h1>
+					{/* <h1>Section 3</h1> */}
 				</section>
 				<section id='projects' className={styles['scroll-section']}>
 					<h1>Section 4</h1>
