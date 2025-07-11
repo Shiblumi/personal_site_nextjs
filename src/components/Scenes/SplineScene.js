@@ -1,78 +1,88 @@
-"use client";
+'use client';
 
-import { useNavbarContext } from "@/components/Navbar/NavbarContext";
-import Spline from "@splinetool/react-spline";
-import { useRef, useEffect, useState } from "react";
+import { useNavbarContext } from '@/components/Navbar/NavbarContext';
+import Spline from '@splinetool/react-spline';
+import { useRef, useEffect, useState } from 'react';
 
 export default function SplineScene() {
-  const { activeSection } = useNavbarContext();
-  const [isLoading, setIsLoading] = useState(true);
-  const videoRef = useRef(null);
+	const { activeSection } = useNavbarContext();
+	const [isLoading, setIsLoading] = useState(true);
+	const videoRef = useRef(null);
 
-  // Store ref to Spline scene to interact with Spline API
-  const spline = useRef();
+	// Store ref to Spline scene to interact with Spline API
+	const spline = useRef();
+	const videoRefs = useRef([]);
 
-  function onLoad(splineApp) {
-    spline.current = splineApp;
-    
-    // Preload all Spline scenes by quickly cycling through each on startup
-    const preloadScenes = async () => {
-      setIsLoading(true);
-      console.log("SPLINE: Preloading scenes...");
-      
-      for (let i = 2; i <= 5; i++) {
-        await new Promise(resolve => {
-          splineApp.setVariables({ "active-section": i });
-          setTimeout(resolve, 100);
-        });
-      }
-      
-      if (activeSection > 1) {
-        splineApp.setVariables({ "active-section": activeSection });
-      } else {
-        splineApp.setVariables({ "active-section": 0 });
-      }
-      setIsLoading(false);
-      console.log("SPLINE: All scenes preloaded");
-    };
-    
-    preloadScenes();
-  }
+	// function onLoad(splineApp) {
+	// 	spline.current = splineApp;
 
-  // TODO: Account for multiple scenes, both 3D and video.
-  useEffect(() => {
-    if (videoRef.current) {
-      if (activeSection === 1) {
-        videoRef.current.play().catch(e => console.error("Video playback scene-1 failed:", e));
-      } else {
-        videoRef.current.pause();
-      }
-    }
-  }, [activeSection]);
+	// 	// Preload all Spline scenes by quickly cycling through each on startup
+	// 	const preloadScenes = async () => {
+	// 		setIsLoading(true);
+	// 		console.log('SPLINE: Preloading scenes...');
 
-  // Set spline scene to currently viewed section
-  useEffect(() => {
-    if (spline.current && !isLoading) {
-      console.log(`SplineScene: Changing to scene ${activeSection}`);
-      spline.current.setVariables({
-        "active-section": activeSection,
-      });
-    }
-  }, [activeSection, isLoading]);
+	// 		for (let i = 2; i <= 5; i++) {
+	// 			await new Promise((resolve) => {
+	// 				splineApp.setVariables({ 'active-section': i });
+	// 				setTimeout(resolve, 100);
+	// 			});
+	// 		}
 
-  return (
-    <div className="spline-container">
-      <video 
-        ref={videoRef}
-        className={`fullscreen-video ${activeSection === 1 ? 'visible' : ''}`}
-        src="/backgrounds/squares_top_view.webm"
-        autoPlay={activeSection === 1}
-        loop
-        muted
-        playsInline
-      />
+	// 		if (activeSection > 1) {
+	// 			splineApp.setVariables({ 'active-section': activeSection });
+	// 		} else {
+	// 			splineApp.setVariables({ 'active-section': 0 });
+	// 		}
+	// 		setIsLoading(false);
+	// 		console.log('SPLINE: All scenes preloaded');
+	// 	};
 
-      {/* <Spline
+	// 	preloadScenes();
+	// }
+
+	// Set spline scene (3D) to currently viewed section
+	useEffect(() => {
+		if (spline.current && !isLoading) {
+			console.log(`SplineScene: Changing to scene ${activeSection}`);
+			spline.current.setVariables({
+				'active-section': activeSection,
+			});
+		}
+	}, [activeSection, isLoading]);
+
+	// Set spline scene (video) to currently viewed section
+	useEffect(() => {
+		videoRefs.current.forEach((video, index) => {
+			if (video) {
+				if (index + 1 === activeSection) {
+					video.play();
+				} else {
+					video.pause();
+				}
+			}
+		});
+	}, [activeSection]);
+
+	return (
+		<div className='spline-container'>
+			{[1, 2, 3].map((sectionNum, index) => (
+				<video
+					className={`fullscreen-video ${
+						activeSection === index + 1 ? 'visible' : ''
+					}`}
+					key={sectionNum}
+					// Store each ref at its index
+					ref={(e) => (videoRefs.current[index] = e)}
+					// TODO: Provide fallbacks (i.e. mp4)
+					src={`/backgrounds/section${sectionNum}.webm`}
+					autoPlay={activeSection === index + 1}
+					loop
+					muted
+					playsInline
+				/>
+			))}
+
+			{/* <Spline
         scene="https://prod.spline.design/Dx46uoO3jyBI1dej/scene.splinecode"
         onLoad={onLoad}
       />
@@ -81,6 +91,6 @@ export default function SplineScene() {
           Placeholder Loading
         </div>
       )} */}
-    </div>
-  );
+		</div>
+	);
 }
