@@ -7,38 +7,38 @@ import { useRef, useEffect, useState } from 'react';
 export default function SplineScene() {
 	const { activeSection } = useNavbarContext();
 	const [isLoading, setIsLoading] = useState(true);
-	const videoRef = useRef(null);
 
 	// Store ref to Spline scene to interact with Spline API
 	const spline = useRef();
 	const videoRefs = useRef([]);
 
-	// function onLoad(splineApp) {
-	// 	spline.current = splineApp;
+	function onLoad(splineApp) {
+		spline.current = splineApp;
+		setIsLoading(false);
 
-	// 	// Preload all Spline scenes by quickly cycling through each on startup
-	// 	const preloadScenes = async () => {
-	// 		setIsLoading(true);
-	// 		console.log('SPLINE: Preloading scenes...');
+		// // Preload all Spline scenes by quickly cycling through each on startup
+		// const preloadScenes = async () => {
+		// 	setIsLoading(true);
+		// 	console.log('SPLINE: Preloading scenes...');
 
-	// 		for (let i = 2; i <= 5; i++) {
-	// 			await new Promise((resolve) => {
-	// 				splineApp.setVariables({ 'active-section': i });
-	// 				setTimeout(resolve, 100);
-	// 			});
-	// 		}
+		// 	for (let i = 2; i <= 5; i++) {
+		// 		await new Promise((resolve) => {
+		// 			splineApp.setVariables({ 'active-section': i });
+		// 			setTimeout(resolve, 100);
+		// 		});
+		// 	}
 
-	// 		if (activeSection > 1) {
-	// 			splineApp.setVariables({ 'active-section': activeSection });
-	// 		} else {
-	// 			splineApp.setVariables({ 'active-section': 0 });
-	// 		}
-	// 		setIsLoading(false);
-	// 		console.log('SPLINE: All scenes preloaded');
-	// 	};
+		// 	if (activeSection > 1) {
+		// 		splineApp.setVariables({ 'active-section': activeSection });
+		// 	} else {
+		// 		splineApp.setVariables({ 'active-section': 0 });
+		// 	}
+		// 	setIsLoading(false);
+		// 	console.log('SPLINE: All scenes preloaded');
+		// };
 
-	// 	preloadScenes();
-	// }
+		// preloadScenes();
+	}
 
 	// Set spline scene (3D) to currently viewed section
 	useEffect(() => {
@@ -82,15 +82,12 @@ export default function SplineScene() {
 				/>
 			))}
 
-			{/* <Spline
-        scene="https://prod.spline.design/Dx46uoO3jyBI1dej/scene.splinecode"
-        onLoad={onLoad}
-      />
-      {isLoading && (
-        <div className="loading-screen">
-          Placeholder Loading
-        </div>
-      )} */}
+			<Spline
+				scene='https://prod.spline.design/mqrGb6Ido6jOtwJJ/scene.splinecode'
+				onLoad={onLoad}
+				className={`fullscreen-video ${activeSection === 3 ? 'visible' : ''}`}
+			/>
+			{isLoading && <div className='loading-screen'>Placeholder Loading</div>}
 		</div>
 	);
 }
