@@ -315,14 +315,6 @@ button:focus {
 	pointer-events: none;
 }
 
-/* --- Fade-In Animation --- */
-.fade-in {
-	opacity: 0;
-	filter: blur(10px);
-	animation: fadeInText var(--fade-duration, 1.5s) ease-out forwards;
-	animation-delay: var(--fade-delay, 0.2s);
-}
-
 @keyframes fadeInText {
 	from {
 		opacity: 0;

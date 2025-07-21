@@ -1,68 +1,86 @@
+"use client";
+
 import styles from '@/components/Section-1/Home.module.css';
 import { useNavbarContext } from '@/components/Navbar/NavbarContext';
 import ActionButton from '@/components/Buttons/ActionButton';
 import DynamicText from '../DynamicText/DynamicText';
 import DownArrow from '@/components/Icons/DownArrow';
+import { motion } from 'framer-motion';
 
 export default function Home(props) {
 	const { activeSection } = useNavbarContext();
+	const shouldAnimate = activeSection === 1;
+
+	const containerVariants = {
+		hidden: {},
+		visible: {
+			transition: {
+				staggerChildren: 0.25,
+			},
+		},
+	};
+
+	const childVariants = {
+		hidden: {
+			opacity: 0,
+			filter: 'blur(5px)',
+		},
+		visible: {
+			opacity: 1,
+			filter: 'blur(0px)',
+			transition: {
+				duration: 1.5,
+				ease: 'easeOut',
+			},
+		},
+	};
 
 	return (
-		<div className={styles['home-container']}>
-			<div className={styles['name-wrapper']}>
-				<span
-					className={`${styles['dirk']} full-dropshadow ${
-						activeSection === 1 ? 'fade-in' : ''
-					}`}
-					style={{
-						'--fade-delay': '0.2s',
-						'--fade-duration': '1.5s',
-					}}
-				>
+		<motion.div
+			className={styles['home-container']}
+			variants={containerVariants}
+			initial='hidden'
+			animate={shouldAnimate ? 'visible' : 'hidden'}
+			style={{
+				willChange: 'opacity',
+			}}
+		>
+			{/* Name */}
+			<motion.div className={styles['name-wrapper']} variants={childVariants}>
+				<span className={`${styles['dirk']} full-dropshadow`}>
 					<span className={styles['di']}>DI</span>RK
 				</span>
 				<br />
-				<span
-					className={`${styles['wilson']} full-dropshadow ${
-						activeSection === 1 ? 'fade-in' : ''
-					}`}
-					style={{
-						'--fade-delay': '0.6s', // 0.6s
-						'--fade-duration': '1.5s',
-					}}
-				>
+				<span className={`${styles['wilson']} full-dropshadow`}>
 					<span className={styles['wi']}>WI</span>LSON
 				</span>
-			</div>
-			<DynamicText
-				class={`${activeSection === 1 ? 'fade-in' : ''}`}
-				fadeDelay='1.0s'
-				style={{
-					'--fade-delay': '1.0s',
-					'--fade-duration': '1.5s',
-				}}
-			/>
-			<div className={styles['buttons-wrapper']}>
-				<ActionButton
-					text='Contact'
-					class='glass-dark-primary'
-					routeTo='contact'
-					sectionNum={1}
-					fadeIn={true}
-					animDelay={'1.3s'}
-					animDuration={'1.5s'}
-				/>
-				<ActionButton
-					text='Learn More'
-					class='full-dropshadow-hoverable'
-					routeTo='exp'
-					sectionNum={1}
-					fadeIn={true}
-					animDelay={'1.4s'}
-					animDuration={'1.5s'}
-					icon={DownArrow}
-				/>
-			</div>
-		</div>
+			</motion.div>
+
+			{/* Dynamic Text */}
+			<motion.div variants={childVariants}>
+				<DynamicText />
+			</motion.div>
+
+			{/* Buttons */}
+			<motion.div className={styles['buttons-wrapper']}>
+				<motion.div variants={childVariants}>
+					<ActionButton
+						text='Contact'
+						class='glass-dark-primary'
+						routeTo='contact'
+						sectionNum={1}
+					/>
+				</motion.div>
+				<motion.div variants={childVariants}>
+					<ActionButton
+						text='Learn More'
+						class='full-dropshadow-hoverable'
+						routeTo='exp'
+						sectionNum={1}
+						icon={DownArrow}
+					/>
+				</motion.div>
+			</motion.div>
+		</motion.div>
 	);
 }

@@ -51,13 +51,7 @@ export default function DynamicText(props) {
 
   return (
     <div
-      className={`${styles["dynamic-text-wrapper"]} ${
-        shouldFadeIn ? "fade-in" : ""
-      }`}
-      style={{
-        "--fade-delay": props.fadeDelay || "0.6s",
-        "--fade-duration": "1.5s",
-      }}
+      className={`${styles["dynamic-text-wrapper"]}`}
     >
       <span
         className={`${styles["dynamic-text"]} full-dropshadow-light ${

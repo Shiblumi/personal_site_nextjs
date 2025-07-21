@@ -1,5 +1,5 @@
 import styles from './Experience.module.css';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { useNavbarContext } from '@/components/Navbar/NavbarContext';
 import PopupLine from '../ExperienceBar/PopupLine';
 import DateLine from '../ExperienceBar/ExpBarDateLine';
