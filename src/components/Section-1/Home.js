@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import styles from '@/components/Section-1/Home.module.css';
 import { useNavbarContext } from '@/components/Navbar/NavbarContext';
@@ -7,7 +7,7 @@ import DynamicText from '../DynamicText/DynamicText';
 import DownArrow from '@/components/Icons/DownArrow';
 import { motion } from 'framer-motion';
 
-export default function Home(props) {
+export default function Home() {
 	const { activeSection } = useNavbarContext();
 	const shouldAnimate = activeSection === 1;
 
@@ -15,7 +15,7 @@ export default function Home(props) {
 		hidden: {},
 		visible: {
 			transition: {
-				staggerChildren: 0.25,
+				staggerChildren: 0.1,
 			},
 		},
 	};
@@ -23,7 +23,7 @@ export default function Home(props) {
 	const childVariants = {
 		hidden: {
 			opacity: 0,
-			filter: 'blur(5px)',
+			filter: 'blur(8px)',
 		},
 		visible: {
 			opacity: 1,
@@ -42,7 +42,7 @@ export default function Home(props) {
 			initial='hidden'
 			animate={shouldAnimate ? 'visible' : 'hidden'}
 			style={{
-				willChange: 'opacity',
+				willChange: 'filter, opacity',
 			}}
 		>
 			{/* Name */}
@@ -62,16 +62,14 @@ export default function Home(props) {
 			</motion.div>
 
 			{/* Buttons */}
-			<motion.div className={styles['buttons-wrapper']}>
-				<motion.div variants={childVariants}>
+			<motion.div variants={childVariants}>
+				<div className={styles['buttons-wrapper']}>
 					<ActionButton
 						text='Contact'
 						class='glass-dark-primary'
 						routeTo='contact'
 						sectionNum={1}
 					/>
-				</motion.div>
-				<motion.div variants={childVariants}>
 					<ActionButton
 						text='Learn More'
 						class='full-dropshadow-hoverable'
@@ -79,7 +77,7 @@ export default function Home(props) {
 						sectionNum={1}
 						icon={DownArrow}
 					/>
-				</motion.div>
+				</div>
 			</motion.div>
 		</motion.div>
 	);
