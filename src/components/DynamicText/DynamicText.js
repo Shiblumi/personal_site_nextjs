@@ -13,7 +13,6 @@ const roles = [
 ];
 
 const CYCLE_INTERVAL = 3000;
-const INITIAL_DELAY = 1000;
 
 export default function DynamicText() {
 	const [index, setIndex] = useState(0);
@@ -26,14 +25,11 @@ export default function DynamicText() {
 			return;
 		}
 
-		// Start cycling after initial delay
-		const startCycling = setTimeout(() => {
-			const intervalId = setInterval(() => {
-				setIndex((i) => (i + 1) % roles.length);
-			}, CYCLE_INTERVAL);
+		const intervalId = setInterval(() => {
+			setIndex((i) => (i + 1) % roles.length);
+		}, CYCLE_INTERVAL);
 
-			return () => clearInterval(intervalId);
-		}, INITIAL_DELAY);
+		return () => clearInterval(intervalId);
 
 		return () => clearTimeout(startCycling);
 	}, [shouldAnimate]);
