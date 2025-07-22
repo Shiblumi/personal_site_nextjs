@@ -15,7 +15,8 @@ export default function Home() {
 		hidden: {},
 		visible: {
 			transition: {
-				staggerChildren: 0.1,
+				staggerChildren: 0.15,
+				delayChildren: 0.2,
 			},
 		},
 	};
@@ -23,14 +24,14 @@ export default function Home() {
 	const childVariants = {
 		hidden: {
 			opacity: 0,
-			filter: 'blur(8px)',
+			// filter: 'blur(8px)',
 		},
 		visible: {
 			opacity: 1,
-			filter: 'blur(0px)',
+			// filter: 'blur(0px)',
 			transition: {
-				duration: 1.5,
-				ease: 'easeOut',
+				duration: 1.2,
+				ease: 'easeIn',
 			},
 		},
 	};

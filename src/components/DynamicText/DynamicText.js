@@ -1,68 +1,86 @@
-import { useEffect, useState } from "react";
-import styles from "./DynamicText.module.css";
-import { useNavbarContext } from "@/components/Navbar/NavbarContext";
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import styles from './DynamicText.module.css';
+import { useNavbarContext } from '@/components/Navbar/NavbarContext';
 
-const roles = ["Full Stack Developer", "A.I. Integrator", "3D Artist", "Video Editor", "Photographer", "Gaming Enthusiast",];
-const FADE_DURATION = 300;
+const roles = [
+	'Full Stack Developer',
+	'A.I. Integrator',
+	'3D Artist',
+	'Video Editor',
+	'Photographer',
+	'Gaming Enthusiast',
+];
+
 const CYCLE_INTERVAL = 3000;
-const INITIAL_TIMEOUT_DELAY = 200;
+const INITIAL_DELAY = 1000;
 
-export default function DynamicText(props) {
-  const [index, setIndex] = useState(0);
-  const [isVisible, setVisible] = useState(true);
-  const { activeSection } = useNavbarContext();
-  const shouldFadeIn = activeSection === 1;
-  const fadeDelay = parseFloat(props.fadeDelay || "0.6s") * 1000;
-  const cycleDelay = fadeDelay + INITIAL_TIMEOUT_DELAY;
-  
-  useEffect(() => {
-    if (!shouldFadeIn) {
-      // Reset to first role when leaving section
-      setIndex(0);
-      setVisible(false);
-      return;
-    }
-    else {
-        setVisible(true);
-    }
+export default function DynamicText() {
+	const [index, setIndex] = useState(0);
+	const { activeSection } = useNavbarContext();
+	const shouldAnimate = activeSection === 1;
 
-    // (1) Timeout till section fade-in is complete
-    // (2) Start interval for dynamic text
-    // (3) Wait for fade-out, then change text and fade in
-    let intervalId;
-    const startCycling = setTimeout(() => { // (1)
-      intervalId = setInterval(() => { // (2)
-        setVisible(false);
-        setTimeout(() => { // (3)
-          setIndex((i) => (i + 1) % roles.length);
-          setVisible(true);
-        }, FADE_DURATION);
-      }, CYCLE_INTERVAL);
-    }, cycleDelay);
+	useEffect(() => {
+		if (!shouldAnimate) {
+			setIndex(0);
+			return;
+		}
 
-    // Define clean up for timeout() and interval() references
-    return () => {
-      clearTimeout(startCycling);
-      if (intervalId) {
-        clearInterval(intervalId);
-      }
-    };
-  }, [shouldFadeIn, cycleDelay]);
+		// Start cycling after initial delay
+		const startCycling = setTimeout(() => {
+			const intervalId = setInterval(() => {
+				setIndex((i) => (i + 1) % roles.length);
+			}, CYCLE_INTERVAL);
 
-  return (
-    <div
-      className={`${styles["dynamic-text-wrapper"]}`}
-    >
-      <span
-        className={`${styles["dynamic-text"]} full-dropshadow-light ${
-          isVisible ? styles["visible"] : styles["hidden"]
-        }`}
-        style={{
-          "--fade-duration": `${FADE_DURATION}ms`,
-        }}
-      >
-        {roles[index]}
-      </span>
-    </div>
-  );
+			return () => clearInterval(intervalId);
+		}, INITIAL_DELAY);
+
+		return () => clearTimeout(startCycling);
+	}, [shouldAnimate]);
+
+	// Animation variants
+	const textVariants = {
+		hidden: {
+			opacity: 0,
+			y: 20,
+			// filter: "blur(4px)"
+		},
+		visible: {
+			opacity: 1,
+			y: 0,
+			// filter: "blur(0px)",
+			transition: {
+				duration: 0.4,
+				ease: 'easeOut',
+			},
+		},
+		exit: {
+			opacity: 0,
+			y: -20,
+			// filter: "blur(4px)",
+			transition: {
+				duration: 0.3,
+				ease: 'easeIn',
+			},
+		},
+	};
+
+	return (
+		<div className={styles['dynamic-text-wrapper']}>
+			<AnimatePresence mode='wait'>
+				{shouldAnimate && (
+					<motion.span
+						key={`${index}-${roles[index]}`}
+						className={`${styles['dynamic-text']} full-dropshadow-light`}
+						variants={textVariants}
+						initial='hidden'
+						animate='visible'
+						exit='exit'
+					>
+						{roles[index]}
+					</motion.span>
+				)}
+			</AnimatePresence>
+		</div>
+	);
 }

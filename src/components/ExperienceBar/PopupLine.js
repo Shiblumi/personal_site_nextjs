@@ -35,8 +35,12 @@ export default function PopupLine({
 
 			<motion.div
 				className={`${styles['text-container']} ${styles[lineDirection]} ${styles[textDirection]} glass-dark-soft`}
-				initial={{ opacity: 0, y: 20 , filter: 'blur(5px)'}}
-				animate={isVisible ? { opacity: 1, y: 0, filter: 'blur(0px)'} : { opacity: 0, y: lineDirection === 'up' ? 20 : -20}}
+				initial={{ opacity: 0, y: 20 }}
+				animate={
+					isVisible
+						? { opacity: 1, y: 0 }
+						: { opacity: 0, y: lineDirection === 'up' ? 20 : -20 }
+				}
 				transition={{
 					duration: isVisible ? 0.42 : 0,
 					delay: isVisible ? Number(delay) + 0.6 : 0,
