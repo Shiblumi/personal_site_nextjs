@@ -8,6 +8,7 @@ import SectionTimeline from '@/components/SectionTimeline/SectionTimeline';
 import Footer from '@/components/Footer/Footer';
 import Home from '@/components/Section-1/Home';
 import Experience from '@/components/Section-2/Experience';
+import Skills from '@/components/Section-3/Skills';
 
 export default function Page() {
 	const { setActiveSection } = useNavbarContext();
@@ -68,7 +69,7 @@ export default function Page() {
 					</div>
 				</section>
 				<section id='skills' className={styles['scroll-section']}>
-					{/* <h1>Section 3</h1> */}
+					<Skills />
 				</section>
 				<section id='projects' className={styles['scroll-section']}>
 					<h1>Section 4</h1>
