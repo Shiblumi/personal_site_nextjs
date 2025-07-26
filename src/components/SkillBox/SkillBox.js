@@ -1,18 +1,34 @@
 import styles from './SkillBox.module.css';
+import Image from 'next/image';
 
-// TODO: Make no-gradient option for glass-dark-soft.
-// IDEA: 
-// 1.   Thin line go horizontally across quickly, expanding right all the way,
-//      then shrink from left.
-// 2.   The sides come down from the horizontal expanding line...
-// Too much processing? Probs.us
-export default function SkillBox({title}) {
+export default function SkillBox({ title, logos = [] }) {
 	return (
-		<>
-			<div className={`${styles['half-box']} glass-dark-soft-no-gradient`}>
-                <span className={`${styles['box-title']}`}>{title}</span>
-				<div className={`${styles['vertical-line']}`} />
-			</div>
-		</>
+		<div className={`${styles['skills-box']} glass-dark-soft-no-gradient`}>
+			<span className={`${styles['box-title']}`}>{title}</span>
+			<div className={`${styles['vertical-line']}`} />
+
+			{logos.map((logo, index) => (
+				<div
+					key={`${index}-logo`}
+					style={{
+						display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center',
+						flexDirection: 'column',
+						gap: '3px',
+						height: '100%',
+					}}
+				>
+					<Image
+						src={logo.src}
+						alt={logo.name || `${title} skill ${index + 1}`}
+						width={40}
+						height={40}
+						style={{ objectFit: 'contain', userSelect: 'none' }}
+					/>
+					<span>{logo.name}</span>
+				</div>
+			))}
+		</div>
 	);
 }

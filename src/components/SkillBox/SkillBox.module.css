@@ -1,25 +1,18 @@
 /* TODO: Make Half-Box auto width based on content within. */
-
-.half-box {
+.skills-box {
+	display: flex;
 	position: relative;
-	border: 1px solid rgba(var(--secondary-rgb));
-	border-bottom: none;
-	border-radius: 12px 12px 0 0;
-	width: 32%;
-	height: 50px;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
 	box-shadow: inset 0px 0px 10px rgba(var(--primary-rgb), 0.15),
 		0px 0px 20px rgba(var(--primary-rgb), 0.15);
-}
-
-.vertical-line {
-	position: absolute;
-	top: -10px;
-	left: 50%;
-	transform: translateX(-50%);
-	background-color: rgba(var(--secondary-rgb));
-	width: 2px;
-	height: 10px;
-	box-shadow: 0 0 10px rgba(146, 255, 230, 0.7)
+	border: 1px solid rgba(var(--secondary-rgb));
+	border-bottom: none;
+	border-radius: 8px 8px 0 0;
+	padding: 12px 24px 12px 24px;
+	width: auto;
+	height: auto;
 }
 
 .box-title {
@@ -28,8 +21,21 @@
 	left: 50%;
 	transform: translateX(-50%);
 	color: rgba(var(--secondary-rgb));
-	font-family: 'Jura';
 	font-weight: 600;
 	font-size: 20px;
+	font-family: 'Jura';
+	user-select: none;
 	text-shadow: 0 0 16px black;
+}
+
+
+.vertical-line {
+	position: absolute;
+	top: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	box-shadow: 0 0 10px rgba(146, 255, 230, 0.7);
+	background-color: rgba(var(--secondary-rgb));
+	width: 2px;
+	height: 10px;
 }

@@ -12,7 +12,7 @@
     width: auto;
     line-height: 22px;
     white-space: nowrap;
-
+	font-size: 16px;
 }
 
 .text-container > strong:first-child {
@@ -20,8 +20,8 @@
     color: rgba(var(--primary-rgb), 0.8);
     font-weight: 600;
     font-weight: 600;
-    font-size: 20px;
-    line-height: 22px;
+    font-size: 22px;
+    line-height: 28px;
     text-shadow: 0 0 8px rgba(var(--primary-rgb), 0.7);
 }
 
