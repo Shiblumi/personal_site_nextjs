@@ -18,18 +18,24 @@ export default function Skills() {
 		{ src: '/images/logos/sql-generic-logo.svg', name: 'SQL' },
 	];
 
-    	const generalSkills = [
+	const generalSkills = [
 		{ src: '/images/logos/python-logo.svg', name: 'Python' },
 		{ src: '/images/logos/cpp-logo.svg', name: 'C++' },
 		{ src: '/images/logos/spline-logo.png', name: 'Spline3D' },
 	];
 
+	const learningSkills = [
+		{ src: '/images/logos/tailwind-css-logo.svg', name: 'Tailwind' },
+		{ src: '/images/logos/typescript-logo.svg', name: 'TypeScript' },
+	];
+
 	return (
-		<div className={`${styles['skills-container']}`}>
+		<div className={`${styles['skills-page-container']}`}>
 			<div className={`${styles['skills-showcase']}`}>
 				<SkillBox title='Frontend' logos={frontendSkills} />
 				<SkillBox title='Backend' logos={backendSkills} />
-				<SkillBox title='General' logos={generalSkills}/>
+				<SkillBox title='General' logos={generalSkills} />
+				<SkillBox title='Learning...' logos={learningSkills} />
 			</div>
 		</div>
 	);

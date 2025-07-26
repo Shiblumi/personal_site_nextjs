@@ -1,4 +1,4 @@
-.skills-container {
+.skills-page-container {
 	display: flex;
 	position: relative;
 	flex-direction: column;
@@ -6,19 +6,23 @@
 	align-items: center;
 	margin-right: auto;
 	margin-left: auto;
-	width: 75%;
+	width: 90%;
 	min-width: 1000px;
-	max-width: 1500px;
+	max-width: 1700px;
 	height: 100vh;
 	min-height: 1000px;
 }
 
 .skills-showcase {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-between;
-  align-items: center;
-  gap: 82px;
-  height: auto;
+	flex-wrap: wrap;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	/* gap: 50px; */
+	column-gap: 50px;
+	row-gap: 80px;
+	height: auto;
+	width: auto;
 }
