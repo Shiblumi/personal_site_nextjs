@@ -1,7 +1,10 @@
 import SkillBox from '../SkillBox/SkillBox';
 import styles from './Skills.module.css';
+import { motion } from 'framer-motion';
 
 export default function Skills() {
+
+
 	const frontendSkills = [
 		{ src: '/images/logos/react-icon.svg', name: 'React' },
 		{ src: '/images/logos/framer-motion-logo.svg', name: 'Motion' },
@@ -32,10 +35,10 @@ export default function Skills() {
 	return (
 		<div className={`${styles['skills-page-container']}`}>
 			<div className={`${styles['skills-showcase']}`}>
-				<SkillBox title='Frontend' logos={frontendSkills} />
-				<SkillBox title='Backend' logos={backendSkills} />
-				<SkillBox title='General' logos={generalSkills} />
-				<SkillBox title='Learning...' logos={learningSkills} />
+				<SkillBox title='Frontend' logos={frontendSkills} delay='0.3'/>
+				<SkillBox title='Backend' logos={backendSkills} delay='0.3'/>
+				<SkillBox title='General' logos={generalSkills} delay='0.3'/>
+				<SkillBox title='Learning...' logos={learningSkills} delay='0.3'/>
 			</div>
 		</div>
 	);

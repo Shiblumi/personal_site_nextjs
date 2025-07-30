@@ -1,23 +1,54 @@
 import styles from './SkillBox.module.css';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { useNavbarContext } from '@/components/Navbar/NavbarContext';
 
-export default function SkillBox({ title, logos = [] }) {
+export default function SkillBox({ title, logos = [], delay = '0.2' }) {
+	const { activeSection } = useNavbarContext();
+	const shouldAnimate = activeSection === 3;
+
+	const skillBoxVariants = {
+		hidden: { opacity: 0, y: 20 },
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				duration: 0.7,
+				ease: 'easeOut',
+				staggerChildren: 0.11,
+				delayChildren: 0.4,
+				delay: shouldAnimate ? Number(delay) : 0,
+			},
+		},
+	};
+
+	const skillLogoVariants = {
+		hidden: { opacity: 0, x: -10 },
+		visible: {
+			opacity: 1,
+			x: 0,
+			transition: {
+				duration: 0.5,
+				ease: 'easeOut',
+			},
+		},
+	};
+
 	return (
-		<div className={`${styles['skills-box']} glass-dark-soft-no-gradient`}>
+		<motion.div
+			className={`${styles['skills-box']} glass-dark-soft-no-gradient`}
+			variants={skillBoxVariants}
+			initial='hidden'
+			animate={shouldAnimate ? 'visible' : 'hidden'}
+		>
 			<span className={`${styles['box-title']}`}>{title}</span>
 			<div className={`${styles['vertical-line']}`} />
 
 			{logos.map((logo, index) => (
-				<div
+				<motion.div
 					key={`${index}-logo`}
-					style={{
-						display: 'flex',
-						justifyContent: 'center',
-						alignItems: 'center',
-						flexDirection: 'column',
-						gap: '3px',
-						height: '100%',
-					}}
+					className={styles['skill-logo']}
+					variants={skillLogoVariants}
 				>
 					<Image
 						src={logo.src}
@@ -27,8 +58,8 @@ export default function SkillBox({ title, logos = [] }) {
 						style={{ objectFit: 'contain', userSelect: 'none' }}
 					/>
 					<span>{logo.name}</span>
-				</div>
+				</motion.div>
 			))}
-		</div>
+		</motion.div>
 	);
 }

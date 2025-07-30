@@ -28,7 +28,6 @@
 	text-shadow: 0 0 16px black;
 }
 
-
 .vertical-line {
 	position: absolute;
 	top: -10px;
@@ -38,4 +37,13 @@
 	background-color: rgba(var(--secondary-rgb));
 	width: 2px;
 	height: 10px;
+}
+
+.skill-logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 3px;
+	height: 100%;
 }
