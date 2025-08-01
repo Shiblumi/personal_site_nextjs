@@ -1,6 +1,6 @@
 import SkillBox from '../SkillBox/SkillBox';
+import TextBox from '@/components/TextBox/TextBox'
 import styles from './Skills.module.css';
-import { motion } from 'framer-motion';
 
 export default function Skills() {
 
@@ -40,6 +40,7 @@ export default function Skills() {
 				<SkillBox title='General' logos={generalSkills} delay='0.3'/>
 				<SkillBox title='Learning...' logos={learningSkills} delay='0.3'/>
 			</div>
+			<TextBox />
 		</div>
 	);
 }

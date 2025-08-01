@@ -35,7 +35,7 @@ export default function Experience(props) {
 						<strong>Ted AI Hackathon</strong>
 						Project: Maptodon
 						<br />
-						Oct 2023
+						<em>Oct 2023</em>
 					</PopupLine>
 					<PopupLine
 						positionLeft='18.2%'
@@ -47,7 +47,7 @@ export default function Experience(props) {
 						<strong>CalHacks 10.0</strong>
 						Project: PediBeat
 						<br />
-						Nov 2023
+						<em>Nov 2023</em>
 					</PopupLine>
 					<PopupLine
 						positionLeft='22.7%'
@@ -59,7 +59,7 @@ export default function Experience(props) {
 						<strong>Project: Slug Meter</strong>
 						Lead Front-End Developer
 						<br />
-						Dec 2023
+						<em>Dec 2023</em>
 					</PopupLine>
 					<PopupLine
 						positionLeft='27.2%'
@@ -71,7 +71,7 @@ export default function Experience(props) {
 						<strong>CruzHacks</strong>
 						Project: Sitegeist
 						<br />
-						Jan 2024
+						<em>Jan 2024</em>
 					</PopupLine>
 					<PopupLine
 						positionLeft='54.54%'
@@ -83,7 +83,7 @@ export default function Experience(props) {
 						<strong>Company: SyncQ</strong>
 						Software Developer
 						<br />
-						Jul 2024 - Present
+						<em>Jul 2024 - Present</em>
 					</PopupLine>
 					<PopupLine
 						positionLeft='77.3%'
@@ -96,7 +96,7 @@ export default function Experience(props) {
 						<strong>Graduate: UC Santa Cruz</strong>
 						B.S. Computer Science
 						<br />
-						Dec 2024
+						<em>Dec 2024</em>
 					</PopupLine>
 					<PopupLine
 						positionLeft='86.4%'
@@ -109,7 +109,7 @@ export default function Experience(props) {
 						<strong>SyncQ Chatbot</strong>
 						Feature Development
 						<br />
-						Feb 2025
+						<em>Feb 2025</em>
 					</PopupLine>
 					{/* TODO: Make me a component */}
 					<motion.div

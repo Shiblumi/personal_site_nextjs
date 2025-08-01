@@ -17,15 +17,15 @@
 
 .box-title {
 	position: absolute;
-	top: -40px;
+	top: -42px;
 	left: 50%;
 	transform: translateX(-50%);
 	color: rgba(var(--secondary-rgb));
 	font-weight: 600;
-	font-size: 22px;
+	font-size: 23px;
 	font-family: 'Jura';
 	user-select: none;
-	text-shadow: 0 0 16px black;
+	text-shadow: 0 0 16px rgba(5, 0, 16);
 }
 
 .vertical-line {

@@ -4,25 +4,24 @@
 }
 
 /* --- Text Container --- */
-
 .text-container {
-    font-family: 'Jura';
-    border-radius: 6px;
-    padding: 8px 12px;
-    width: auto;
-    line-height: 22px;
-    white-space: nowrap;
+	border-radius: 6px;
+	padding: 8px 12px;
+	width: auto;
 	font-size: 16px;
+	line-height: 22px;
+	font-family: 'Jura';
+	white-space: nowrap;
 }
 
 .text-container > strong:first-child {
-    display: block;
-    color: rgba(var(--primary-rgb), 0.8);
-    font-weight: 600;
-    font-weight: 600;
-    font-size: 22px;
-    line-height: 28px;
-    text-shadow: 0 0 8px rgba(var(--primary-rgb), 0.7);
+	display: block;
+	color: rgba(var(--primary-rgb), 0.8);
+	font-weight: 600;
+	font-weight: 600;
+	font-size: 22px;
+	line-height: 28px;
+	text-shadow: 0 0 8px rgba(var(--primary-rgb), 0.7);
 }
 
 /* --- Text RIGHT of line --- */
@@ -44,20 +43,19 @@
 
 /* --- Text LEFT of line --- */
 .text-container.left {
-    position: absolute;
-    text-align: right;
+	position: absolute;
+	text-align: right;
 }
 
 .text-container.up.left {
-    top: 0;
-    right: 10px;
+	top: 0;
+	right: 10px;
 }
 
 .text-container.down.left {
-    right: 10px;
-    bottom: 0;
+	right: 10px;
+	bottom: 0;
 }
-
 
 /* --- Line Variants --- */
 .popup-line {
