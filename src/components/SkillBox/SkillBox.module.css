@@ -1,10 +1,11 @@
 /* TODO: Make Half-Box auto width based on content within. */
 .skills-box {
 	display: flex;
+	flex-direction: row;
 	position: relative;
 	justify-content: center;
 	align-items: center;
-	gap: 40px;
+	gap: 56px;
 	box-shadow: inset 0px 0px 10px rgba(var(--primary-rgb), 0.15),
 		0px 0px 20px rgba(var(--primary-rgb), 0.15);
 	border: 1px solid rgba(var(--secondary-rgb));
@@ -46,4 +47,6 @@
 	flex-direction: column;
 	gap: 3px;
 	height: 100%;
+	/* text-shadow: 0 0 10px rgba(5, 0, 16); */
+
 }

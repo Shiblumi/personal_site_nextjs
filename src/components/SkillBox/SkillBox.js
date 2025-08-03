@@ -16,7 +16,7 @@ export default function SkillBox({ title, logos = [], delay = '0.2' }) {
 				duration: 1,
 				ease: 'easeOut',
 				staggerChildren: 0.11,
-				delayChildren: 0.4,
+				delayChildren: Number(delay) + 0.1,
 				delay: shouldAnimate ? Number(delay) : 0,
 			},
 		},

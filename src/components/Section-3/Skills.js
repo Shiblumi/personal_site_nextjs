@@ -1,5 +1,5 @@
 import SkillBox from '../SkillBox/SkillBox';
-import TextBox from '@/components/TextBox/TextBox'
+import TextBox from '@/components/TextBox/TextBox';
 import styles from './Skills.module.css';
 
 export default function Skills() {
@@ -34,13 +34,15 @@ export default function Skills() {
 
 	return (
 		<div className={`${styles['skills-page-container']}`}>
-			<div className={`${styles['skills-showcase']}`}>
-				<SkillBox title='Frontend' logos={frontendSkills} delay='0.3'/>
-				<SkillBox title='Backend' logos={backendSkills} delay='0.3'/>
-				<SkillBox title='General' logos={generalSkills} delay='0.3'/>
-				<SkillBox title='Learning...' logos={learningSkills} delay='0.3'/>
+			<TextBox maxWidth='65%' minWidth='500px' delay='0.8' />
+			<div
+				className={`${styles['skills-showcase']}`}
+			>
+				<SkillBox title='Frontend' logos={frontendSkills} delay='0.3' />
+				<SkillBox title='Backend' logos={backendSkills} delay='0.45' />
+				<SkillBox title='General' logos={generalSkills} delay='0.6' />
+				<SkillBox title='Learning...' logos={learningSkills} delay='0.75' />
 			</div>
-			<TextBox />
 		</div>
 	);
 }
