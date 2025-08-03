@@ -1,4 +1,4 @@
-import styles from './SkillBox.module.css';
+import styles from './SkillsBox.module.css';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useNavbarContext } from '@/components/Navbar/NavbarContext';
@@ -8,10 +8,11 @@ export default function SkillBox({ title, logos = [], delay = '0.2' }) {
 	const shouldAnimate = activeSection === 3;
 
 	const skillBoxVariants = {
-		hidden: { opacity: 0, scale: 0.9 },
+		hidden: { opacity: 0, scale: 0.9, rotateX: 15},
 		visible: {
 			opacity: 1,
 			scale: 1,
+			rotateX: 0,
 			transition: {
 				duration: 1,
 				ease: 'easeOut',

@@ -1,10 +1,8 @@
-import SkillBox from '../SkillBox/SkillBox';
+import SkillsBox from '../SkillBox/SkillsBox';
 import TextBox from '@/components/TextBox/TextBox';
 import styles from './Skills.module.css';
 
 export default function Skills() {
-
-
 	const frontendSkills = [
 		{ src: '/images/logos/react-icon.svg', name: 'React' },
 		{ src: '/images/logos/framer-motion-logo.svg', name: 'Motion' },
@@ -34,14 +32,12 @@ export default function Skills() {
 
 	return (
 		<div className={`${styles['skills-page-container']}`}>
-			<TextBox maxWidth='65%' minWidth='500px' delay='0.8' />
-			<div
-				className={`${styles['skills-showcase']}`}
-			>
-				<SkillBox title='Frontend' logos={frontendSkills} delay='0.3' />
-				<SkillBox title='Backend' logos={backendSkills} delay='0.45' />
-				<SkillBox title='General' logos={generalSkills} delay='0.6' />
-				<SkillBox title='Learning...' logos={learningSkills} delay='0.75' />
+			<TextBox maxWidth='65%' minWidth='500px' delay='0.35' />
+			<div className={`${styles['skills-showcase']}`}>
+				<SkillsBox title='Frontend' logos={frontendSkills} delay='0.3' />
+				<SkillsBox title='Backend' logos={backendSkills} delay='0.45' />
+				<SkillsBox title='General' logos={generalSkills} delay='0.6' />
+				<SkillsBox title='Learning...' logos={learningSkills} delay='0.75' />
 			</div>
 		</div>
 	);

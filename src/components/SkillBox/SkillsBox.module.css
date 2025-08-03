@@ -1,8 +1,8 @@
 /* TODO: Make Half-Box auto width based on content within. */
 .skills-box {
 	display: flex;
-	flex-direction: row;
 	position: relative;
+	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	gap: 56px;
@@ -42,11 +42,10 @@
 
 .skill-logo {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
 	gap: 3px;
 	height: 100%;
 	/* text-shadow: 0 0 10px rgba(5, 0, 16); */
-
 }
