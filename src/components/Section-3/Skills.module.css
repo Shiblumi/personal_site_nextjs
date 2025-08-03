@@ -4,26 +4,25 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	gap: 90px;
+	gap: 128px;
 	margin-right: auto;
 	margin-left: auto;
 	width: 90%;
-	min-width: 1000px;
 	max-width: 1700px;
 	height: 100vh;
-	/* min-height: 1000px; */
+	min-height: 900px;
 }
 
 .skills-showcase {
-	flex-wrap: wrap;
 	display: flex;
-	flex-direction: row;
-	align-content: center;
-	justify-content: center;
-	align-items: center;
 	/* gap: 50px; */
 	column-gap: 50px;
 	row-gap: 80px;
-	height: auto;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
 	width: auto;
+	height: auto;
 }

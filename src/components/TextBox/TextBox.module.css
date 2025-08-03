@@ -1,10 +1,9 @@
 .text-container {
 	width: auto;
 	height: auto;
-	padding: 22px 32px;
+	padding: 22px 44px;
 	border-radius: 8px;
     font-size: 20px;
-    line-height: 32px;
-    text-shadow: rgba(5, 0, 16);
-    /* background-color: rgba(5, 0, 16, 0.2); */
+    line-height: 1.6em;
+    text-shadow: 0 0 18px var(--bg-dark);
 }

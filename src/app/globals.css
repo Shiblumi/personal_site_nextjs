@@ -26,10 +26,11 @@
 
 	--primary-rgb: 146, 255, 253;
 	--secondary-rgb: 148, 200, 255;
+	--bg-dark-rgb: 5, 0, 16;
 
 	--color-primary: rgb(var(--primary-rgb));
 	--color-secondary: rgb(var(--secondary-rgb));
-	--bg-dark: rgb(var(--dark-bg-rgb));
+	--bg-dark: rgb(var(--bg-dark-rgb));
     font-family: 'Jura';
 }
 

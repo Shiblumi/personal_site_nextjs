@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useNavbarContext } from '@/components/Navbar/NavbarContext';
 import PopupLine from '../ExperienceBar/PopupLine';
 import DateLine from '../ExperienceBar/ExpBarDateLine';
+import TextBox from '@/components/TextBox/TextBox';
 
 export default function Experience(props) {
 	const { activeSection } = useNavbarContext();
@@ -91,7 +92,6 @@ export default function Experience(props) {
 						textDirection='left'
 						isVisible={shouldAnimate}
 						delay='1.92'
-
 					>
 						<strong>Graduate: UC Santa Cruz</strong>
 						B.S. Computer Science
@@ -104,7 +104,6 @@ export default function Experience(props) {
 						textDirection='right'
 						isVisible={shouldAnimate}
 						delay='2.2'
-
 					>
 						<strong>SyncQ Chatbot</strong>
 						Feature Development
@@ -170,6 +169,20 @@ export default function Experience(props) {
 					/>
 				</div>
 			</div>
+			<TextBox maxWidth='65%' minWidth='500px' opacity={0.65} delay='1.3' sectionNum={2}>
+				<h1 style={{marginBottom: '22px'}}>Experience</h1>
+				<p>
+					Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
+					yardarm. Pinnace holystone mizzenmast quarter crows nest nipperkin
+					grog yardarm hempen halter furl. Swab barque interloper chantey
+					doubloon starboard grog black jack gangway rutters. Deadlights jack
+					lad schooner scallywag dance the hempen jig carouser broadside cable
+					strike colors. Bring a spring upon her cable holystone blow the man
+					down spanker Shiver me timbers to go on account lookout wherry
+					doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm
+					spyglass sheet transom heave to.
+				</p>
+			</TextBox>
 		</div>
 	);
 }
