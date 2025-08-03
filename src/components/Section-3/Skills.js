@@ -32,7 +32,7 @@ export default function Skills() {
 
 	return (
 		<div className={`${styles['skills-page-container']}`}>
-			<TextBox maxWidth='65%' minWidth='500px' delay='0.35' />
+			<TextBox maxWidth='65%' minWidth='500px' delay='0.45' />
 			<div className={`${styles['skills-showcase']}`}>
 				<SkillsBox title='Frontend' logos={frontendSkills} delay='0.3' />
 				<SkillsBox title='Backend' logos={backendSkills} delay='0.45' />

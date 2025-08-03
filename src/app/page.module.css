@@ -32,7 +32,7 @@
   /* margin-top: 104px; */
   height: 100vh;
   overflow-y: scroll;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   scroll-snap-type: y mandatory;
 }
 
