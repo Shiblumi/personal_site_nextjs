@@ -32,7 +32,7 @@ export default function Skills() {
 
 	return (
 		<div className={`${styles['skills-page-container']}`}>
-			<TextBox maxWidth='65%' minWidth='500px' delay='0.3' sectionNum={3}>
+			<TextBox maxWidth='65%' minWidth='500px' delay='0.3'>
 				<h1 style={{marginBottom: '22px'}}>Skills</h1>
 				<p>
 					Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast

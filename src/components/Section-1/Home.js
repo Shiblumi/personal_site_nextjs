@@ -1,15 +1,12 @@
 'use client';
 
 import styles from '@/components/Section-1/Home.module.css';
-import { useNavbarContext } from '@/components/Navbar/NavbarContext';
 import ActionButton from '@/components/Buttons/ActionButton';
 import DynamicText from '../DynamicText/DynamicText';
 import DownArrow from '@/components/Icons/DownArrow';
 import { motion } from 'framer-motion';
 
 export default function Home() {
-	const { activeSection } = useNavbarContext();
-	const shouldAnimate = activeSection === 1;
 
 	const nameParentVariants = {
 		hidden: {
@@ -48,7 +45,11 @@ export default function Home() {
 			className={styles['home-container']}
 			variants={nameParentVariants}
 			initial='hidden'
-			animate={shouldAnimate ? 'visible' : 'hidden'}
+			whileInView='visible'
+			viewport={{
+				once: false,
+				amount: 0.5,
+			}}
 		>
 			{/* Name */}
 			<motion.div className={styles['name-wrapper']} variants={nameVariants}>

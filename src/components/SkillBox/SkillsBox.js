@@ -1,12 +1,8 @@
 import styles from './SkillsBox.module.css';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useNavbarContext } from '@/components/Navbar/NavbarContext';
 
 export default function SkillBox({ title, logos = [], delay = '0.2' }) {
-	const { activeSection } = useNavbarContext();
-	const shouldAnimate = activeSection === 3;
-
 	const skillBoxVariants = {
 		hidden: { opacity: 0, scale: 0.9, transition: { duration: 0 } },
 		visible: {
@@ -17,7 +13,7 @@ export default function SkillBox({ title, logos = [], delay = '0.2' }) {
 				ease: 'easeOut',
 				staggerChildren: 0.11,
 				delayChildren: Number(delay) + 0.1,
-				delay: shouldAnimate ? Number(delay) : 0,
+				delay: Number(delay),
 			},
 		},
 	};
@@ -38,7 +34,11 @@ export default function SkillBox({ title, logos = [], delay = '0.2' }) {
 			className={`${styles['skills-box']} glass-dark-soft-no-gradient`}
 			variants={skillBoxVariants}
 			initial='hidden'
-			animate={shouldAnimate ? 'visible' : 'hidden'}
+			whileInView='visible'
+			viewport={{
+				once: false,
+				amount: 0.5,
+			}}
 		>
 			<span className={`${styles['box-title']}`}>{title}</span>
 			<div className={`${styles['vertical-line']}`} />

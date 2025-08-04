@@ -7,7 +7,6 @@ const lineDirections = {
 };
 
 export default function PopupLine({
-	isVisible = true,
 	positionLeft = { left: '0%' },
 	lineDirection = 'up',
 	textDirection = 'right',
@@ -59,7 +58,11 @@ export default function PopupLine({
 				className={`${styles['popup-line']} ${styles[lineDirection]}`}
 				variants={lineVariants}
 				initial='hidden'
-				animate={isVisible ? 'visible' : 'hidden'}
+				whileInView='visible'
+				viewport={{
+					once: false,
+					amount: 0.5,
+				}}
 				style={{
 					originY: lineDirection === 'up' ? 1 : 0,
 				}}
@@ -69,7 +72,11 @@ export default function PopupLine({
 				className={`${styles['text-container']} ${styles[lineDirection]} ${styles[textDirection]} glass-dark-soft`}
 				variants={textVariants}
 				initial='hidden'
-				animate={isVisible ? 'visible' : 'hidden'}
+				whileInView='visible'
+				viewport={{
+					once: false,
+					amount: 0.5,
+				}}
 			>
 				{children}
 			</motion.div>

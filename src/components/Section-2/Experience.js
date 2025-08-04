@@ -1,13 +1,10 @@
 import styles from './Experience.module.css';
 import { motion } from 'framer-motion';
-import { useNavbarContext } from '@/components/Navbar/NavbarContext';
 import PopupLine from '../ExperienceBar/PopupLine';
 import DateLine from '../ExperienceBar/ExpBarDateLine';
 import TextBox from '@/components/TextBox/TextBox';
 
 export default function Experience(props) {
-	const { activeSection } = useNavbarContext();
-	const shouldAnimate = activeSection === 2;
 
 	const expBarVariants = {
 		hidden: { scaleX: 0, transition: { duration: 0 } },
@@ -36,7 +33,6 @@ export default function Experience(props) {
 						positionLeft='13.6%'
 						lineDirection='up'
 						textDirection='left'
-						isVisible={shouldAnimate}
 						delay='0.93'
 					>
 						<strong>Ted AI Hackathon</strong>
@@ -48,7 +44,6 @@ export default function Experience(props) {
 						positionLeft='18.2%'
 						lineDirection='down'
 						textDirection='left'
-						isVisible={shouldAnimate}
 						delay='1.07'
 					>
 						<strong>CalHacks 10.0</strong>
@@ -60,7 +55,6 @@ export default function Experience(props) {
 						positionLeft='22.7%'
 						lineDirection='up'
 						textDirection='right'
-						isVisible={shouldAnimate}
 						delay='1.15'
 					>
 						<strong>Project: Slug Meter</strong>
@@ -72,7 +66,6 @@ export default function Experience(props) {
 						positionLeft='27.2%'
 						lineDirection='down'
 						textDirection='right'
-						isVisible={shouldAnimate}
 						delay='1.3'
 					>
 						<strong>CruzHacks</strong>
@@ -84,7 +77,6 @@ export default function Experience(props) {
 						positionLeft='54.54%'
 						lineDirection='up'
 						textDirection='right'
-						isVisible={shouldAnimate}
 						delay='1.58'
 					>
 						<strong>Company: SyncQ</strong>
@@ -96,7 +88,6 @@ export default function Experience(props) {
 						positionLeft='77.3%'
 						lineDirection='down'
 						textDirection='left'
-						isVisible={shouldAnimate}
 						delay='1.92'
 					>
 						<strong>Graduate: UC Santa Cruz</strong>
@@ -108,7 +99,6 @@ export default function Experience(props) {
 						positionLeft='86.4%'
 						lineDirection='up'
 						textDirection='right'
-						isVisible={shouldAnimate}
 						delay='2.2'
 					>
 						<strong>SyncQ Chatbot</strong>
@@ -123,7 +113,11 @@ export default function Experience(props) {
 						className={styles['exp-bar']}
 						variants={expBarVariants}
 						initial='hidden'
-						animate={shouldAnimate ? 'visible' : 'hidden'}
+						whileInView='visible'
+						viewport={{
+							once: false,
+							amount: 0.5,
+						}}
 						style={{
 							originX: 0,
 						}}
@@ -140,10 +134,14 @@ export default function Experience(props) {
 						className={`${styles['exp-bar-trailing-dots']}`}
 						variants={trailingDotVariants}
 						initial='hidden'
-						animate={shouldAnimate ? 'visible' : 'hidden'}
+						whileInView='visible'
+						viewport={{
+							once: false,
+							amount: 0.5,
+						}}
 						transition={{
-							duration: shouldAnimate ? 0.2 : 0,
-							delay: shouldAnimate ? 2.75 : 0,
+							duration: 0.2,
+							delay: 2.75,
 							ease: 'easeOut',
 						}}
 						style={{ '--position-right': '-20px' }}
@@ -152,10 +150,14 @@ export default function Experience(props) {
 						className={`${styles['exp-bar-trailing-dots']}`}
 						variants={trailingDotVariants}
 						initial='hidden'
-						animate={shouldAnimate ? 'visible' : 'hidden'}
+						whileInView='visible'
+						viewport={{
+							once: false,
+							amount: 0.5,
+						}}
 						transition={{
-							duration: shouldAnimate ? 0.2 : 0,
-							delay: shouldAnimate ? 2.95 : 0,
+							duration: 0.2,
+							delay: 2.95,
 							ease: 'easeOut',
 						}}
 						style={{ '--position-right': '-40px' }}
@@ -164,10 +166,14 @@ export default function Experience(props) {
 						className={`${styles['exp-bar-trailing-dots']}`}
 						variants={trailingDotVariants}
 						initial='hidden'
-						animate={shouldAnimate ? 'visible' : 'hidden'}
+						whileInView='visible'
+						viewport={{
+							once: false,
+							amount: 0.5,
+						}}
 						transition={{
-							duration: shouldAnimate ? 0.2 : 0,
-							delay: shouldAnimate ? 3.15 : 0,
+							duration: 0.2,
+							delay: 3.15,
 							ease: 'easeOut',
 						}}
 						style={{ '--position-right': '-60px' }}

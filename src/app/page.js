@@ -9,9 +9,11 @@ import Footer from '@/components/Footer/Footer';
 import Home from '@/components/Section-1/Home';
 import Experience from '@/components/Section-2/Experience';
 import Skills from '@/components/Section-3/Skills';
+import { useRef } from 'react';
 
 export default function Page() {
 	const { setActiveSection } = useNavbarContext();
+	// const scrollWrapperRef = useRef(null);
 
 	useEffect(() => {
 		// Spline takes an int for identifying scenes.
@@ -64,11 +66,13 @@ export default function Page() {
 					</div>
 				</section>
 				<section id='exp' className={styles['scroll-section']}>
-					<div className='container'>
-						<Experience />
-					</div>
+					<div className='container'><Experience /></div>
 				</section>
-				<section id='skills' className={styles['scroll-section']}>
+				<section
+					id='skills'
+					// scrollRef={scrollWrapperRef}
+					className={styles['scroll-section']}
+				>
 					<Skills />
 				</section>
 				<section id='projects' className={styles['scroll-section']}>
