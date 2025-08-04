@@ -8,8 +8,14 @@ import TextBox from '@/components/TextBox/TextBox';
 export default function Experience(props) {
 	const { activeSection } = useNavbarContext();
 	const shouldAnimate = activeSection === 2;
+
+	const expBarVariants = {
+		hidden: { scaleX: 0, transition: { duration: 0 } },
+		visible: { scaleX: 1, transition: { duration: 2.5, delay: 0.3, ease: 'easeInOut' } },
+	};
+
 	const trailingDotVariants = {
-		hidden: { opacity: 0, scale: 0.8 },
+		hidden: { opacity: 0, scale: 0.8, transition: { duration: 0} },
 		visible: { opacity: 1, scale: 1 },
 	};
 
@@ -110,26 +116,25 @@ export default function Experience(props) {
 						<br />
 						<em>Feb 2025</em>
 					</PopupLine>
+
+					{/* The Experience Bar */}
 					{/* TODO: Make me a component */}
 					<motion.div
 						className={styles['exp-bar']}
-						initial={{ scaleX: 0 }}
-						animate={{
-							scaleX: shouldAnimate ? 1 : 0,
-						}}
-						transition={{
-							duration: shouldAnimate ? 2.5 : 0,
-							delay: shouldAnimate ? 0.3 : 0,
-							ease: 'easeInOut',
-						}}
+						variants={expBarVariants}
+						initial='hidden'
+						animate={shouldAnimate ? 'visible' : 'hidden'}
 						style={{
 							originX: 0,
 						}}
 					/>
+
+					{/* Date Lines (Years) */}
 					<DateLine positionLeft='27.27%' delay='1.2' date='2024' />
 					<DateLine positionLeft='81.81%' delay='2.0' date='2025' />
 				</div>
 
+				{/* Exp-Bar Trailing Dots */}
 				<div className={`${styles['trailing-dots-container']}`}>
 					<motion.div
 						className={`${styles['exp-bar-trailing-dots']}`}
@@ -169,8 +174,14 @@ export default function Experience(props) {
 					/>
 				</div>
 			</div>
-			<TextBox maxWidth='65%' minWidth='500px' opacity={0.65} delay='1.3' sectionNum={2}>
-				<h1 style={{marginBottom: '22px'}}>Experience</h1>
+			<TextBox
+				maxWidth='65%'
+				minWidth='500px'
+				opacity={0.65}
+				delay='1.3'
+				sectionNum={2}
+			>
+				<h1 style={{ marginBottom: '22px' }}>Experience</h1>
 				<p>
 					Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
 					yardarm. Pinnace holystone mizzenmast quarter crows nest nipperkin

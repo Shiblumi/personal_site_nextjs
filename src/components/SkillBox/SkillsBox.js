@@ -8,11 +8,10 @@ export default function SkillBox({ title, logos = [], delay = '0.2' }) {
 	const shouldAnimate = activeSection === 3;
 
 	const skillBoxVariants = {
-		hidden: { opacity: 0, scale: 0.9, rotateX: 15},
+		hidden: { opacity: 0, scale: 0.9, transition: { duration: 0 } },
 		visible: {
 			opacity: 1,
 			scale: 1,
-			rotateX: 0,
 			transition: {
 				duration: 1,
 				ease: 'easeOut',
@@ -24,7 +23,7 @@ export default function SkillBox({ title, logos = [], delay = '0.2' }) {
 	};
 
 	const skillLogoVariants = {
-		hidden: { opacity: 0, y: 10 },
+		hidden: { opacity: 0, y: 10, transition: { duration: 0 } },
 		visible: {
 			opacity: 1,
 			y: 0,

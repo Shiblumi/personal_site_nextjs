@@ -5,6 +5,8 @@
 
 /* --- Text Container --- */
 .text-container {
+	transform: translateZ(0);
+	will-change: transform, opacity;
 	border-radius: 6px;
 	padding: 8px 12px;
 	width: auto;
@@ -60,8 +62,10 @@
 /* --- Line Variants --- */
 .popup-line {
 	position: absolute;
+	transform: translateZ(0);
 	z-index: -10;
 	filter: blur(1px);
+	will-change: transform, opacity;
 	box-shadow: 0 0 10px rgba(146, 255, 230, 0.1),
 		0 0 20px rgba(146, 255, 230, 0.3);
 	border-radius: 6px;

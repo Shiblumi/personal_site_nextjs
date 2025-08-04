@@ -1,17 +1,19 @@
 .dynamic-text-wrapper {
-  display: flex;
-  margin-top: 15px;
-  margin-bottom: -5px;
-  width: 700px;
-  height: auto;
+	display: flex;
+	margin-top: 15px;
+	margin-bottom: -5px;
+	width: 700px;
+	height: auto;
 }
 
 .dynamic-text {
-  color: rgba(148, 200, 255, 0.8);
-  font-weight: 400;
-  font-size: 3.6rem;
-  font-family: 'Montserrat', sans-serif;
-  user-select: none;
-  text-shadow: 0px 0px 18px rgba(5, 0, 16, 0.2),
-    0px 0px 24px rgba(5, 0, 16, 0.4);
+	transform: translateZ(0);
+	will-change: transform, opacity;
+	color: rgba(148, 200, 255, 0.8);
+	font-weight: 400;
+	font-size: 3.6rem;
+	font-family: 'Montserrat', sans-serif;
+	user-select: none;
+	text-shadow: 0px 0px 18px rgba(5, 0, 16, 0.2),
+		0px 0px 24px rgba(5, 0, 16, 0.4);
 }

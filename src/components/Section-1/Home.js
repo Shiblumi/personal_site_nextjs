@@ -11,8 +11,12 @@ export default function Home() {
 	const { activeSection } = useNavbarContext();
 	const shouldAnimate = activeSection === 1;
 
-	const containerVariants = {
-		hidden: {},
+	const nameParentVariants = {
+		hidden: {
+			transition: {
+				duration: 0,
+			},
+		},
 		visible: {
 			transition: {
 				staggerChildren: 0.15,
@@ -21,10 +25,13 @@ export default function Home() {
 		},
 	};
 
-	const childVariants = {
+	const nameVariants = {
 		hidden: {
 			opacity: 0,
 			// filter: 'blur(8px)',
+			transition: {
+				duration: 0,
+			},
 		},
 		visible: {
 			opacity: 1,
@@ -39,15 +46,12 @@ export default function Home() {
 	return (
 		<motion.div
 			className={styles['home-container']}
-			variants={containerVariants}
+			variants={nameParentVariants}
 			initial='hidden'
 			animate={shouldAnimate ? 'visible' : 'hidden'}
-			style={{
-				willChange: 'filter, opacity',
-			}}
 		>
 			{/* Name */}
-			<motion.div className={styles['name-wrapper']} variants={childVariants}>
+			<motion.div className={styles['name-wrapper']} variants={nameVariants}>
 				<span className={`${styles['dirk']} full-dropshadow`}>
 					<span className={styles['di']}>DI</span>RK
 				</span>
@@ -58,12 +62,12 @@ export default function Home() {
 			</motion.div>
 
 			{/* Dynamic Text */}
-			<motion.div variants={childVariants}>
+			<motion.div variants={nameVariants}>
 				<DynamicText />
 			</motion.div>
 
 			{/* Buttons */}
-			<motion.div variants={childVariants}>
+			<motion.div variants={nameVariants}>
 				<div className={styles['buttons-wrapper']}>
 					<ActionButton
 						text='Contact'

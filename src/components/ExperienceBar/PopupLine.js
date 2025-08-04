@@ -14,6 +14,42 @@ export default function PopupLine({
 	children = 'Nice weather we are having!',
 	delay = '0.3s',
 }) {
+	const lineVariants = {
+		hidden: {
+			scaleY: 0,
+			transition: {
+				duration: 0,
+			},
+		},
+		visible: {
+			scaleY: 1,
+			transition: {
+				duration: 1.0,
+				delay: Number(delay),
+				ease: 'easeOut',
+			},
+		},
+	};
+
+	const textVariants = {
+		hidden: {
+			opacity: 0,
+			y: lineDirection === 'up' ? 20 : -20,
+			transition: {
+				duration: 0,
+			},
+		},
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				duration: 0.42,
+				delay: Number(delay) + 0.6,
+				ease: 'easeOut',
+			},
+		},
+	};
+
 	return (
 		<motion.div
 			className={`${styles['popup-line-container']}`}
@@ -21,13 +57,9 @@ export default function PopupLine({
 		>
 			<motion.div
 				className={`${styles['popup-line']} ${styles[lineDirection]}`}
-				initial={{ scaleY: 0 }}
-				animate={{ scaleY: isVisible ? 1 : 0 }}
-				transition={{
-					duration: isVisible ? 1.0 : 0,
-					delay: isVisible ? delay : 0,
-					ease: 'easeOut',
-				}}
+				variants={lineVariants}
+				initial='hidden'
+				animate={isVisible ? 'visible' : 'hidden'}
 				style={{
 					originY: lineDirection === 'up' ? 1 : 0,
 				}}
@@ -35,17 +67,9 @@ export default function PopupLine({
 
 			<motion.div
 				className={`${styles['text-container']} ${styles[lineDirection]} ${styles[textDirection]} glass-dark-soft`}
-				initial={{ opacity: 0, y: 20 }}
-				animate={
-					isVisible
-						? { opacity: 1, y: 0 }
-						: { opacity: 0, y: lineDirection === 'up' ? 20 : -20 }
-				}
-				transition={{
-					duration: isVisible ? 0.42 : 0,
-					delay: isVisible ? Number(delay) + 0.6 : 0,
-					ease: 'easeOut',
-				}}
+				variants={textVariants}
+				initial='hidden'
+				animate={isVisible ? 'visible' : 'hidden'}
 			>
 				{children}
 			</motion.div>

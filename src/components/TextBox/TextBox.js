@@ -13,7 +13,7 @@ export default function TextBox({
 	const { activeSection } = useNavbarContext();
 	const shouldAnimate = sectionNum === activeSection;
 	const variants = {
-		hidden: { scale: 0.98, opacity: 0 },
+		hidden: { scale: 0.98, opacity: 0, transition: { duration: 0 } },
 		visible: { scale: 1, opacity: 1 },
 	};
 
