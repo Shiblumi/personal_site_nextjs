@@ -1,6 +1,6 @@
 'use client';
 
-import { useNavbarContext } from '@/components/Navbar/NavbarContext';
+import { useNavbarContext } from '@/components/UI/NavbarContext';
 import { useRef, useEffect, useState } from 'react';
 
 export default function SplineScene() {

@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState } from "react";
-import Navbar from "$/Navbar/Navbar";
+import Navbar from "@/components/UI/Navbar/Navbar";
 
 export const ActiveSectionContext = createContext();
 

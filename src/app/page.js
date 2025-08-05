@@ -2,13 +2,13 @@
 
 import styles from './page.module.css';
 import { useEffect } from 'react';
-import { useNavbarContext } from '@/components/Navbar/NavbarContext';
-import SplineScene from '@/components/Scenes/SplineScene';
-import SectionTimeline from '@/components/SectionTimeline/SectionTimeline';
-import Footer from '@/components/Footer/Footer';
-import Home from '@/components/Section-1/Home';
-import Experience from '@/components/Section-2/Experience';
-import Skills from '@/components/Section-3/Skills';
+import { useNavbarContext } from '@/components/UI/NavbarContext';
+import SplineScene from '@/components/UI/SplineScene';
+import ScrollingTimeline from '@/components/ScrollingTimeline/ScrollingTimeline';
+import Footer from '@/components/UI/Footer/Footer';
+import Home from '@/components/Sections/Section-1/Home';
+import Experience from '@/components/Sections/Section-2/Experience';
+import Skills from '@/components/Sections/Section-3/Skills';
 import { useRef } from 'react';
 
 export default function Page() {
@@ -55,7 +55,7 @@ export default function Page() {
 
 	return (
 		<main className={styles['main']}>
-			<SectionTimeline />
+			<ScrollingTimeline />
 			<div className={styles['background-scene']}>
 				<SplineScene />
 			</div>

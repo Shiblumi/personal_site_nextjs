@@ -1,14 +1,14 @@
 import styles from './Experience.module.css';
 import { motion } from 'framer-motion';
-import PopupLine from '../ExperienceBar/PopupLine';
-import DateLine from '../ExperienceBar/ExpBarDateLine';
-import TextBox from '@/components/TextBox/TextBox';
+import PopupLine from '../../UI/ExperienceBar/PopupLine';
+import DateLine from '../../UI/ExperienceBar/ExpBarDateLine';
+import TextBox from '@/components/UI/TextBox/TextBox';
 
 export default function Experience(props) {
 
 	const expBarVariants = {
 		hidden: { scaleX: 0, transition: { duration: 0 } },
-		visible: { scaleX: 1, transition: { duration: 2.5, delay: 0.3, ease: 'easeInOut' } },
+		visible: { scaleX: 1, transition: { duration: 2, delay: 0.3, ease: 'easeInOut' } },
 	};
 
 	const trailingDotVariants = {
@@ -33,7 +33,7 @@ export default function Experience(props) {
 						positionLeft='13.6%'
 						lineDirection='up'
 						textDirection='left'
-						delay='0.93'
+						delay='0.8'
 					>
 						<strong>Ted AI Hackathon</strong>
 						Project: Maptodon
@@ -44,7 +44,7 @@ export default function Experience(props) {
 						positionLeft='18.2%'
 						lineDirection='down'
 						textDirection='left'
-						delay='1.07'
+						delay='0.9'
 					>
 						<strong>CalHacks 10.0</strong>
 						Project: PediBeat
@@ -55,10 +55,10 @@ export default function Experience(props) {
 						positionLeft='22.7%'
 						lineDirection='up'
 						textDirection='right'
-						delay='1.15'
+						delay='1'
 					>
 						<strong>Project: Slug Meter</strong>
-						Lead Front-End Developer
+						Front-End Developer
 						<br />
 						<em>Dec 2023</em>
 					</PopupLine>
@@ -66,7 +66,7 @@ export default function Experience(props) {
 						positionLeft='27.2%'
 						lineDirection='down'
 						textDirection='right'
-						delay='1.3'
+						delay='1.1'
 					>
 						<strong>CruzHacks</strong>
 						Project: Sitegeist
@@ -77,7 +77,7 @@ export default function Experience(props) {
 						positionLeft='54.54%'
 						lineDirection='up'
 						textDirection='right'
-						delay='1.58'
+						delay='1.35'
 					>
 						<strong>Company: SyncQ</strong>
 						Software Developer
@@ -88,7 +88,7 @@ export default function Experience(props) {
 						positionLeft='77.3%'
 						lineDirection='down'
 						textDirection='left'
-						delay='1.92'
+						delay='1.65'
 					>
 						<strong>Graduate: UC Santa Cruz</strong>
 						B.S. Computer Science
@@ -99,10 +99,10 @@ export default function Experience(props) {
 						positionLeft='86.4%'
 						lineDirection='up'
 						textDirection='right'
-						delay='2.2'
+						delay='1.85'
 					>
 						<strong>SyncQ Chatbot</strong>
-						Feature Development
+						Feature <span style={{letterSpacing: '0.5px'}}>R&D</span>
 						<br />
 						<em>Feb 2025</em>
 					</PopupLine>
@@ -124,11 +124,12 @@ export default function Experience(props) {
 					/>
 
 					{/* Date Lines (Years) */}
-					<DateLine positionLeft='27.27%' delay='1.2' date='2024' />
-					<DateLine positionLeft='81.81%' delay='2.0' date='2025' />
+					<DateLine positionLeft='27.27%' delay='1.1' date='2024' />
+					<DateLine positionLeft='81.81%' delay='1.7' date='2025' />
 				</div>
 
 				{/* Exp-Bar Trailing Dots */}
+				{/* TODO: Make me a component */}
 				<div className={`${styles['trailing-dots-container']}`}>
 					<motion.div
 						className={`${styles['exp-bar-trailing-dots']}`}
@@ -141,7 +142,7 @@ export default function Experience(props) {
 						}}
 						transition={{
 							duration: 0.2,
-							delay: 2.75,
+							delay: 2.25,
 							ease: 'easeOut',
 						}}
 						style={{ '--position-right': '-20px' }}
@@ -157,7 +158,7 @@ export default function Experience(props) {
 						}}
 						transition={{
 							duration: 0.2,
-							delay: 2.95,
+							delay: 2.45,
 							ease: 'easeOut',
 						}}
 						style={{ '--position-right': '-40px' }}
@@ -173,7 +174,7 @@ export default function Experience(props) {
 						}}
 						transition={{
 							duration: 0.2,
-							delay: 3.15,
+							delay: 2.65,
 							ease: 'easeOut',
 						}}
 						style={{ '--position-right': '-60px' }}

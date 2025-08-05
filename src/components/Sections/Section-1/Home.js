@@ -1,9 +1,9 @@
 'use client';
 
-import styles from '@/components/Section-1/Home.module.css';
-import ActionButton from '@/components/Buttons/ActionButton';
-import DynamicText from '../DynamicText/DynamicText';
-import DownArrow from '@/components/Icons/DownArrow';
+import styles from './Home.module.css';
+import ActionButton from '@/components/UI/Buttons/ActionButton';
+import AlternatingText from '../../UI/AlternatingText/AlternatingText';
+import DownArrow from '@/components/UI/Icons/DownArrow';
 import { motion } from 'framer-motion';
 
 export default function Home() {
@@ -64,7 +64,7 @@ export default function Home() {
 
 			{/* Dynamic Text */}
 			<motion.div variants={nameVariants}>
-				<DynamicText />
+				<AlternatingText />
 			</motion.div>
 
 			{/* Buttons */}

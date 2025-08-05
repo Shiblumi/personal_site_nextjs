@@ -1,5 +1,5 @@
 import "@/app/globals.css";
-import NavbarContext from "@/components/Navbar/NavbarContext";
+import NavbarContext from "@/components/UI/NavbarContext";
 
 export const metadata = {
   title: "Create Next App",

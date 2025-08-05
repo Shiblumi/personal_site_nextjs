@@ -1,8 +1,8 @@
 import { motion } from 'motion/react';
-import { useNavbarContext } from '@/components/Navbar/NavbarContext';
-import styles from './SectionTimeline.module.css';
+import { useNavbarContext } from '@/components/UI/NavbarContext';
+import styles from './ScrollingTimeline.module.css';
 
-export default function SectionTimeline() {
+export default function ScrollingTimeline() {
 	const { activeSection } = useNavbarContext();
 
 	const sections = [

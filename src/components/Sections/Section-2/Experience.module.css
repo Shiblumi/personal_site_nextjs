@@ -33,7 +33,6 @@
 .exp-bar {
 	position: relative;
 	transform: translateZ(0);
-	will-change: transform;
 	box-shadow: 0 0 10px rgba(146, 255, 230, 0.4),
 		0 0 20px rgba(146, 255, 230, 0.2);
 	border-radius: 6px;

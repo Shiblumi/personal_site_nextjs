@@ -1,5 +1,5 @@
-import SkillsBox from '../SkillBox/SkillsBox';
-import TextBox from '@/components/TextBox/TextBox';
+import SkillsBox from '../../UI/SkillBox/SkillsBox';
+import TextBox from '@/components/UI/TextBox/TextBox';
 import styles from './Skills.module.css';
 
 export default function Skills() {

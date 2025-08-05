@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import styles from './DynamicText.module.css';
-import { useNavbarContext } from '@/components/Navbar/NavbarContext';
+import styles from './AlternatingText.module.css';
+import { useNavbarContext } from '@/components/UI/NavbarContext';
 
 const roles = [
 	'Full Stack Developer',
@@ -14,7 +14,7 @@ const roles = [
 
 const CYCLE_INTERVAL = 3000;
 
-export default function DynamicText() {
+export default function AlternatingText() {
 	const [index, setIndex] = useState(0);
 	const { activeSection } = useNavbarContext();
 	const shouldAnimate = activeSection === 1;

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import styles from './Navbar.module.css';
-import { useNavbarContext } from './NavbarContext';
+import { useNavbarContext } from '../NavbarContext';
 
 export default function Navbar() {
 	const { activeSection } = useNavbarContext();
