@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './AlternatingText.module.css';
-import { useNavbarContext } from '@/components/UI/NavbarContext';
+import { useNavbarContext } from '@/components/UI/ActiveSectionContext';
 
 const roles = [
 	'Full Stack Developer',

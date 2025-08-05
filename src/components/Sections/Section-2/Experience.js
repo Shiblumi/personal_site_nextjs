@@ -99,7 +99,7 @@ export default function Experience(props) {
 						positionLeft='86.4%'
 						lineDirection='up'
 						textDirection='right'
-						delay='1.85'
+						delay='1.8'
 					>
 						<strong>SyncQ Chatbot</strong>
 						Feature <span style={{letterSpacing: '0.5px'}}>R&D</span>
@@ -185,7 +185,7 @@ export default function Experience(props) {
 				maxWidth='65%'
 				minWidth='500px'
 				opacity={0.65}
-				delay='1.3'
+				delay='0.65'
 				sectionNum={2}
 			>
 				<h1 style={{ marginBottom: '22px' }}>Experience</h1>

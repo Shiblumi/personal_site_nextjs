@@ -2,14 +2,18 @@
 
 import styles from './page.module.css';
 import { useEffect } from 'react';
-import { useNavbarContext } from '@/components/UI/NavbarContext';
+import { useNavbarContext } from '@/components/UI/ActiveSectionContext';
+
+// Components import
 import SplineScene from '@/components/UI/SplineScene';
-import ScrollingTimeline from '@/components/ScrollingTimeline/ScrollingTimeline';
+import ScrollingTimeline from '@/components/UI/ScrollingTimeline/ScrollingTimeline';
 import Footer from '@/components/UI/Footer/Footer';
+
+// Sections import
 import Home from '@/components/Sections/Section-1/Home';
 import Experience from '@/components/Sections/Section-2/Experience';
 import Skills from '@/components/Sections/Section-3/Skills';
-import { useRef } from 'react';
+import Projects from '@/components/Sections/Section-4/Projects';
 
 export default function Page() {
 	const { setActiveSection } = useNavbarContext();
@@ -66,7 +70,9 @@ export default function Page() {
 					</div>
 				</section>
 				<section id='exp' className={styles['scroll-section']}>
-					<div className='container'><Experience /></div>
+					<div className='container'>
+						<Experience />
+					</div>
 				</section>
 				<section
 					id='skills'
@@ -76,7 +82,7 @@ export default function Page() {
 					<Skills />
 				</section>
 				<section id='projects' className={styles['scroll-section']}>
-					<h1>Section 4</h1>
+					<Projects />
 				</section>
 				<section id='contact' className={styles['scroll-section']}>
 					<h1>Section 5</h1>

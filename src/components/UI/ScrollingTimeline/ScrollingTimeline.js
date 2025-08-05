@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { useNavbarContext } from '@/components/UI/NavbarContext';
+import { useNavbarContext } from '@/components/UI/ActiveSectionContext';
 import styles from './ScrollingTimeline.module.css';
 
 export default function ScrollingTimeline() {
