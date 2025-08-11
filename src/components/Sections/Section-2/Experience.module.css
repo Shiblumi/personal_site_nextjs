@@ -9,8 +9,8 @@
 	width: 80%;
 	min-width: 1000px;
 	max-width: 1500px;
-	height: 100vh;
-	min-height: 1100px;
+	height: 100%;
+	min-height: 1200px;
 }
 
 .exp-bar-wrapper {

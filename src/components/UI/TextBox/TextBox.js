@@ -2,8 +2,9 @@ import { motion } from 'framer-motion';
 import styles from './TextBox.module.css';
 
 export default function TextBox({
-	maxWidth = '40vw',
-	minWidth = '1000px',
+	width = 'auto',
+	minWidth = '200px',
+	maxWidth = '100%',
 	opacity = 0,
 	delay = '0.3',
 	children,
@@ -29,6 +30,7 @@ export default function TextBox({
 				ease: 'easeOut',
 			}}
 			style={{
+				width: width,
 				maxWidth: maxWidth,
 				minWidth: minWidth,
 				backgroundColor: `rgba(var(--bg-dark-rgb), ${opacity})`,

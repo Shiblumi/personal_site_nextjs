@@ -1,4 +1,4 @@
-import SkillsBox from '../../UI/SkillBox/SkillsBox';
+import SkillsBox from '../../UI/SkillsBox/SkillsBox';
 import TextBox from '@/components/UI/TextBox/TextBox';
 import styles from './Skills.module.css';
 

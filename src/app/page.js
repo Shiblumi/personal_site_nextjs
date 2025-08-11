@@ -38,6 +38,8 @@ export default function Page() {
 						let sceneNum = sectionNameID[sectionID];
 						console.log(`page: Setting active scene to ${sceneNum}`);
 						setActiveSection(sceneNum);
+						/* Update URL without reloading the page (using history API). */
+						window.history.replaceState(null, '', `/#${sectionID}`);
 					}
 				});
 			},
@@ -64,26 +66,27 @@ export default function Page() {
 				<SplineScene />
 			</div>
 			<div className={styles['scroll-wrapper']}>
+				{/* Home */}
 				<section id='home' className={styles['scroll-section']}>
-					<div className='container'>
-						<Home />
-					</div>
+					<Home />
 				</section>
+
+				{/* Experience */}
 				<section id='exp' className={styles['scroll-section']}>
-					<div className='container'>
-						<Experience />
-					</div>
+					<Experience />
 				</section>
-				<section
-					id='skills'
-					// scrollRef={scrollWrapperRef}
-					className={styles['scroll-section']}
-				>
+
+				{/* Skills */}
+				<section id='skills' className={styles['scroll-section']}>
 					<Skills />
 				</section>
+
+				{/* Projects */}
 				<section id='projects' className={styles['scroll-section']}>
 					<Projects />
 				</section>
+
+				{/* Contact */}
 				<section id='contact' className={styles['scroll-section']}>
 					<h1>Section 5</h1>
 				</section>

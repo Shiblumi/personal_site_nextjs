@@ -1,0 +1,36 @@
+.project-gallery-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+	border-radius: 12px;
+	padding: 20px;
+	height: auto;
+	/* min-width: 500px; */
+	overflow: hidden;
+}
+
+.project-gallery-item {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+	border-radius: 10px;
+	width: 45%;
+	aspect-ratio: 16/9;
+	overflow: hidden;
+  /* min-width: 125px; */
+}
+
+@media (max-width: 1000px) {
+	.project-gallery-container {
+		width: 100%;
+	}
+
+	.project-gallery-item {
+		width: 30%;
+	}
+}

@@ -36,7 +36,7 @@
 	top: -11px;
 	left: 50%;
 	transform: translateX(-50%);
-	box-shadow: 0 0 10px rgba(146, 255, 230, 0.7);
+	box-shadow: 0 0 10px rgba(146, 255, 230, 0.3);
 	background-color: rgba(var(--secondary-rgb), 0.6);
 	width: 2px;
 	height: 10px;
