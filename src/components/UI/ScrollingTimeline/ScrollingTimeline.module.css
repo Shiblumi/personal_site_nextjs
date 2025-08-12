@@ -27,3 +27,17 @@
   border-color: rgb(146, 255, 230);
   background-color: rgb(146, 255, 230);
 }
+
+@media (max-width: 1600px) {
+  .section-timeline-wrapper {
+    left: 30px;
+    transform: scale(0.9) translateY(-50%);
+  }
+}
+
+@media (max-width: 800px) {
+  .section-timeline-wrapper {
+    left: 12px;
+    transform: scale(0.8) translateY(-50%);
+  }
+}

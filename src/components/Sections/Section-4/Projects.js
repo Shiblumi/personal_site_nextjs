@@ -14,33 +14,48 @@ export default function Projects() {
 	};
 
 	const contentVariants = {
-		initial: { opacity: 0, scale: 0.98 },
-		animate: { opacity: 1, scale: 1 },
-		exit: { opacity: 0, scale: 1.02 },
+		initial: { opacity: 0 },
+		animate: { opacity: 1 },
+		exit: { opacity: 0 },
 	};
 
 	return (
 		<div className={`${styles['projects-page-container']}`}>
-			<TextBox width='100%' delay='0.3'>
-				<AnimatePresence mode='wait'>
+			{/* Project information */}
+			<AnimatePresence mode='wait'>
+				<TextBox width='100%' delay='0.3'>
+					{/* TODO: Move this motion.div into TextBox. */}
 					<motion.div
 						key={selectedProject.id}
 						variants={contentVariants}
 						initial='initial'
 						animate='animate'
 						exit='exit'
-						transition={{ duration: 0.3 }}
+						layout
+						transition={{
+							ease: 'easeOut',
+							duration: 0.5,
+							layout: {
+								duration: 0.2,
+								ease: 'easeOut',
+							},
+						}}
+						style={{ height: '100%', overflow: 'hidden' }}
 					>
+            {/* Title */}
 						<h2 style={{ color: 'var(--color-primary)' }}>
 							{selectedProject.title}
 						</h2>
+            {/* Role */}
 						<p>
 							<strong>Role:</strong> {selectedProject.role}
 						</p>
+            {/* Date */}
 						<p>
 							<strong>Date:</strong> {selectedProject.date}
 						</p>
-						<strong>Skills:</strong>
+            {/* Tech Stack */}
+						<strong>Tech Stack:</strong>
 						<div
 							style={{
 								display: 'flex',
@@ -63,10 +78,17 @@ export default function Projects() {
 							))}
 						</div>
 						<div style={{ marginTop: '16px' }}></div>
-						<p>{selectedProject.description}</p>
+						<div className={styles['description-container']}>
+              {/* Description */}
+							<p style={{ margin: 0, lineHeight: '1.6' }}>
+								{selectedProject.description}
+							</p>
+						</div>
 					</motion.div>
-				</AnimatePresence>
-			</TextBox>
+				</TextBox>
+			</AnimatePresence>
+
+			{/* Project Gallery */}
 			<ProjectGallery
 				onProjectSelect={handleProjectSelect}
 				selectedProject={selectedProject}

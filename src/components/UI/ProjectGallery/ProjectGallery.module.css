@@ -7,7 +7,6 @@
 	border-radius: 12px;
 	padding: 20px;
 	width: 400px !important;
-	min-width: 400px !important;
 	max-width: 800px;
 	height: 400px;
 	font-size: clamp(0.6rem, 2.5vw, 1rem);
@@ -54,10 +53,14 @@
 
 @media (max-width: 1600px) {
 	.project-gallery-container {
-		padding: clamp(10px, 3vw, 20px);
-		width: clamp(300px, 90vw, 500px);
-		min-width: 0px !important;
-		height: clamp(200px, 40vh, 300px);
+		padding: clamp(15px, 3vw, 20px);
+		width: clamp(200px, 100%, 700px) !important;
+		height: 300px;
+	}
+
+	.project-gallery-container h1 {
+		font-size: 1.2em;
+		line-height: 1.4;
 	}
 
 	.project-gallery-grid {
@@ -74,5 +77,15 @@
 
 	.project-gallery-item h3 {
 		font-size: clamp(0.5rem, 3vw, 0.9rem);
+	}
+}
+
+@media (max-height: 800px) and (max-width: 1600px) {
+	.project-gallery-container {
+		height: clamp(150px, 20vh, 400px) !important;
+	}
+	.project-gallery-container h1 {
+		font-size: 1.1em;
+		line-height: 0 !important;
 	}
 }

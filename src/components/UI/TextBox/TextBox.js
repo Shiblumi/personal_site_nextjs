@@ -19,15 +19,22 @@ export default function TextBox({
 			className={`${styles['text-container']} glass-dark-soft-no-gradient`}
 			initial='hidden'
 			whileInView='visible'
+			layout
 			viewport={{
 				once: false,
-				amount: 0.5,
+				amount: 0.2,
 			}}
 			variants={variants}
 			transition={{
 				duration: 0.8,
 				delay: Number(delay),
 				ease: 'easeOut',
+				layout: {
+					type: 'spring',
+					stiffness: 300,
+					damping: 30,
+					mass: 1,
+				},
 			}}
 			style={{
 				width: width,
