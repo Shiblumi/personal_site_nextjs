@@ -1,0 +1,43 @@
+.section-timeline-wrapper {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50px;
+  flex-direction: column;
+  gap: 22px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.timeline-dot {
+  transition: all 0.3s ease-out;
+  border: 2px solid rgba(146, 255, 230, 0.6);
+  border-radius: 50%;
+  background-color: none;
+  width: 14px;
+  height: 14px;
+}
+
+.timeline-dot.active {
+  box-shadow: 
+    0 0 10px rgba(146, 255, 230, 0.6),
+    0 0 20px rgba(146, 255, 230, 0.4),
+    0 0 30px rgba(146, 255, 230, 0.2);
+  border-color: rgb(146, 255, 230);
+  background-color: rgb(146, 255, 230);
+}
+
+@media (max-width: 1600px) {
+  .section-timeline-wrapper {
+    left: 30px;
+    transform: scale(0.9) translateY(-50%);
+  }
+}
+
+@media (max-width: 800px) {
+  .section-timeline-wrapper {
+    left: 12px;
+    transform: scale(0.8) translateY(-50%);
+  }
+}

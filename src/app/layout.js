@@ -1,5 +1,5 @@
 import "@/app/globals.css";
-import NavbarContext from "@/components/Navbar/NavbarContext";
+import ActiveSectionContext from "@/components/UI/ActiveSectionContext";
 
 export const metadata = {
   title: "Create Next App",
@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-          <NavbarContext>{children}</NavbarContext>
+          <ActiveSectionContext>{children}</ActiveSectionContext>
       </body>
     </html>
   );

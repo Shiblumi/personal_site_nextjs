@@ -2,14 +2,18 @@
 
 import styles from './page.module.css';
 import { useEffect } from 'react';
-import { useNavbarContext } from '@/components/Navbar/NavbarContext';
-import SplineScene from '@/components/Scenes/SplineScene';
-import SectionTimeline from '@/components/SectionTimeline/SectionTimeline';
-import Footer from '@/components/Footer/Footer';
-import Home from '@/components/Section-1/Home';
-import Experience from '@/components/Section-2/Experience';
-import Skills from '@/components/Section-3/Skills';
-import { useRef } from 'react';
+import { useNavbarContext } from '@/components/UI/ActiveSectionContext';
+
+// Components import
+import SplineScene from '@/components/UI/SplineScene';
+import ScrollingTimeline from '@/components/UI/ScrollingTimeline/ScrollingTimeline';
+import Footer from '@/components/UI/Footer/Footer';
+
+// Sections import
+import Home from '@/components/Sections/Section-1/Home';
+import Experience from '@/components/Sections/Section-2/Experience';
+import Skills from '@/components/Sections/Section-3/Skills';
+import Projects from '@/components/Sections/Section-4/Projects';
 
 export default function Page() {
 	const { setActiveSection } = useNavbarContext();
@@ -34,6 +38,8 @@ export default function Page() {
 						let sceneNum = sectionNameID[sectionID];
 						console.log(`page: Setting active scene to ${sceneNum}`);
 						setActiveSection(sceneNum);
+						/* Update URL without reloading the page (using history API). */
+						window.history.replaceState(null, '', `/#${sectionID}`);
 					}
 				});
 			},
@@ -55,29 +61,32 @@ export default function Page() {
 
 	return (
 		<main className={styles['main']}>
-			<SectionTimeline />
+			<ScrollingTimeline />
 			<div className={styles['background-scene']}>
 				<SplineScene />
 			</div>
 			<div className={styles['scroll-wrapper']}>
+				{/* Home */}
 				<section id='home' className={styles['scroll-section']}>
-					<div className='container'>
-						<Home />
-					</div>
+					<Home />
 				</section>
+
+				{/* Experience */}
 				<section id='exp' className={styles['scroll-section']}>
-					<div className='container'><Experience /></div>
+					<Experience />
 				</section>
-				<section
-					id='skills'
-					// scrollRef={scrollWrapperRef}
-					className={styles['scroll-section']}
-				>
+
+				{/* Skills */}
+				<section id='skills' className={styles['scroll-section']}>
 					<Skills />
 				</section>
+
+				{/* Projects */}
 				<section id='projects' className={styles['scroll-section']}>
-					<h1>Section 4</h1>
+					<Projects />
 				</section>
+
+				{/* Contact */}
 				<section id='contact' className={styles['scroll-section']}>
 					<h1>Section 5</h1>
 				</section>

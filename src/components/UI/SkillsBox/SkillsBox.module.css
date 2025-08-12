@@ -1,0 +1,53 @@
+/* TODO: Make Half-Box auto width based on content within. */
+.skills-box {
+	display: flex;
+	position: relative;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 56px;
+	box-shadow: inset 0px 0px 10px rgba(var(--primary-rgb), 0.15),
+		0px 0px 20px rgba(var(--primary-rgb), 0.15);
+	border: 1px solid rgba(var(--secondary-rgb), 0.6);
+	border-bottom: none;
+	border-radius: 8px 8px 0 0;
+	padding: 12px 24px 12px 24px;
+	width: auto;
+	height: auto;
+	will-change: transform, opacity;
+	transform: translateZ(0);
+}
+
+.box-title {
+	position: absolute;
+	top: -42px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: rgba(var(--secondary-rgb));
+	font-weight: 600;
+	font-size: 23px;
+	font-family: 'Jura';
+	user-select: none;
+	text-shadow: 0 0 16px rgba(5, 0, 16);
+}
+
+.vertical-line {
+	position: absolute;
+	top: -11px;
+	left: 50%;
+	transform: translateX(-50%);
+	box-shadow: 0 0 10px rgba(146, 255, 230, 0.3);
+	background-color: rgba(var(--secondary-rgb), 0.6);
+	width: 2px;
+	height: 10px;
+}
+
+.skill-logo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 3px;
+	height: 100%;
+	/* text-shadow: 0 0 10px rgba(5, 0, 16); */
+}
