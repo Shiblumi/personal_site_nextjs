@@ -42,10 +42,10 @@ export default function ProjectGallery({
 
 	// Gallery item animation (individual project buttons)
     const galleryItemVariants = {
-        hidden: { opacity: 0, y: 10, transition: { duration: 0 } },
+        hidden: { opacity: 0, translateY: 10, transition: { duration: 0 } },
         visible: {
             opacity: 1,
-            y: 0,
+            translateY: 0,
             transition: {
                 duration: 0.5,
             },

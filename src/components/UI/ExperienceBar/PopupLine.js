@@ -33,14 +33,14 @@ export default function PopupLine({
 	const textVariants = {
 		hidden: {
 			opacity: 0,
-			y: lineDirection === 'up' ? 20 : -20,
+			translateY: lineDirection === 'up' ? 20 : -20,
 			transition: {
 				duration: 0,
 			},
 		},
 		visible: {
 			opacity: 1,
-			y: 0,
+			translateY: 0,
 			transition: {
 				duration: 0.42,
 				delay: Number(delay) + 0.6,

@@ -38,12 +38,12 @@ export default function AlternatingText() {
 	const textVariants = {
 		hidden: {
 			opacity: 0,
-			y: 20,
+			translateY: 20,
 			// filter: "blur(4px)"
 		},
 		visible: {
 			opacity: 1,
-			y: 0,
+			translateY: 0,
 			// filter: "blur(0px)",
 			transition: {
 				duration: 0.4,
@@ -52,7 +52,7 @@ export default function AlternatingText() {
 		},
 		exit: {
 			opacity: 0,
-			y: -20,
+			translateY: -20,
 			// filter: "blur(4px)",
 			transition: {
 				duration: 0.3,
