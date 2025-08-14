@@ -8,6 +8,8 @@
   transform: translateY(-50%);
   pointer-events: none;
   z-index: 1000;
+  /* GPU acceleration */
+  will-change: transform;
 }
 
 .timeline-dot {
@@ -17,6 +19,9 @@
   background-color: none;
   width: 14px;
   height: 14px;
+  /* GPU acceleration */
+  transform: translateZ(0);
+  will-change: transform, opacity;
 }
 
 .timeline-dot.active {

@@ -5,7 +5,7 @@ import Navbar from '@/components/UI/Navbar/Navbar';
 
 export const ActiveSectionContext = createContext();
 
-// Context of which section is currently being viewed.a
+// Context of which section is currently being viewed.
 export const useNavbarContext = () => {
   const context = useContext(ActiveSectionContext);
   if (!context) {

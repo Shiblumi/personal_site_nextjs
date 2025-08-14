@@ -11,6 +11,9 @@
 	width: 90%;
 	max-width: 1700px;
 	height: 100%;
+	/* GPU acceleration */
+	transform: translateZ(0);
+	will-change: transform;
 }
 
 .description-container {
@@ -19,6 +22,9 @@
 	scrollbar-width: thin;
 	scrollbar-color: rgba(var(--primary-rgb), 0.3) transparent;
 	scroll-behavior: smooth;
+	/* GPU acceleration */
+	transform: translateZ(0);
+	will-change: scroll-position;
 }
 
 @media (max-width: 1600px) {
@@ -51,7 +57,12 @@
 
 @media (max-height: 800px) and (max-width: 1600px) {
 	.projects-page-container {
-		padding: 70px 2vw 4vh 2vw;
+		padding: 100px 2vw 4vh 2vw;
 	}
+}
 
+@media (max-height: 800px) and (max-width: 800px) {
+	.projects-page-container {
+		padding: 75px 2vw 4vh 2vw;
+	}
 }
