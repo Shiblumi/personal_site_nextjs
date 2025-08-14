@@ -54,7 +54,12 @@ export default function SkillBox({ title, logos = [], delay = '0.2' }) {
 						alt={logo.name || `${title} skill ${index + 1}`}
 						width={40}
 						height={40}
-						style={{ objectFit: 'contain', userSelect: 'none' }}
+						style={{ 
+							objectFit: 'contain', 
+							userSelect: 'none',
+							width: 'clamp(24px, 3vw, 40px)',
+							height: 'clamp(24px, 3vw, 40px)'
+						}}
 					/>
 					<span>{logo.name}</span>
 				</motion.div>

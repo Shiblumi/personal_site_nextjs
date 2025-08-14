@@ -8,6 +8,7 @@ export default function TextBox({
 	opacity = 0,
 	delay = '0.3',
 	children,
+	height = 'auto',
 }) {
 	const variants = {
 		hidden: { scale: 0.98, opacity: 0, transition: { duration: 0 } },
@@ -37,6 +38,7 @@ export default function TextBox({
 				},
 			}}
 			style={{
+				height: height,
 				width: width,
 				maxWidth: maxWidth,
 				minWidth: minWidth,
