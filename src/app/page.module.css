@@ -13,11 +13,17 @@
   width: 100vw;
   height: 100vh;
   /* pointer-events: none; */
+  /* GPU acceleration */
+  transform: translateZ(0);
+  will-change: contents;
 }
 
 .background-scene canvas {
   width: 100vw !important;
   height: 100vh !important;
+  /* GPU acceleration */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .scroll-wrapper {
