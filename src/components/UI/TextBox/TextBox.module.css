@@ -7,6 +7,9 @@
     line-height: 1.6em;
     text-shadow: 0 0 18px var(--bg-dark);
 	overflow: hidden;
+	/* GPU acceleration */
+	transform: translateZ(0);
+	will-change: transform, opacity;
 }
 
 @media (max-width: 1600px) {

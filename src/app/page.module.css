@@ -33,6 +33,9 @@
   height: 100vh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  /* GPU acceleration */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .footer {
