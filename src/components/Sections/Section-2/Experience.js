@@ -116,7 +116,7 @@ export default function Experience(props) {
 						whileInView='visible'
 						viewport={{
 							once: false,
-							amount: 0.5,
+							amount: 0.9,
 						}}
 						style={{
 							originX: 0,
@@ -138,7 +138,7 @@ export default function Experience(props) {
 						whileInView='visible'
 						viewport={{
 							once: false,
-							amount: 0.5,
+							amount: 0.9,
 						}}
 						transition={{
 							duration: 0.2,
@@ -154,7 +154,7 @@ export default function Experience(props) {
 						whileInView='visible'
 						viewport={{
 							once: false,
-							amount: 0.5,
+							amount: 0.9,
 						}}
 						transition={{
 							duration: 0.2,
@@ -170,7 +170,7 @@ export default function Experience(props) {
 						whileInView='visible'
 						viewport={{
 							once: false,
-							amount: 0.5,
+							amount: 0.9,
 						}}
 						transition={{
 							duration: 0.2,

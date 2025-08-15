@@ -20,7 +20,7 @@ export default function TextBox({
 				layout
 				viewport={{
 					once: false,
-					amount: 0.2,
+					amount: 0.9,
 				}}
 				variants={variants}
 				transition={{

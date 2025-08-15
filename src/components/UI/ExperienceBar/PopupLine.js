@@ -61,7 +61,7 @@ export default function PopupLine({
 				whileInView='visible'
 				viewport={{
 					once: false,
-					amount: 0.5,
+					amount: 0.9,
 				}}
 				style={{
 					originY: lineDirection === 'up' ? 1 : 0,
@@ -75,7 +75,7 @@ export default function PopupLine({
 				whileInView='visible'
 				viewport={{
 					once: false,
-					amount: 0.5,
+					amount: 0.9,
 				}}
 			>
 				{children}

@@ -44,7 +44,7 @@ export default function DateLine({ positionLeft, delay, date = '2049' }) {
 				whileInView='visible'
 				viewport={{
 					once: false,
-					amount: 0.5,
+					amount: 0.9,
 				}}
 			/>
 
@@ -62,7 +62,7 @@ export default function DateLine({ positionLeft, delay, date = '2049' }) {
 				whileInView='visible'
 				viewport={{
 					once: false,
-					amount: 0.5,
+					amount: 0.9,
 				}}
 			>
 				{date}

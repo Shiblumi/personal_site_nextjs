@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 import { useNavbarContext } from '../ActiveSectionContext';
+import ChromaticText from '@/components/UI/ChromaticText/ChromaticText';
 
 export default function Navbar() {
 	const { activeSection } = useNavbarContext();
@@ -17,45 +18,24 @@ export default function Navbar() {
 					DIWI
 				</Link>
 				<div className={`${styles['navbar-link-container']}`}>
-					<Link
-						href='#home'
-						className={`${styles['navbar-link']} ${
-							activeSection === 1 ? styles['active'] : ''
-						}`}
-					>
-						Home
+					<Link href='#home' className={`${styles['navbar-link']}`}>
+						<ChromaticText isActive={activeSection === 1}>Home</ChromaticText>
 					</Link>
-					<Link
-						href='#exp'
-						className={`${styles['navbar-link']} ${
-							activeSection === 2 ? styles['active'] : ''
-						}`}
-					>
-						Exp
+					<Link href='#exp' className={`${styles['navbar-link']}`}>
+						<ChromaticText isActive={activeSection === 2}>Exp</ChromaticText>
 					</Link>
-					<Link
-						href='#skills'
-						className={`${styles['navbar-link']} ${
-							activeSection === 3 ? styles['active'] : ''
-						}`}
-					>
-						Skills
+					<Link href='#skills' className={`${styles['navbar-link']}`}>
+						<ChromaticText isActive={activeSection === 3}>Skills</ChromaticText>
 					</Link>
-					<Link
-						href='#projects'
-						className={`${styles['navbar-link']} ${
-							activeSection === 4 ? styles['active'] : ''
-						}`}
-					>
-						Projects
+					<Link href='#projects' className={`${styles['navbar-link']}`}>
+						<ChromaticText isActive={activeSection === 4}>
+							Projects
+						</ChromaticText>
 					</Link>
-					<Link
-						href='#contact'
-						className={`${styles['navbar-link']} ${
-							activeSection === 5 ? styles['active'] : ''
-						}`}
-					>
-						Contact
+					<Link href='#contact' className={`${styles['navbar-link']}`}>
+						<ChromaticText isActive={activeSection === 5}>
+							Contact
+						</ChromaticText>
 					</Link>
 				</div>
 			</div>

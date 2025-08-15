@@ -48,7 +48,7 @@ export default function Home() {
 			whileInView='visible'
 			viewport={{
 				once: false,
-				amount: 0.5,
+				amount: 0.9,
 			}}
 		>
 			{/* Name */}

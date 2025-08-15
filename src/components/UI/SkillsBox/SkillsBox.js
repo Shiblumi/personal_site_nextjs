@@ -37,7 +37,7 @@ export default function SkillBox({ title, logos = [], delay = '0.2' }) {
 			whileInView='visible'
 			viewport={{
 				once: false,
-				amount: 0.5,
+				amount: 0.9,
 			}}
 		>
 			<span className={`${styles['box-title']}`}>{title}</span>

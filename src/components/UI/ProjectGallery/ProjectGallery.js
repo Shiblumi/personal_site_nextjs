@@ -66,7 +66,7 @@ export default function ProjectGallery({
             whileInView='visible'
             viewport={{
                 once: false,
-                amount: 0.5,
+                amount: 0.9,
             }}
         >
             <h1 style={{ color: 'var(--color-secondary)', lineHeight: '12px' }}>Projects</h1>
@@ -77,7 +77,7 @@ export default function ProjectGallery({
                 whileInView='visible'
                 viewport={{
                     once: false,
-                    amount: 0.5,
+                    amount: 0.9,
                 }}
             >
                 {projects.map((project) => (
