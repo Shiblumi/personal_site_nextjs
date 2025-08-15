@@ -182,8 +182,7 @@ export default function Experience(props) {
 				</div>
 			</div>
 			<TextBox
-				maxWidth='65%'
-				minWidth='500px'
+				styles={{ maxWidth: '65%', minWidth: '500px' }}
 				opacity={0.65}
 				delay='0.65'
 				sectionNum={2}

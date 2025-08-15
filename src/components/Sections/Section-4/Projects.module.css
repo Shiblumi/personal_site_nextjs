@@ -2,26 +2,27 @@
 	display: flex;
 	position: relative;
 	flex-direction: row;
-	justify-content: center;
 	align-items: center;
-	gap: 150px;
-	margin: 0 auto;
-	padding: 200px 64px 64px 64px;
+	justify-content: center;
 	/* min-height: 900px; */
 	width: 90%;
 	max-width: 1700px;
 	height: 100%;
+	margin: 0 auto;
+	padding: 200px 64px 0px 64px;
+	gap: 150px;
 	/* GPU acceleration */
 	transform: translateZ(0);
 	will-change: transform;
 }
 
 .description-container {
-	overflow-y: auto;
+	padding: clamp(10px, 4vh, 35px) 0px;
 	padding-right: 8px;
-	scrollbar-width: thin;
-	scrollbar-color: rgba(var(--primary-rgb), 0.3) transparent;
+	overflow-y: auto;
 	scroll-behavior: smooth;
+	scrollbar-color: rgba(var(--primary-rgb), 0.3) transparent;
+	scrollbar-width: thin;
 	/* GPU acceleration */
 	transform: translateZ(0);
 	will-change: scroll-position;
@@ -30,8 +31,8 @@
 @media (max-width: 1600px) {
 	.projects-page-container {
 		flex-direction: column;
-		gap: 24px;
 		padding: 16vh 3vw 8vh 3vw;
+		gap: 24px;
 	}
 	.projects-page-container > div:first-child {
 		width: 100% !important;
@@ -43,6 +44,13 @@
 	.description-container {
 		height: calc(100% - 137px);
 		min-height: 80px;
+		mask: linear-gradient(
+			to bottom,
+			transparent 0%,
+			rgb(0, 0, 0) clamp(8%, 4vh, 15%),
+			rgb(0, 0, 0) clamp(85%, 5vh, 90%),
+			transparent 100%
+		);
 	}
 }
 

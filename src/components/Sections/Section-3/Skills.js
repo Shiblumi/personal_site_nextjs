@@ -32,19 +32,45 @@ export default function Skills() {
 
 	return (
 		<div className={`${styles['skills-page-container']}`}>
-			<TextBox maxWidth='65%' minWidth='500px' delay='0.3'>
-				<h1 style={{marginBottom: '22px'}}>Skills</h1>
-				<p>
-					Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
-					yardarm. Pinnace holystone mizzenmast quarter crows nest nipperkin
-					grog yardarm hempen halter furl. Swab barque interloper chantey
-					doubloon starboard grog black jack gangway rutters. Deadlights jack
-					lad schooner scallywag dance the hempen jig carouser broadside cable
-					strike colors. Bring a spring upon her cable holystone blow the man
-					down spanker Shiver me timbers to go on account lookout wherry
-					doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm
-					spyglass sheet transom heave to.
-				</p>
+			<TextBox
+				styles={{
+					width: '100%',
+					display: 'flex',
+					gap: '0px',
+					flexDirection: 'column',
+					paddingBottom: '0px',
+				}}
+				delay='0.3'
+			>
+				<h1>Skills</h1>
+				<div
+					style={{
+						overflowY: 'auto',
+						scrollBehavior: 'smooth',
+						scrollbarColor: 'rgba(var(--primary-rgb), 0.3) transparent',
+						scrollbarWidth: 'thin',
+						mask: `linear-gradient(
+							to bottom,
+							transparent 0%,
+							rgb(0, 0, 0) clamp(5%, 1vh, 8%),
+							rgb(0, 0, 0) clamp(92%, 3vh, 95%),
+							transparent 100%
+						)`,
+						padding: '8px 8px 16px 0px',
+					}}
+				>
+					<p>
+						Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
+						yardarm. Pinnace holystone mizzenmast quarter crows nest nipperkin
+						grog yardarm hempen halter furl. Swab barque interloper chantey
+						doubloon starboard grog black jack gangway rutters. Deadlights jack
+						lad schooner scallywag dance the hempen jig carouser broadside cable
+						strike colors. Bring a spring upon her cable holystone blow the man
+						down spanker Shiver me timbers to go on account lookout wherry
+						doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm
+						spyglass sheet transom heave to.
+					</p>
+				</div>
 			</TextBox>
 			<div className={`${styles['skills-showcase']}`}>
 				<SkillsBox title='Frontend' logos={frontendSkills} delay='0.3' />

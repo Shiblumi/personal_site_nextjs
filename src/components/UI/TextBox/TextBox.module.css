@@ -1,27 +1,35 @@
 .text-container {
-	/* width: auto; */
 	height: auto;
 	padding: 22px 44px;
 	border-radius: 12px;
-    font-size: 1.2em;
-    line-height: 1.6em;
-    text-shadow: 0 0 18px var(--bg-dark);
+	font-size: 1.2em;
+	line-height: 1.6em;
+	text-shadow: 0 0 18px var(--bg-dark);
 	overflow: hidden;
 	/* GPU acceleration */
 	transform: translateZ(0);
 	will-change: transform, opacity;
+
 }
 
 @media (max-width: 1600px) {
 	.text-container {
 		padding: 16px 32px;
-		font-size: 1em;
+		font-size: 1.1em;
 		line-height: 1.4em;
 	}
 }
 @media (max-width: 800px) {
 	.text-container {
 		padding: 12px 20px;
+		font-size: 1em;
+		line-height: 1.3em;
+	}
+}
+
+@media (max-width: 500px) {
+	.text-container {
+		padding: 10px 18px;
 		font-size: 0.9em;
 		line-height: 1.3em;
 	}

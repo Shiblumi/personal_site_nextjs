@@ -20,8 +20,8 @@
 	/* gap: 50px; */
 	column-gap: 50px;
 	row-gap: 80px;
-	flex-direction: row;
-	flex-wrap: wrap;
+	flex-direction: column;
+
 	align-content: center;
 	justify-content: center;
 	align-items: center;
@@ -33,16 +33,21 @@
 @media (max-width: 1600px) {
 	.skills-page-container {
 		flex-direction: column-reverse;
-		gap: 24px;
+		gap: clamp(24px, 5vw, 64px);
 		padding: 16vh 3vw 8vh 3vw;
+	}
+	.skills-showcase {
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 }
 
 @media (max-width: 800px) {
 	.skills-page-container {
 		padding: 8vh 2vw 4vh 2vw;
+		gap: clamp(24px, 10vw, 100px);
 	}
-	
+
 	.skills-showcase {
 		column-gap: clamp(30px, 5vw, 40px);
 		row-gap: clamp(50px, 8vw, 60px);
@@ -52,16 +57,25 @@
 @media (max-height: 800px) and (max-width: 1600px) {
 	.skills-page-container {
 		padding: 100px 2vw 4vh 2vw;
+		gap: clamp(10px, 3vh, 60px);
+	}
+	.skills-showcase {
+		column-gap: clamp(30px, 10vw, 40px);
+		row-gap: 50px;
 	}
 }
 
 @media (max-height: 800px) and (max-width: 800px) {
 	.skills-page-container {
 		padding: 75px 2vw 4vh 2vw;
+		gap: clamp(10px, 3vh, 60px);
 	}
 }
 
-@media (max-width: 500px) {
+@media (min-height: 800px) and (max-width: 500px) {
+	.skills-page-container {
+		gap: clamp(10px, 8vh, 100px);
+	}
 	.skills-showcase {
 		column-gap: clamp(20px, 4vw, 30px);
 		row-gap: clamp(40px, 6vw, 50px);

@@ -23,7 +23,7 @@ export default function Projects() {
 		<div className={`${styles['projects-page-container']}`}>
 			{/* Project information */}
 			<AnimatePresence mode='wait'>
-				<TextBox width='100%' delay='0.3'>
+				<TextBox styles={{ width: '100%', paddingBottom: '0px', marginBottom: '0px' }} delay='0.3'>
 					{/* TODO: Move this motion.div into TextBox. */}
 					<motion.div
 						key={selectedProject.id}
@@ -42,19 +42,19 @@ export default function Projects() {
 						}}
 						style={{ height: '100%', overflow: 'hidden' }}
 					>
-            {/* Title */}
+						{/* Title */}
 						<h2 style={{ color: 'var(--color-primary)' }}>
 							{selectedProject.title}
 						</h2>
-            {/* Role */}
+						{/* Role */}
 						<p>
 							<strong>Role:</strong> {selectedProject.role}
 						</p>
-            {/* Date */}
+						{/* Date */}
 						<p>
 							<strong>Date:</strong> {selectedProject.date}
 						</p>
-            {/* Tech Stack */}
+						{/* Tech Stack */}
 						<strong>Tech Stack:</strong>
 						<div
 							style={{
@@ -77,9 +77,8 @@ export default function Projects() {
 								</span>
 							))}
 						</div>
-						<div style={{ marginTop: '16px' }}></div>
 						<div className={styles['description-container']}>
-              {/* Description */}
+							{/* Description */}
 							<p style={{ margin: 0, lineHeight: '1.6' }}>
 								{selectedProject.description}
 							</p>
