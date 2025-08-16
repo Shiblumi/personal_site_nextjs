@@ -11,7 +11,7 @@ export default function Home() {
 	const nameParentVariants = {
 		hidden: {
 			transition: {
-				duration: 0,
+				duration: 0.2,
 			},
 		},
 		visible: {
@@ -27,7 +27,7 @@ export default function Home() {
 			opacity: 0,
 			// filter: 'blur(8px)',
 			transition: {
-				duration: 0,
+				duration: 0.2,
 			},
 		},
 		visible: {

@@ -12,12 +12,13 @@ export default function PopupLine({
 	textDirection = 'right',
 	children = 'Nice weather we are having!',
 	delay = '0.3s',
+	isInView = false,
 }) {
 	const lineVariants = {
 		hidden: {
 			scaleY: 0,
 			transition: {
-				duration: 0,
+				duration: 0.2,
 			},
 		},
 		visible: {
@@ -35,7 +36,7 @@ export default function PopupLine({
 			opacity: 0,
 			translateY: lineDirection === 'up' ? 20 : -20,
 			transition: {
-				duration: 0,
+				duration: 0.2,
 			},
 		},
 		visible: {
@@ -58,11 +59,7 @@ export default function PopupLine({
 				className={`${styles['popup-line']} ${styles[lineDirection]}`}
 				variants={lineVariants}
 				initial='hidden'
-				whileInView='visible'
-				viewport={{
-					once: false,
-					amount: 0.9,
-				}}
+				animate={isInView ? 'visible' : 'hidden'}
 				style={{
 					originY: lineDirection === 'up' ? 1 : 0,
 				}}
@@ -72,11 +69,7 @@ export default function PopupLine({
 				className={`${styles['text-container']} ${styles[lineDirection]} ${styles[textDirection]} glass-dark-soft`}
 				variants={textVariants}
 				initial='hidden'
-				whileInView='visible'
-				viewport={{
-					once: false,
-					amount: 0.9,
-				}}
+				animate={isInView ? 'visible' : 'hidden'}
 			>
 				{children}
 			</motion.div>

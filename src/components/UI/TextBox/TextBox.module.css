@@ -9,7 +9,6 @@
 	/* GPU acceleration */
 	transform: translateZ(0);
 	will-change: transform, opacity;
-
 }
 
 @media (max-width: 1600px) {

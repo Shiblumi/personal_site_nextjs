@@ -64,7 +64,7 @@ export default function ChromaticText({
 			animate={isActive ? 'active' : 'initial'}
 			style={{ padding: '5px 10px' }}
 		>
-			{/* Blue layer (bottom/back) */}
+			{/* Blue layer (bottom/front) */}
 			<motion.span
 				className={`${styles['chromatic-layer']} ${styles['blue-layer']}`}
 				variants={blueVariants}
@@ -82,7 +82,7 @@ export default function ChromaticText({
 				{children}
 			</motion.span>
 
-			{/* Red layer (top/front) */}
+			{/* Red layer (top/back) */}
 			<motion.span
 				className={`${styles['chromatic-layer']} ${styles['red-layer']}`}
 				variants={redVariants}

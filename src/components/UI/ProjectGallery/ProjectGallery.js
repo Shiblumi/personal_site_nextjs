@@ -13,7 +13,7 @@ export default function ProjectGallery({
         hidden: { 
             opacity: 0, 
             scale: 0.95,
-            transition: { duration: 0 } 
+            transition: { duration: 0.2 } 
         },
         visible: {
             opacity: 1,
@@ -28,7 +28,7 @@ export default function ProjectGallery({
 
     // Grid animation (for staggered children)
     const projectGalleryVariants = {
-        hidden: { opacity: 0, transition: { duration: 0 } },
+        hidden: { opacity: 0, transition: { duration: 0.2 } },
         visible: {
             opacity: 1,
             transition: {
@@ -42,7 +42,7 @@ export default function ProjectGallery({
 
 	// Gallery item animation (individual project buttons)
     const galleryItemVariants = {
-        hidden: { opacity: 0, translateY: 10, transition: { duration: 0 } },
+        hidden: { opacity: 0, translateY: 10, transition: { duration: 0.2 } },
         visible: {
             opacity: 1,
             translateY: 0,

@@ -8,7 +8,7 @@ export default function TextBox({
 	children,
 }) {
 	const variants = {
-		hidden: { scale: 0.98, opacity: 0, transition: { duration: 0 } },
+		hidden: { scale: 0.98, opacity: 0, transition: { duration: 0.2 } },
 		visible: { scale: 1, opacity: 1 },
 	};
 

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function SkillBox({ title, logos = [], delay = '0.2' }) {
 	const skillBoxVariants = {
-		hidden: { opacity: 0, scale: 0.9, transition: { duration: 0 } },
+		hidden: { opacity: 0, scale: 0.9, transition: { duration: 0.2 } },
 		visible: {
 			opacity: 1,
 			scale: 1,
@@ -19,7 +19,7 @@ export default function SkillBox({ title, logos = [], delay = '0.2' }) {
 	};
 
 	const skillLogoVariants = {
-		hidden: { opacity: 0, translateY: 10, transition: { duration: 0 } },
+		hidden: { opacity: 0, translateY: 10, transition: { duration: 0.2 } },
 		visible: {
 			opacity: 1,
 			translateY: 0,
