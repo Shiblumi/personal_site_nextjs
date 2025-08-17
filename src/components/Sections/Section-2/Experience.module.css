@@ -82,7 +82,7 @@
 		);
 		scroll-behavior: smooth;
 		scrollbar-color: rgba(var(--primary-rgb), 0.3) transparent;
-		scrollbar-width: thin;
+		scrollbar-width: none;
 	}
 	.exp-bar-wrapper {
 		width: 100%;
@@ -97,7 +97,6 @@
 		height: 350px;
 		padding: 4vh 12vw;
 		overflow-x: auto;
-		overflow-y: hidden;
 	}
 	.exp-bar-wrapper {
 		width: 125vw;

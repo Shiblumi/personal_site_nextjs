@@ -2,7 +2,7 @@ import styles from './SkillsBox.module.css';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-export default function SkillBox({ title, logos = [], delay = '0.2' }) {
+export default function SkillBox({ title, logos = [], delay = '0.2', isInView = false }) {
 	const skillBoxVariants = {
 		hidden: { opacity: 0, scale: 0.9, transition: { duration: 0.2 } },
 		visible: {
@@ -34,11 +34,7 @@ export default function SkillBox({ title, logos = [], delay = '0.2' }) {
 			className={`${styles['skills-box']} glass-dark-soft-no-gradient`}
 			variants={skillBoxVariants}
 			initial='hidden'
-			whileInView='visible'
-			viewport={{
-				once: false,
-				amount: 0.9,
-			}}
+			animate={isInView ? 'visible' : 'hidden'}
 		>
 			<span className={`${styles['box-title']}`}>{title}</span>
 			<div className={`${styles['vertical-line']}`} />

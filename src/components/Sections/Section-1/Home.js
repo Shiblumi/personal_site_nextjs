@@ -4,9 +4,15 @@ import styles from './Home.module.css';
 import ActionButton from '@/components/UI/Buttons/ActionButton';
 import AlternatingText from '../../UI/AlternatingText/AlternatingText';
 import DownArrow from '@/components/UI/Icons/DownArrow';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 export default function Home() {
+	const sectionRef = useRef(null);
+	const isInView = useInView(sectionRef, {
+		once: false,
+		amount: 0.9,
+	});
 
 	const nameParentVariants = {
 		hidden: {
@@ -42,14 +48,11 @@ export default function Home() {
 
 	return (
 		<motion.div
+			ref={sectionRef}
 			className={styles['home-container']}
 			variants={nameParentVariants}
 			initial='hidden'
-			whileInView='visible'
-			viewport={{
-				once: false,
-				amount: 0.9,
-			}}
+			animate={isInView ? 'visible' : 'hidden'}
 		>
 			{/* Name */}
 			<motion.div className={styles['name-wrapper']} variants={nameVariants}>

@@ -1,12 +1,17 @@
 import TextBox from '@/components/UI/TextBox/TextBox';
 import styles from './Projects.module.css';
 import ProjectGallery from '@/components/UI/ProjectGallery/ProjectGallery';
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { AnimatePresence } from 'framer-motion';
 import { projectsData } from './ProjectGalleryItems';
 
 export default function Projects() {
+	const sectionRef = useRef(null);
+	const isInView = useInView(sectionRef, {
+		once: false,
+		amount: 0.75,
+	});
 	const [selectedProject, setSelectedProject] = useState(projectsData[0]);
 
 	const handleProjectSelect = (project) => {
@@ -20,7 +25,7 @@ export default function Projects() {
 	};
 
 	return (
-		<div className={`${styles['projects-page-container']}`}>
+		<div ref={sectionRef} className={`${styles['projects-page-container']}`}>
 			{/* Project information */}
 			<AnimatePresence mode='wait'>
 				<TextBox styles={{ width: '100%' }} delay='0.3'>
@@ -91,6 +96,7 @@ export default function Projects() {
 				onProjectSelect={handleProjectSelect}
 				selectedProject={selectedProject}
 				projects={projectsData}
+				isInView={isInView}
 			/>
 		</div>
 	);

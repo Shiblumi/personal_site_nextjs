@@ -1,8 +1,15 @@
 import SkillsBox from '../../UI/SkillsBox/SkillsBox';
 import TextBox from '@/components/UI/TextBox/TextBox';
 import styles from './Skills.module.css';
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
 
 export default function Skills() {
+	const sectionRef = useRef(null);
+	const isInView = useInView(sectionRef, {
+		once: false,
+		amount: 0.75,
+	});
 	const frontendSkills = [
 		{ src: '/images/logos/react-icon.svg', name: 'React' },
 		{ src: '/images/logos/framer-motion-logo.svg', name: 'Motion' },
@@ -31,7 +38,7 @@ export default function Skills() {
 	];
 
 	return (
-		<div className={`${styles['skills-page-container']}`}>
+		<div ref={sectionRef} className={`${styles['skills-page-container']}`}>
 			<TextBox
 				styles={{
 					width: '100%',
@@ -73,10 +80,10 @@ export default function Skills() {
 				</div>
 			</TextBox>
 			<div className={`${styles['skills-showcase']}`}>
-				<SkillsBox title='Frontend' logos={frontendSkills} delay='0.3' />
-				<SkillsBox title='Backend' logos={backendSkills} delay='0.45' />
-				<SkillsBox title='General' logos={generalSkills} delay='0.6' />
-				<SkillsBox title='Learning...' logos={learningSkills} delay='0.75' />
+				<SkillsBox title='Frontend' logos={frontendSkills} delay='0.3' isInView={isInView} />
+				<SkillsBox title='Backend' logos={backendSkills} delay='0.45' isInView={isInView} />
+				<SkillsBox title='General' logos={generalSkills} delay='0.6' isInView={isInView} />
+				<SkillsBox title='Learning...' logos={learningSkills} delay='0.75' isInView={isInView} />
 			</div>
 		</div>
 	);

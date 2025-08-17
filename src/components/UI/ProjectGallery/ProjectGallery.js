@@ -7,6 +7,7 @@ export default function ProjectGallery({
     projects,
     onProjectSelect,
     selectedProject,
+    isInView = false,
 }) {
     // Container animation (whole component including header)
     const containerVariants = {
@@ -63,22 +64,14 @@ export default function ProjectGallery({
             className={`${styles['project-gallery-container']} glass-dark-soft-no-gradient`}
             variants={containerVariants}
             initial='hidden'
-            whileInView='visible'
-            viewport={{
-                once: false,
-                amount: 0.9,
-            }}
+            animate={isInView ? 'visible' : 'hidden'}
         >
             <h1 style={{ color: 'var(--color-secondary)', lineHeight: '12px' }}>Projects</h1>
             <motion.div
                 className={`${styles['project-gallery-grid']}`}
                 variants={projectGalleryVariants}
                 initial='hidden'
-                whileInView='visible'
-                viewport={{
-                    once: false,
-                    amount: 0.9,
-                }}
+                animate={isInView ? 'visible' : 'hidden'}
             >
                 {projects.map((project) => (
                     <motion.button
