@@ -136,8 +136,18 @@ export default function Experience(props) {
 					/>
 
 					{/* Date Lines (Years) */}
-					<DateLine positionLeft='27.27%' delay='1.1' date='2024' isInView={isInView} />
-					<DateLine positionLeft='81.81%' delay='1.7' date='2025' isInView={isInView} />
+					<DateLine
+						positionLeft='27.27%'
+						delay='1.1'
+						date='2024'
+						isInView={isInView}
+					/>
+					<DateLine
+						positionLeft='81.81%'
+						delay='1.7'
+						date='2025'
+						isInView={isInView}
+					/>
 				</div>
 
 				{/* Exp-Bar Trailing Dots */}
@@ -182,23 +192,47 @@ export default function Experience(props) {
 				</div>
 			</div>
 			<TextBox
-				styles={{ maxWidth: '65%', minWidth: '500px' }}
+				styles={{
+					width: '100%',
+					maxWidth: '1000px',
+					display: 'flex',
+					gap: '0px',
+					flexDirection: 'column',
+					paddingBottom: '0px',
+				}}
 				opacity={0.65}
 				delay='0.65'
 				sectionNum={2}
 			>
-				<h1 style={{ marginBottom: '22px' }}>Experience</h1>
-				<p>
-					Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
-					yardarm. Pinnace holystone mizzenmast quarter crows nest nipperkin
-					grog yardarm hempen halter furl. Swab barque interloper chantey
-					doubloon starboard grog black jack gangway rutters. Deadlights jack
-					lad schooner scallywag dance the hempen jig carouser broadside cable
-					strike colors. Bring a spring upon her cable holystone blow the man
-					down spanker Shiver me timbers to go on account lookout wherry
-					doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm
-					spyglass sheet transom heave to.
-				</p>
+				<h1>Experience</h1>
+				<div
+					style={{
+						overflowY: 'auto',
+						scrollBehavior: 'smooth',
+						scrollbarColor: 'rgba(var(--primary-rgb), 0.3) transparent',
+						scrollbarWidth: 'thin',
+						mask: `linear-gradient(
+							to bottom,
+							transparent 0%,
+							rgb(0, 0, 0) clamp(5%, 1vh, 8%),
+							rgb(0, 0, 0) clamp(92%, 3vh, 95%),
+							transparent 100%
+						)`,
+						padding: '8px 8px 16px 0px',
+					}}
+				>
+					<p>
+						Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
+						yardarm. Pinnace holystone mizzenmast quarter crows nest nipperkin
+						grog yardarm hempen halter furl. Swab barque interloper chantey
+						doubloon starboard grog black jack gangway rutters. Deadlights jack
+						lad schooner scallywag dance the hempen jig carouser broadside cable
+						strike colors. Bring a spring upon her cable holystone blow the man
+						down spanker Shiver me timbers to go on account lookout wherry
+						doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm
+						spyglass sheet transom heave to.
+					</p>
+				</div>
 			</TextBox>
 		</div>
 	);

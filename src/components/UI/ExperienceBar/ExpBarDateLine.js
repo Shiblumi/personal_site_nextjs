@@ -47,13 +47,14 @@ export default function DateLine({ positionLeft, delay, date = '2049', isInView 
 			<motion.span
 				style={{
 					position: 'absolute',
-					bottom: 'clamp(30px, 5vh, 50px)',
-					transform: 'translateY(clamp(-5px, -1vh, -10px))',
-					left: `calc(${positionLeft} - 18px)`,
+					// bottom: 'clamp(40px, 8vh, 80px)',
+					transform: 'translateY(clamp(-24px, -10vh, -43px)) translateX(-50%)',
+					left: positionLeft,
 					zIndex: 1,
-					fontSize: 'clamp(0.8em, 1.2vw, 1em)',
+					fontSize: 'clamp(0.7em, 1.1vw, 0.9em)',
 					fontWeight: '600',
 					color: 'rgba(var(--secondary-rgb), 0.9)',
+					textAlign: 'center',
 				}}
 				variants={dateTextVariants}
 				initial='hidden'

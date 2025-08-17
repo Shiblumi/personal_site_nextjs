@@ -2,14 +2,14 @@
 	display: flex;
 	position: relative;
 	flex-direction: row;
-	justify-content: center;
 	align-items: center;
-	gap: 150px;
-	margin: 0 auto;
-	padding: 200px 64px 64px 64px;
+	justify-content: center;
 	width: 90%;
 	max-width: 1700px;
 	height: 100%;
+	margin: 0 auto;
+	padding: 200px 64px 64px 64px;
+	gap: 150px;
 	/* GPU acceleration */
 	transform: translateZ(0);
 	will-change: transform;
@@ -23,18 +23,18 @@
 	flex-direction: column;
 
 	align-content: center;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
+	height: auto;
 	transform: translateZ(0);
 	will-change: transform;
-	height: auto;
 }
 
 @media (max-width: 1600px) {
 	.skills-page-container {
 		flex-direction: column-reverse;
-		gap: clamp(24px, 5vw, 64px);
 		padding: 16vh 3vw 8vh 3vw;
+		gap: clamp(24px, 5vw, 64px);
 	}
 	.skills-showcase {
 		flex-direction: row;

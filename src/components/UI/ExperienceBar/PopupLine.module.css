@@ -5,13 +5,14 @@
 
 /* --- Text Container --- */
 .text-container {
-	border-radius: 6px;
-	padding: 8px 12px;
 	width: auto;
+	padding: 8px 12px;
+	border-radius: 6px;
 	font-size: 1.1em;
 	line-height: 22px;
 	font-family: 'Jura';
 	white-space: nowrap;
+	background-color: rgba(var(--bg-dark-rgb), 0.4);
 	/* GPU acceleration */
 	transform: translateZ(0);
 	will-change: transform, opacity;
@@ -61,16 +62,16 @@
 
 /* --- Line Variants --- */
 .popup-line {
-	position: absolute;
-	transform: translateZ(0);
 	z-index: -10;
-	filter: blur(1px);
-	will-change: transform, opacity;
-	box-shadow: 0 0 10px rgba(146, 255, 230, 0.1),
-		0 0 20px rgba(146, 255, 230, 0.3);
-	border-radius: 6px;
+	position: absolute;
 	width: 3px;
 	height: 150px;
+	transform: translateZ(0);
+	border-radius: 6px;
+	box-shadow: 0 0 10px rgba(146, 255, 230, 0.1),
+		0 0 20px rgba(146, 255, 230, 0.3);
+	filter: blur(1px);
+	will-change: transform, opacity;
 }
 
 .popup-line.up {
@@ -93,6 +94,23 @@
 	);
 }
 
+@media (max-height: 600px) {
+	.popup-line-container {
+		height: clamp(100px, 11vh, 150px);
+	}
+	.popup-line {
+		height: clamp(100px, 11vh, 150px);
+	}
+	.text-container {
+		padding: 0.5em 1em;
+		font-size: clamp(0.5em, 1.2vw, 1em);
+		line-height: clamp(1.1em, 1.2vh, 1.2em);
+	}
+	.text-container > strong:first-child {
+		line-height: clamp(1.1em, 2vw, 1.2em);
+	}
+}
+
 @media (min-width: 900px) and (max-width: 1400px) {
 	.popup-line-container {
 		height: clamp(100px, 11vh, 150px);
@@ -101,9 +119,9 @@
 		height: clamp(100px, 11vh, 150px);
 	}
 	.text-container {
+		padding: 0.5em 1em;
 		font-size: clamp(0.5em, 1.2vw, 1em);
 		line-height: clamp(1.1em, 1.2vh, 1.2em);
-		padding: 0.5em 1em;
 	}
 	.text-container > strong:first-child {
 		line-height: clamp(1.1em, 2vw, 1.2em);

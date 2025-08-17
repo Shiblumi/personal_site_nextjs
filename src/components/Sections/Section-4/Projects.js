@@ -23,8 +23,7 @@ export default function Projects() {
 		<div className={`${styles['projects-page-container']}`}>
 			{/* Project information */}
 			<AnimatePresence mode='wait'>
-				<TextBox styles={{ width: '100%', paddingBottom: '0px', marginBottom: '0px' }} delay='0.3'>
-					{/* TODO: Move this motion.div into TextBox. */}
+				<TextBox styles={{ width: '100%' }} delay='0.3'>
 					<motion.div
 						key={selectedProject.id}
 						variants={contentVariants}

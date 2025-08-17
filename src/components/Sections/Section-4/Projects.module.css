@@ -48,7 +48,7 @@
 			to bottom,
 			transparent 0%,
 			rgb(0, 0, 0) clamp(8%, 4vh, 15%),
-			rgb(0, 0, 0) clamp(85%, 5vh, 90%),
+			rgb(0, 0, 0) clamp(90%, 4vh, 95%),
 			transparent 100%
 		);
 	}
@@ -59,7 +59,7 @@
 		padding: 8vh 2vw 4vh 2vw;
 	}
 	.description-container {
-		height: calc(100% - 120px);
+		height: calc(100% - 100px);
 	}
 }
 
