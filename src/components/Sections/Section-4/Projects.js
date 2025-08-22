@@ -2,9 +2,9 @@ import TextBox from '@/components/UI/TextBox/TextBox';
 import styles from './Projects.module.css';
 import ProjectGallery from '@/components/UI/ProjectGallery/ProjectGallery';
 import { useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { AnimatePresence } from 'framer-motion';
-import { projectsData } from './ProjectGalleryItems';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { projectsData, skillsLogoSrc } from './ProjectsMetadata';
+import Image from 'next/image';
 
 export default function Projects() {
 	const sectionRef = useRef(null);
@@ -24,11 +24,26 @@ export default function Projects() {
 		exit: { opacity: 0 },
 	};
 
+	const skillLogoVariants = {
+		hidden: { opacity: 0, translateX: 10, transition: { duration: 0.2 } },
+		visible: {
+			opacity: 1,
+			translateX: 0,
+			transition: {
+				duration: 0.5,
+			},
+		},
+	};
+
 	return (
 		<div ref={sectionRef} className={`${styles['projects-page-container']}`}>
 			{/* Project information */}
 			<AnimatePresence mode='wait'>
-				<TextBox styles={{ width: '100%',}} delay='0.3' opacity={0.25}>
+				<TextBox
+					styles={{ width: '100%', lineHeight: '1.6' }}
+					delay='0.3'
+					opacity={0.25}
+				>
 					<motion.div
 						key={selectedProject.id}
 						variants={contentVariants}
@@ -44,7 +59,12 @@ export default function Projects() {
 								ease: 'easeOut',
 							},
 						}}
-						style={{ height: '100%', overflow: 'hidden' }}
+						style={{
+							display: 'flex',
+							flexDirection: 'column',
+							height: '100%',
+							overflow: 'hidden',
+						}}
 					>
 						{/* Title */}
 						<h2 style={{ color: 'var(--color-primary)' }}>
@@ -59,31 +79,59 @@ export default function Projects() {
 							<strong>Date:</strong> {selectedProject.date}
 						</p>
 						{/* Tech Stack */}
-						<strong>Tech Stack:</strong>
-						<div
-							style={{
-								display: 'flex',
-								gap: '8px',
-								flexWrap: 'wrap',
-							}}
-						>
-							{selectedProject.skills.map((skill, index) => (
-								<span
-									key={index}
-									style={{
-										padding: '4px 8px',
-										backgroundColor: 'rgba(var(--primary-rgb), 0.2)',
-										borderRadius: '4px',
-										fontSize: '0.9em',
-									}}
-								>
-									{skill}
-								</span>
+						<motion.div
+                            key={`tech-stack-${selectedProject.id}`}
+                            initial='hidden'
+                            animate='visible'
+                            variants={{
+                                hidden: {},
+                                visible: {
+                                    transition: {
+                                        staggerChildren: 0.1,
+                                        delayChildren: 0.2,
+                                    },
+                                },
+                            }}
+                            style={{
+                                display: 'flex',
+                                columnGap: '24px',
+                                rowGap: '12px',
+                                flexWrap: 'wrap',
+                                marginBottom: '4px',
+                            }}
+                        >
+                            {selectedProject.title !== 'Maptodon' &&<strong>Tech Stack:</strong>}
+							{/* Tech Stack: Skill Logos */}
+                            {selectedProject.skills.map((skill, index) => (
+                                <motion.div
+                                    key={`${selectedProject.id}-${skill}-${index}`}
+                                    variants={skillLogoVariants}
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: 'clamp(6px, 1vw, 8px)',
+                                        fontSize: '0.8em',
+                                    }}
+                                >
+									<Image
+										src={skillsLogoSrc[skill]}
+										alt={`${skill} logo`}
+										width={40}
+										height={40}
+										style={{
+											objectFit: 'contain',
+											userSelect: 'none',
+											width: 'clamp(18px, 2vw, 28px)',
+											height: 'clamp(18px, 2vw, 30px)',
+										}}
+									/>
+									<span>{skill}</span>
+								</motion.div>
 							))}
-						</div>
+						</motion.div>
+						{/* Description */}
 						<div className={styles['description-container']}>
-							{/* Description */}
-							<p style={{lineHeight: '1.6', marginRight: '1em' }}>
+							<p style={{ lineHeight: '1.6', marginRight: '1em' }}>
 								{selectedProject.description}
 							</p>
 						</div>

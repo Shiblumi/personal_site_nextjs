@@ -14,7 +14,7 @@
 	border-bottom: none;
 	border-radius: clamp(4px, 0.5vw, 8px) clamp(4px, 0.5vw, 8px) 0 0;
 	padding: clamp(8px, 1vw, 12px) clamp(12px, 2vw, 24px);
-	background-color: rgba(var(--bg-dark-rgb), 0.15);
+	background-color: rgba(7, 9, 42, 0.25);
 	width: auto;
 	height: auto;
 }
@@ -29,7 +29,7 @@
 	font-size: clamp(0.9em, 2.5vw, 1.4em);
 	font-family: 'Jura';
 	user-select: none;
-	text-shadow: 0 0 16px rgba(5, 0, 16);
+	text-shadow: 0 0 8px rgba(5, 0, 16), 0 0 16px rgba(5, 0, 16);
 }
 
 .vertical-line {

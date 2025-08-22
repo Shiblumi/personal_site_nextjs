@@ -41,7 +41,7 @@
 		width: 100%;
 	}
 	.description-container {
-		height: calc(100% - 137px);
+		height: calc(100%);
 		min-height: 80px;
 		mask: linear-gradient(
 			to bottom,

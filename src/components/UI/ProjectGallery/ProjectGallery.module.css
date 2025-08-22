@@ -10,7 +10,7 @@
 	max-width: 800px;
 	height: 400px;
 	font-size: clamp(0.6rem, 2.5vw, 1rem);
-	background-color: rgba(var(--bg-dark-rgb), 0.7);
+	background-color: rgba(7, 9, 42, 0.25);
 	/* GPU acceleration */
 	transform: translateZ(0);
 	will-change: transform, opacity;

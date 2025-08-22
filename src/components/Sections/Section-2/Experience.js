@@ -200,7 +200,7 @@ export default function Experience(props) {
 					flexDirection: 'column',
 					gap: '0px',
 				}}
-				opacity={0.25}
+				opacity={0.3}
 				delay='0.65'
 				sectionNum={2}
 			>

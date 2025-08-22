@@ -38,7 +38,7 @@ export default function TextBox({
 				}}
 				style={{
 					...customStyles,
-					backgroundColor: `rgba(var(--bg-dark-rgb), ${opacity})`,
+					backgroundColor: `rgba(7, 9, 42, ${opacity})`,
 				}}
 			>
 				{children}

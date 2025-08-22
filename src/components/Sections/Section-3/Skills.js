@@ -3,6 +3,7 @@ import TextBox from '@/components/UI/TextBox/TextBox';
 import styles from './Skills.module.css';
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
+import { frontendSkills, backendSkills, generalSkills, learningSkills } from './SkillsMetadata';
 
 export default function Skills() {
 	const sectionRef = useRef(null);
@@ -10,32 +11,7 @@ export default function Skills() {
 		once: false,
 		amount: 0.75,
 	});
-	const frontendSkills = [
-		{ src: '/images/logos/react-icon.svg', name: 'React' },
-		{ src: '/images/logos/framer-motion-logo.svg', name: 'Motion' },
-		{ src: '/images/logos/javascript-logo.svg', name: 'JavaScript' },
-		{ src: '/images/logos/html-logo.svg', name: 'HTML' },
-		{ src: '/images/logos/CSS3-logo.svg', name: 'CSS' },
-	];
-
-	const backendSkills = [
-		{ src: '/images/logos/nextjs-logo.svg', name: 'NextJS' },
-		{ src: '/images/logos/expressjs-logo.svg', name: 'ExpressJS' },
-		{ src: '/images/logos/pydantic-logo.png', name: 'PydanticAI' },
-		{ src: '/images/logos/node-logo.svg', name: 'NodeJS' },
-		{ src: '/images/logos/sql-generic-logo.svg', name: 'SQL' },
-	];
-
-	const generalSkills = [
-		{ src: '/images/logos/python-logo.svg', name: 'Python' },
-		{ src: '/images/logos/cpp-logo.svg', name: 'C++' },
-		{ src: '/images/logos/spline-logo.png', name: 'Spline3D' },
-	];
-
-	const learningSkills = [
-		{ src: '/images/logos/tailwind-css-logo.svg', name: 'Tailwind' },
-		{ src: '/images/logos/typescript-logo.svg', name: 'TypeScript' },
-	];
+	
 
 	return (
 		<div ref={sectionRef} className={`${styles['skills-page-container']}`}>
@@ -78,7 +54,7 @@ export default function Skills() {
 						strike colors. Bring a spring upon her cable holystone blow the man
 						down spanker Shiver me timbers to go on account lookout wherry
 						doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm
-						spyglass sheet transom heave to.
+						spyglass sheet transom.
 					</p>
 				</div>
 			</TextBox>
