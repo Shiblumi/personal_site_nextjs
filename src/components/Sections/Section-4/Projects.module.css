@@ -17,8 +17,7 @@
 }
 
 .description-container {
-	padding: clamp(10px, 4vh, 35px) 0px;
-	padding-right: 8px;
+	padding: 1.2em 0 2em 0;
 	overflow-y: auto;
 	scroll-behavior: smooth;
 	scrollbar-color: rgba(var(--primary-rgb), 0.3) transparent;

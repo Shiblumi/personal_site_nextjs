@@ -8,9 +8,9 @@
 	max-width: 1800px;
 	height: 100%;
 	margin: 0 auto;
-	padding: 200px 64px 64px 64px;
-	gap: 150px;
-	padding-bottom: 10vh;
+	padding: 200px 64px 10vh 64px;
+	gap: clamp(24px, 6vh, 75px);
+
 	/* GPU acceleration */
 	transform: translateZ(0);
 	will-change: transform;
@@ -18,9 +18,8 @@
 
 .skills-showcase {
 	display: flex;
-	/* gap: 50px; */
 	column-gap: 50px;
-	row-gap: 80px;	
+	row-gap: clamp(64px, 6vh, 100px);
 	flex-direction: row;
 	flex-wrap: wrap;
 	max-width: 1200px;
@@ -36,14 +35,14 @@
 	.skills-page-container {
 		flex-direction: column-reverse;
 		padding: 16vh 3vw 8vh 3vw;
-		gap: clamp(24px, 5vw, 64px);
+		gap: clamp(24px, 5vh, 64px);
 	}
 }
 
 @media (max-width: 800px) {
 	.skills-page-container {
 		padding: 8vh 2vw 4vh 2vw;
-		gap: clamp(24px, 10vw, 100px);
+		gap: clamp(24px, 10vh, 100px);
 	}
 
 	.skills-showcase {
@@ -65,7 +64,7 @@
 
 @media (max-height: 800px) and (max-width: 800px) {
 	.skills-page-container {
-		padding: 75px 2vw 4vh 2vw;
+		padding: 100px 2vw 4vh 2vw;
 		gap: clamp(10px, 3vh, 60px);
 	}
 }

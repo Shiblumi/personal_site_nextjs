@@ -28,7 +28,7 @@ export default function Projects() {
 		<div ref={sectionRef} className={`${styles['projects-page-container']}`}>
 			{/* Project information */}
 			<AnimatePresence mode='wait'>
-				<TextBox styles={{ width: '100%' }} delay='0.3' opacity={0.25}>
+				<TextBox styles={{ width: '100%',}} delay='0.3' opacity={0.25}>
 					<motion.div
 						key={selectedProject.id}
 						variants={contentVariants}
@@ -83,7 +83,7 @@ export default function Projects() {
 						</div>
 						<div className={styles['description-container']}>
 							{/* Description */}
-							<p style={{ margin: 0, lineHeight: '1.6' }}>
+							<p style={{lineHeight: '1.6', marginRight: '1em' }}>
 								{selectedProject.description}
 							</p>
 						</div>

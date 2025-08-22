@@ -195,21 +195,27 @@ export default function Experience(props) {
 				styles={{
 					width: '100%',
 					maxWidth: '1000px',
+					padding: '0px',
 					display: 'flex',
-					gap: '0px',
 					flexDirection: 'column',
-					paddingBottom: '0px',
+					gap: '0px',
 				}}
 				opacity={0.25}
 				delay='0.65'
 				sectionNum={2}
 			>
-				<h1>Experience</h1>
+				<h1
+					style={{
+						padding: 'clamp(8px, 2vh, 16px) 0 0 clamp(24px, 2vw, 32px)',
+					}}
+				>
+					Experience
+				</h1>
 				<div
 					style={{
 						overflowY: 'auto',
 						scrollBehavior: 'smooth',
-						scrollbarColor: 'rgba(var(--primary-rgb), 0.3) transparent',
+						scrollbarColor: 'rgba(var(--secondary-rgb), 0.3) transparent',
 						scrollbarWidth: 'thin',
 						mask: `linear-gradient(
 							to bottom,
@@ -218,7 +224,9 @@ export default function Experience(props) {
 							rgb(0, 0, 0) clamp(92%, 3vh, 95%),
 							transparent 100%
 						)`,
-						padding: '8px 8px 16px 0px',
+						padding:
+							'clamp(8px, 1vh, 24px) clamp(24px, 2vw, 32px) clamp(8px, 1vh, 24px) clamp(24px, 2vw, 32px)',
+						margin: '0 clamp(8px, 2vw, 16px) clamp(8px, 1vh, 16px) 0',
 					}}
 				>
 					<p>

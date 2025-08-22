@@ -81,7 +81,7 @@
 			transparent 100%
 		);
 		scroll-behavior: smooth;
-		scrollbar-color: rgba(var(--primary-rgb), 0.3) transparent;
+		scrollbar-color: rgba(var(--secondary-rgb), 0.3) transparent;
 		scrollbar-width: none;
 	}
 	.exp-bar-wrapper {
