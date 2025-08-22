@@ -1,6 +1,6 @@
 .text-container {
 	height: auto;
-	padding: 22px 44px;
+	padding: 22px 44px 0px 44px;
 	overflow: hidden;
 	border-radius: 12px;
 	font-size: 1.2em;
@@ -14,7 +14,7 @@
 @media (max-width: 1600px) {
 	.text-container {
 		padding: 16px 32px;
-		padding-bottom: 2vh !important;
+		/* padding-bottom: 2vh !important; */
 		font-size: 1.1em;
 		line-height: 1.4em;
 	}

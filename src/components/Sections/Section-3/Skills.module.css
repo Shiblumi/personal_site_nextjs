@@ -1,15 +1,16 @@
 .skills-page-container {
 	display: flex;
 	position: relative;
-	flex-direction: row;
+	flex-direction: column-reverse;
 	align-items: center;
 	justify-content: center;
 	width: 90%;
-	max-width: 1700px;
+	max-width: 1800px;
 	height: 100%;
 	margin: 0 auto;
 	padding: 200px 64px 64px 64px;
 	gap: 150px;
+	padding-bottom: 10vh;
 	/* GPU acceleration */
 	transform: translateZ(0);
 	will-change: transform;
@@ -19,9 +20,10 @@
 	display: flex;
 	/* gap: 50px; */
 	column-gap: 50px;
-	row-gap: 80px;
-	flex-direction: column;
-
+	row-gap: 80px;	
+	flex-direction: row;
+	flex-wrap: wrap;
+	max-width: 1200px;
 	align-content: center;
 	align-items: center;
 	justify-content: center;
@@ -35,10 +37,6 @@
 		flex-direction: column-reverse;
 		padding: 16vh 3vw 8vh 3vw;
 		gap: clamp(24px, 5vw, 64px);
-	}
-	.skills-showcase {
-		flex-direction: row;
-		flex-wrap: wrap;
 	}
 }
 

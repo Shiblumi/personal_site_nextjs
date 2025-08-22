@@ -2,11 +2,13 @@ import { motion } from 'framer-motion';
 import styles from './TextBox.module.css';
 
 export default function TextBox({
+	className,
 	styles: customStyles = {},
 	opacity = 0,
 	delay = '0.3',
 	children,
 }) {
+	
 	const variants = {
 		hidden: { scale: 0.98, opacity: 0, transition: { duration: 0.2 } },
 		visible: { scale: 1, opacity: 1 },
@@ -14,7 +16,7 @@ export default function TextBox({
 
 	return (
 			<motion.div
-				className={`${styles['text-container']} glass-dark-soft-no-gradient`}
+				className={`${className} ${styles['text-container']} glass-dark-soft-no-gradient`}
 				initial='hidden'
 				whileInView='visible'
 				layout

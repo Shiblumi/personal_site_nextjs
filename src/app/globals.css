@@ -229,7 +229,7 @@ button:focus {
 .glass-dark-soft-no-gradient {
 	position: relative;
 	z-index: 1;
-	backdrop-filter: blur(3.5px);
+	backdrop-filter: blur(6.5px);
 	/* border-color: rgba(146, 255, 230, 0.2) rgba(146, 255, 230, 0.2)
 		rgba(146, 255, 230, 0.1) rgba(255, 255, 255, 0.1); */
 	/* box-shadow: inset 0px 0px 14px 4px rgba(40, 31, 68, 0.25); */

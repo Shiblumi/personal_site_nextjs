@@ -42,11 +42,13 @@ export default function Skills() {
 			<TextBox
 				styles={{
 					width: '100%',
+					maxWidth: '1000px',
 					display: 'flex',
 					gap: '0px',
 					flexDirection: 'column',
 					paddingBottom: '0px',
 				}}
+				opacity={0.25}
 				delay='0.3'
 			>
 				<h1>Skills</h1>
@@ -80,10 +82,30 @@ export default function Skills() {
 				</div>
 			</TextBox>
 			<div className={`${styles['skills-showcase']}`}>
-				<SkillsBox title='Frontend' logos={frontendSkills} delay='0.3' isInView={isInView} />
-				<SkillsBox title='Backend' logos={backendSkills} delay='0.45' isInView={isInView} />
-				<SkillsBox title='General' logos={generalSkills} delay='0.6' isInView={isInView} />
-				<SkillsBox title='Learning...' logos={learningSkills} delay='0.75' isInView={isInView} />
+				<SkillsBox
+					title='Frontend'
+					logos={frontendSkills}
+					delay='0.3'
+					isInView={isInView}
+				/>
+				<SkillsBox
+					title='Backend'
+					logos={backendSkills}
+					delay='0.45'
+					isInView={isInView}
+				/>
+				<SkillsBox
+					title='General'
+					logos={generalSkills}
+					delay='0.6'
+					isInView={isInView}
+				/>
+				<SkillsBox
+					title='Learning...'
+					logos={learningSkills}
+					delay='0.75'
+					isInView={isInView}
+				/>
 			</div>
 		</div>
 	);

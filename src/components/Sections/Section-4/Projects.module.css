@@ -9,7 +9,7 @@
 	max-width: 1700px;
 	height: 100%;
 	margin: 0 auto;
-	padding: 200px 64px 0px 64px;
+	padding: 200px 64px 10vh 64px;
 	gap: 150px;
 	/* GPU acceleration */
 	transform: translateZ(0);

@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { useNavbarContext } from '@/components/UI/ActiveSectionContext';
 
 // Components import
-import SplineScene from '@/components/UI/SplineScene';
+import BackgroundVideo from '@/components/UI/BackgroundVideo';
 import ScrollingTimeline from '@/components/UI/ScrollingTimeline/ScrollingTimeline';
 import Footer from '@/components/UI/Footer/Footer';
 
@@ -63,7 +63,7 @@ export default function Page() {
 		<main className={styles['main']}>
 			<ScrollingTimeline />
 			<div className={styles['background-scene']}>
-				<SplineScene />
+				<BackgroundVideo />
 			</div>
 			<div className={styles['scroll-wrapper']}>
 				{/* Home */}
