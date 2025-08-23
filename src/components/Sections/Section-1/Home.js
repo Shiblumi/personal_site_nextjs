@@ -1,11 +1,11 @@
 'use client';
 
 import styles from './Home.module.css';
-import ActionButton from '@/components/UI/Buttons/ActionButton';
 import AlternatingText from '../../UI/AlternatingText/AlternatingText';
-import DownArrow from '@/components/UI/Icons/DownArrow';
+import TextBox from '@/components/UI/TextBox/TextBox';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import Image from 'next/image';
 
 export default function Home() {
 	const sectionRef = useRef(null);
@@ -48,45 +48,65 @@ export default function Home() {
 
 	return (
 		<motion.div
-			ref={sectionRef}
 			className={styles['home-container']}
 			variants={nameParentVariants}
 			initial='hidden'
 			animate={isInView ? 'visible' : 'hidden'}
 		>
-			{/* Name */}
-			<motion.div className={styles['name-wrapper']} variants={nameVariants}>
-				<span className={`${styles['dirk']} full-dropshadow`}>
-					<span className={styles['di']}>DI</span>RK
-				</span>
-				<br />
-				<span className={`${styles['wilson']} full-dropshadow`}>
-					<span className={styles['wi']}>WI</span>LSON
-				</span>
-			</motion.div>
+			<motion.div ref={sectionRef} className={styles['home-content-container']}>
+				{/* Name */}
+				<motion.div className={styles['name-wrapper']} variants={nameVariants}>
+					<span className={`${styles['dirk']} full-dropshadow`}>
+						<span className={styles['di']}>DI</span>RK
+					</span>
+					<span className={`${styles['wilson']} full-dropshadow`}>
+						<span className={styles['wi']}>WI</span>LSON
+					</span>
+				</motion.div>
 
-			{/* Dynamic Text */}
-			<motion.div variants={nameVariants}>
-				<AlternatingText />
-			</motion.div>
-
-			{/* Buttons */}
-			<motion.div variants={nameVariants}>
-				<div className={styles['buttons-wrapper']}>
-					<ActionButton
-						text='Contact'
-						class='glass-dark-primary'
-						routeTo='contact'
-						sectionNum={1}
-					/>
-					<ActionButton
-						text='Learn More'
-						class='full-dropshadow-hoverable'
-						routeTo='exp'
-						sectionNum={1}
-						icon={DownArrow}
-					/>
-				</div>
+				{/* Dynamic Text */}
+				<motion.div variants={nameVariants}>
+					<AlternatingText />
+				</motion.div>
+				{/* Intro Text */}
+				{/* <TextBox styles={{ maxWidth: '600px' }} delay='0.8' opacity={0.3}>
+					<p>Hi my name is wuuuuuuh.</p>
+				</TextBox> */}
+				{/* Buttons */}
+				<motion.div variants={nameVariants} style={{ width: '100%' }}>
+					<div className={styles['buttons-wrapper']}>
+						<button
+							type='button'
+							className={`${styles['home-button']} glass-dark-primary`}
+							onClick={() => {
+								document.getElementById('contact').scrollIntoView({
+									behavior: 'smooth',
+								});
+							}}
+						>
+							Contact
+						</button>
+						<button
+							type='button'
+							className={styles['home-button']}
+							onClick={() => {
+								document.getElementById('exp').scrollIntoView({
+									behavior: 'smooth',
+								});
+							}}
+							style={{ backdropFilter: 'none'}}
+						>
+							Learn More
+							<Image
+								className={`${styles['home-button-down-arrow']}`}
+								src='/images/down-arrow.svg'
+								alt=''
+								width={38}
+								height={38}
+							/>
+						</button>
+					</div>
+				</motion.div>
 			</motion.div>
 		</motion.div>
 	);

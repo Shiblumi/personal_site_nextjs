@@ -16,7 +16,7 @@ export const projectsData = [
 		description:
 			"Two ghostly white figures in coveralls and helmets are softly dancing Cambrian explosion colonies preserve and cherish that pale blue dot made in the interiors of collapsing stars star stuff harvesting star light. The carbon in our apple pies the sky calls to us white dwarf Orion's sword extraordinary claims require extraordinary evidence Tunguska event? Globular star cluster dream of the mind's eye intelligent beings as a patch of light dream of the mind's eye ship of the imagination and billions upon billions upon billions upon billions upon billions upon billions upon billions.",
 		skills: ['Python', 'PydanticAI', 'PineconeDB', 'JS', 'CSS', 'HTML'],
-		role: 'Full-Stack Developer',
+		role: 'R&D Engineer',
 		date: 'Feb 2025',
 		image: '/images/project2.jpg',
 		link: '/projects/project-two',
@@ -27,7 +27,7 @@ export const projectsData = [
 		description:
 			'A very small stage in a vast cosmic arena permanence of the stars corpus callosum two ghostly white figures in coveralls and helmets are softly dancing are creatures of the cosmos Hypatia? Network of wormholes descended from astronomers made in the interiors of collapsing stars shores of the cosmic ocean extraordinary claims require extraordinary evidence a billion trillion. A mote of dust suspended in a sunbeam made in the interiors of collapsing stars a still more glorious dawn awaits Jean-François Champollion courage of our questions rings of Uranus and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
 		skills: ['NextJS', 'React', 'JS', 'CSS', 'HTML'],
-		role: 'Full-Stack Developer',
+		role: 'Front-End Developer',
 		date: 'Jan 2024',
 		image: '/images/project2.jpg',
 		link: '/projects/project-two',
@@ -49,7 +49,7 @@ export const projectsData = [
 		description:
 			'Encyclopaedia galactica of brilliant syntheses a very small stage in a vast cosmic arena birth something incredible is waiting to be known Drake Equation. Ship of the imagination how far away rich in heavy atoms dispassionate extraterrestrial observer descended from astronomers extraplanetary? From which we spring concept of the number one hundreds of thousands a mote of dust suspended in a sunbeam citizens of distant epochs the carbon in our apple pies and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
 		skills: ['Python'],
-		role: 'Back-End Developer',
+		role: 'Developer',
 		date: 'Nov 2023',
 		image: '/images/project2.jpg',
 		link: '/projects/project-two',

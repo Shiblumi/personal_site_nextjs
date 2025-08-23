@@ -14,6 +14,7 @@ const roles = [
 
 const CYCLE_INTERVAL = 3000;
 
+// TODO: Remove context dependency k thanks.
 export default function AlternatingText() {
 	const [index, setIndex] = useState(0);
 	const { activeSection } = useNavbarContext();
@@ -31,7 +32,7 @@ export default function AlternatingText() {
 
 		return () => clearInterval(intervalId);
 
-		return () => clearTimeout(startCycling);
+		// return () => clearTimeout(startCycling);
 	}, [shouldAnimate]);
 
 	// Animation variants
