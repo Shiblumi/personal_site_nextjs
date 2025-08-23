@@ -163,13 +163,13 @@ button:focus {
 	border-radius: 18px;
 	background-image: radial-gradient(
 			circle at 100% 10%,
-			rgba(77, 30, 208, 0.15) 20%,
-			rgba(170, 144, 255, 0) 45%
+			rgba(19, 7, 87, 0.15) 10%,
+			rgba(59, 62, 255, 0) 45%
 		),
 		radial-gradient(
 			circle at 10% 100%,
 			rgba(38, 133, 181, 0.1) 10%,
-			rgba(170, 144, 255, 0) 35%
+			rgba(144, 153, 255, 0) 35%
 		),
 		linear-gradient(190deg, rgba(106, 138, 255, 0.1), rgba(67, 183, 187, 0.15));
 }

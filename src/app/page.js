@@ -14,6 +14,7 @@ import Home from '@/components/Sections/Section-1/Home';
 import Experience from '@/components/Sections/Section-2/Experience';
 import Skills from '@/components/Sections/Section-3/Skills';
 import Projects from '@/components/Sections/Section-4/Projects';
+import Contact from '@/components/Sections/Section-5/Contact';
 
 export default function Page() {
 	const { setActiveSection } = useNavbarContext();
@@ -88,7 +89,7 @@ export default function Page() {
 
 				{/* Contact */}
 				<section id='contact' className={styles['scroll-section']}>
-					<h1>Section 5</h1>
+					<Contact />
 				</section>
 				<Footer />
 			</div>
