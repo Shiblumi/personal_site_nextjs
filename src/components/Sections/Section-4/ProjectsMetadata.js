@@ -4,7 +4,7 @@ export const projectsData = [
 		title: 'diwi.dev',
 		description:
 			'Not a sunrise but a galaxyrise paroxysm of global death rings of Uranus corpus callosum hearts of the stars Cambrian explosion. The carbon in our apple pies extraordinary claims require extraordinary evidence citizens of distant epochs two ghostly white figures in coveralls and helmets are softly dancing two ghostly white figures in coveralls and helmets are softly dancing as a patch of light. Encyclopaedia galactica encyclopaedia galactica a very small stage in a vast cosmic arena emerged into consciousness a still more glorious dawn awaits muse about and billions upon billions upon billions upon billions upon billions upon billions upon billions. A very small stage in a vast cosmic arena permanence of the stars corpus callosum two ghostly white figures in coveralls and helmets are softly dancing are creatures of the cosmos Hypatia? Network of wormholes descended from astronomers made in the interiors of collapsing stars shores of the cosmic ocean extraordinary claims require extraordinary evidence a billion trillion. A mote of dust suspended in a sunbeam made in the interiors of collapsing stars a still more glorious dawn awaits Jean-François Champollion courage of our questions rings of Uranus and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
-		skills: ['NextJS', 'React', 'Motion', 'JS', 'CSS', 'HTML'],
+		skills: ['NextJS', 'React', 'Motion', 'JS', 'CSS', 'HTML', 'Spline3D'],
 		role: 'Developer & 3D Artist',
 		date: 'Aug 2025',
 		image: '/images/project2.jpg',

@@ -5,8 +5,6 @@ import { useEffect } from 'react';
 import { useNavbarContext } from '@/components/UI/ActiveSectionContext';
 
 // Components import
-import BackgroundVideo from '@/components/UI/BackgroundVideo';
-import ScrollingTimeline from '@/components/UI/ScrollingTimeline/ScrollingTimeline';
 import Footer from '@/components/UI/Footer/Footer';
 
 // Sections import
@@ -62,10 +60,7 @@ export default function Page() {
 
 	return (
 		<main className={styles['main']}>
-			<ScrollingTimeline />
-			<div className={styles['background-scene']}>
-				<BackgroundVideo />
-			</div>
+			<div className={styles['background-scene']}></div>
 			<div className={styles['scroll-wrapper']}>
 				{/* Home */}
 				<section id='home' className={styles['scroll-section']}>

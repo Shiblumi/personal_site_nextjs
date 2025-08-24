@@ -15,3 +15,7 @@
 	transform: translateZ(0);
 	will-change: transform;
 }
+
+.input-field-small {
+    width: clamp(300px, 50%, 600px);
+}

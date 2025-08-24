@@ -46,7 +46,7 @@ export default function Contact() {
 
                 {/* Email Field */}
 				<div>
-					<label htmlFor='email'>Email</label>
+					<label className={`${styles['input-field-small']}`} htmlFor='email'>Email</label>
 					<input
 						name='email'
 						id='email'
