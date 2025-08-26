@@ -9,7 +9,7 @@ export default function Experience(props) {
 	const sectionRef = useRef(null);
 	const isInView = useInView(sectionRef, {
 		once: false,
-		amount: 0.5,
+		amount: 0.75,
 	});
 
 	const expBarVariants = {

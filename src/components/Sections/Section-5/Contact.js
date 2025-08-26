@@ -34,21 +34,132 @@ export default function Contact() {
 		amount: 0.75,
 	});
 
+	// Container animation variants
+	const containerVariants = {
+		hidden: {
+			opacity: 0,
+			scale: 0.9,
+		},
+		visible: {
+			opacity: 1,
+			scale: 1,
+			transition: {
+				duration: 0.8,
+				ease: 'easeOut',
+			},
+		},
+	};
+
+	// Form animation variants
+	const formVariants = {
+		hidden: {
+			opacity: 0,
+			y: 0,
+		},
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				duration: 0.6,
+				staggerChildren: 0.2,
+				delayChildren: 0.2,
+			},
+		},
+	};
+
+	// Form group animation (for each label-input pair)
+	const formGroupVariants = {
+		hidden: {
+			opacity: 1,
+			scale: 0.98,
+		},
+		visible: {
+			opacity: 1,
+			scale: 1,
+			transition: {
+				duration: 0.5,
+				ease: 'easeOut',
+				staggerChildren: 0.1, // Small stagger within each field group
+			},
+		},
+	};
+
+	// Field title animation variants (no backdrop filter)
+	const formTitleVariants = {
+		hidden: {
+			opacity: 0,
+			scale: 0.95,
+		},
+		visible: {
+			opacity: 1,
+			scale: 1,
+			transition: {
+				duration: 0.5,
+				ease: 'easeOut',
+			},
+		},
+	};
+
+	// Field animation variants (with backdrop filter)
+	const formFieldVariants = {
+		hidden: {
+			opacity: 0,
+			scale: 0.98,
+			backdropFilter: 'blur(0px)',
+		},
+		visible: {
+			opacity: 1,
+			scale: 1,
+			backdropFilter: 'blur(5px)',
+			transition: {
+				duration: 0.5,
+				ease: 'easeOut',
+			},
+		},
+	};
+
+	const formButtonVariants = {
+		hidden: { opacity: 0, scale: 0.98, backdropFilter: 'blur(0px)' },
+		visible: {
+			opacity: 1,
+			scale: 1,
+			backdropFilter: 'blur(5px)',
+			transition: {
+				duration: 0.5,
+				ease: 'easeOut',
+				delay: 1.1,
+			},
+		},
+	};
+
 	return (
-		<div
+		<motion.div
 			ref={sectionRef}
 			id='contact'
 			className={styles['contact-page-container']}
+			variants={containerVariants}
+			initial='hidden'
+			animate={isInView ? 'visible' : 'hidden'}
 		>
-			<form className={`${styles['contact-form']}`} onSubmit={sendMail}>
-				<div>
+			<motion.form
+				className={`${styles['contact-form']}`}
+				onSubmit={sendMail}
+				variants={formVariants}
+			>
+				{/* Title */}
+				<motion.div variants={formGroupVariants}>
 					<h1 style={{ marginBottom: '12px' }}>Contact</h1>
-				</div>
+				</motion.div>
 
-				{/* Email Field */}
-				<div className={`${styles['titled-input-field']}`}>
-					<label htmlFor='email'>Email</label>
-					<input
+				{/* Email Field Group */}
+				<motion.div
+					className={`${styles['titled-input-field']}`}
+					variants={formGroupVariants}
+				>
+					<motion.label variants={formTitleVariants} htmlFor='email'>
+						Email
+					</motion.label>
+					<motion.input
 						className={`glass-dark-soft-no-gradient`}
 						name='email'
 						id='email'
@@ -59,13 +170,23 @@ export default function Contact() {
 							setSenderEmail(e.target.value);
 						}}
 						placeholder=''
+						variants={formFieldVariants}
+						whileFocus={{
+							scale: 1.02,
+							transition: { duration: 0.2 },
+						}}
 					/>
-				</div>
+				</motion.div>
 
-				{/* Subject Field */}
-				<div className={`${styles['titled-input-field']}`}>
-					<label htmlFor='subject'>Subject</label>
-					<input
+				{/* Subject Field Group */}
+				<motion.div
+					className={`${styles['titled-input-field']}`}
+					variants={formGroupVariants}
+				>
+					<motion.label variants={formTitleVariants} htmlFor='subject'>
+						Subject
+					</motion.label>
+					<motion.input
 						className={`glass-dark-soft-no-gradient`}
 						name='subject'
 						id='subject'
@@ -76,13 +197,23 @@ export default function Contact() {
 							setSubject(e.target.value);
 						}}
 						placeholder=''
+						variants={formFieldVariants}
+						whileFocus={{
+							scale: 1.02,
+							transition: { duration: 0.2 },
+						}}
 					/>
-				</div>
+				</motion.div>
 
-				{/* Message Field */}
-				<div className={`${styles['titled-input-field']}`}>
-					<label htmlFor='message'>Message</label>
-					<textarea
+				{/* Message Field Group */}
+				<motion.div
+					className={`${styles['titled-input-field']}`}
+					variants={formGroupVariants}
+				>
+					<motion.label variants={formTitleVariants} htmlFor='message'>
+						Message
+					</motion.label>
+					<motion.textarea
 						className={`glass-dark-soft-no-gradient`}
 						name='message'
 						id='message'
@@ -90,20 +221,28 @@ export default function Contact() {
 						cols={10}
 						rows={5}
 						value={message}
+						variants={formFieldVariants}
 						onChange={(e) => {
 							setMessage(e.target.value);
 						}}
 						placeholder=''
-					></textarea>
-				</div>
-				<button
+						whileFocus={{
+							scale: 1.01,
+							transition: { duration: 0.2 },
+						}}
+					></motion.textarea>
+				</motion.div>
+
+				{/* Submit Button */}
+				<motion.button
 					className={`${styles['submit-button']} glass-dark-primary`}
 					type='submit'
+					variants={formButtonVariants}
 				>
-					<span>Send Message</span>
-				</button>
-			</form>
+					<motion.span>Send Message</motion.span>
+				</motion.button>
+			</motion.form>
 			<Footer />
-		</div>
+		</motion.div>
 	);
 }

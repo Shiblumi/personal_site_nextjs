@@ -11,7 +11,7 @@ export default function Home() {
 	const sectionRef = useRef(null);
 	const isInView = useInView(sectionRef, {
 		once: false,
-		amount: 0.9,
+		amount: 0.75,
 	});
 
 	const nameParentVariants = {
@@ -46,6 +46,24 @@ export default function Home() {
 		},
 	};
 
+	const buttonBlurVariants = {
+		hidden: {
+			opacity: 0,
+			backdropFilter: 'blur(0px)',
+			transition: {
+				duration: 0.2,
+			},
+		},
+		visible: {
+			opacity: 1,
+			backdropFilter: 'blur(5px)',
+			transition: {
+				duration: 1.2,
+				ease: 'easeIn',
+			},
+		},
+	};
+
 	return (
 		<motion.div
 			className={styles['home-container']}
@@ -64,29 +82,38 @@ export default function Home() {
 					</span>
 				</motion.div>
 
-				{/* Dynamic Text */}
+				{/* Alternating Text */}
 				<motion.div variants={nameVariants}>
 					<AlternatingText />
 				</motion.div>
+
 				{/* Intro Text */}
 				{/* <TextBox styles={{ maxWidth: '600px' }} delay='0.8' opacity={0.3}>
-					<p>Hi my name is wuuuuuuh.</p>
+					<p>Hi my name is uuuuuuh.</p>
 				</TextBox> */}
+
 				{/* Buttons */}
-				<motion.div variants={nameVariants} style={{ width: '100%' }}>
+				<div style={{ width: '100%' }}>
 					<div className={styles['buttons-wrapper']}>
-						<button
+						<motion.button
 							type='button'
 							className={`${styles['home-button']} glass-dark-primary`}
+							variants={buttonBlurVariants}
 							onClick={() => {
 								document.getElementById('contact').scrollIntoView({
 									behavior: 'auto',
 								});
 							}}
+							whileTap={{
+								scale: 0.98,
+								transition: {
+									duration: 0.1,
+								},
+							}}
 						>
 							Contact
-						</button>
-						<button
+						</motion.button>
+						<motion.button
 							type='button'
 							className={styles['home-button']}
 							onClick={() => {
@@ -94,7 +121,14 @@ export default function Home() {
 									behavior: 'smooth',
 								});
 							}}
-							style={{ backdropFilter: 'none'}}
+							variants={nameVariants}
+							whileTap={{
+								scale: 0.98,
+								transition: {
+									duration: 0.1,
+								},
+							}}
+							style={{ backdropFilter: 'none' }}
 						>
 							Learn More
 							<Image
@@ -104,9 +138,9 @@ export default function Home() {
 								width={38}
 								height={38}
 							/>
-						</button>
+						</motion.button>
 					</div>
-				</motion.div>
+				</div>
 			</motion.div>
 		</motion.div>
 	);
