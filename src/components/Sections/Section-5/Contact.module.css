@@ -76,13 +76,6 @@
 	scroll-behavior: smooth;
 	scrollbar-color: rgba(var(--primary-rgb), 0.3) transparent;
 	scrollbar-width: thin;
-	/* mask: linear-gradient(
-		to bottom,
-		transparent 1%,
-		rgb(0, 0, 0) clamp(5%, 1vh, 8%),
-		rgb(0, 0, 0) clamp(92%, 3vh, 95%),
-		transparent 100%
-	); */
 }
 
 .outline {
@@ -104,7 +97,6 @@
 	width: auto;
 	height: 70px;
 	margin-top: clamp(4px, 2vh, 20px);
-	/* margin-left: auto; */
 	padding: 0px 20px;
 	gap: 5px;
 	border-radius: 12px;
@@ -183,9 +175,9 @@
 
 @media (max-height: 800px) and (max-width: 1600px) {
 	.contact-page-container {
-		transform: translateY(-5vh);
-		gap: 0;
 		padding: 100px 2vw 4vh 2vw;
+		gap: 0;
+		transform: translateY(-5vh);
 	}
 
 	.submit-button {
@@ -199,8 +191,8 @@
 
 @media (max-height: 800px) and (max-width: 800px) {
 	.contact-page-container {
-		padding: 100px 2vw 5vh 2vw;
 		justify-content: space-between;
+		padding: 100px 2vw 5vh 2vw;
 	}
 
 	.contact-form {

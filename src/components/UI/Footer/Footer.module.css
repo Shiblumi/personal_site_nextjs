@@ -13,8 +13,6 @@
 	filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.5));
 	font-family: 'Montserrat', sans-serif;
 	padding-bottom: 5px;
-	/* backdrop-filter: blur(10px); */
-	/* background: rgba(7, 9, 42, 0.2); */
 }
 
 .footer-img {
@@ -29,6 +27,7 @@
 	gap: 8px;
 	text-decoration: underline;
 	text-underline-offset: 3px;
+	-webkit-tap-highlight-color: rgb(var(--secondary-rgb), 0.5);
 }
 
 .footer-container span {

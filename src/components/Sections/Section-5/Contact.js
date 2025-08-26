@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import styles from './Contact.module.css';
-import Footer from '@/components/UI/Footer/Footer'
+import Footer from '@/components/UI/Footer/Footer';
 
 export default function Contact() {
 	const [senderEmail, setSenderEmail] = useState('');
@@ -94,14 +94,16 @@ export default function Contact() {
 							setMessage(e.target.value);
 						}}
 						placeholder=''
-					>
-					</textarea>
+					></textarea>
 				</div>
-				<button className={`${styles['submit-button']} glass-dark-primary`} type='submit'>
+				<button
+					className={`${styles['submit-button']} glass-dark-primary`}
+					type='submit'
+				>
 					<span>Send Message</span>
 				</button>
 			</form>
-			<Footer/>
+			<Footer />
 		</div>
 	);
 }

@@ -14,7 +14,7 @@
 
 .timeline-dot {
   transition: all 0.3s ease-out;
-  border: 2px solid rgba(146, 255, 230, 0.6);
+  border: 2px solid rgba(var(--logo-rgb), 0.6);
   border-radius: 50%;
   background-color: none;
   width: 14px;
@@ -26,11 +26,11 @@
 
 .timeline-dot.active {
   box-shadow: 
-    0 0 10px rgba(146, 255, 230, 0.6),
-    0 0 20px rgba(146, 255, 230, 0.4),
-    0 0 30px rgba(146, 255, 230, 0.2);
-  border-color: rgb(146, 255, 230);
-  background-color: rgb(146, 255, 230);
+    0 0 10px rgba(var(--logo-rgb), 0.6),
+    0 0 20px rgba(var(--logo-rgb), 0.4),
+    0 0 30px rgba(var(--logo-rgb), 0.2);
+  border-color: rgb(var(--logo-rgb));
+  background-color: rgb(var(--logo-rgb));
 }
 
 @media (max-width: 1600px) {
