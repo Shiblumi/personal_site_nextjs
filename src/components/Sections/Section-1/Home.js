@@ -80,7 +80,7 @@ export default function Home() {
 							className={`${styles['home-button']} glass-dark-primary`}
 							onClick={() => {
 								document.getElementById('contact').scrollIntoView({
-									behavior: 'smooth',
+									behavior: 'auto',
 								});
 							}}
 						>

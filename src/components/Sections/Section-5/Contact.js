@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import styles from './Contact.module.css';
+import Footer from '@/components/UI/Footer/Footer'
 
 export default function Contact() {
 	const [senderEmail, setSenderEmail] = useState('');
@@ -12,19 +13,19 @@ export default function Contact() {
 
 	const sendMail = async (e) => {
 		e.preventDefault();
-        const res = await fetch('/api/sendEmail', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                senderEmail: senderEmail,
-                subject: subject,
-                message: message,
-            }),
-        });
-        const data = await res.json();
-        console.log(data);
+		const res = await fetch('/api/sendEmail', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				senderEmail: senderEmail,
+				subject: subject,
+				message: message,
+			}),
+		});
+		const data = await res.json();
+		console.log(data);
 	};
 
 	const sectionRef = useRef(null);
@@ -39,15 +40,16 @@ export default function Contact() {
 			id='contact'
 			className={styles['contact-page-container']}
 		>
-			<form onSubmit={sendMail}>
+			<form className={`${styles['contact-form']}`} onSubmit={sendMail}>
 				<div>
-					<h1>Contact</h1>
+					<h1 style={{ marginBottom: '12px' }}>Contact</h1>
 				</div>
 
-                {/* Email Field */}
-				<div>
-					<label className={`${styles['input-field-small']}`} htmlFor='email'>Email</label>
+				{/* Email Field */}
+				<div className={`${styles['titled-input-field']}`}>
+					<label htmlFor='email'>Email</label>
 					<input
+						className={`glass-dark-soft-no-gradient`}
 						name='email'
 						id='email'
 						type='email'
@@ -56,14 +58,15 @@ export default function Contact() {
 						onChange={(e) => {
 							setSenderEmail(e.target.value);
 						}}
-						placeholder='you@example.com'
+						placeholder=''
 					/>
 				</div>
 
 				{/* Subject Field */}
-				<div>
+				<div className={`${styles['titled-input-field']}`}>
 					<label htmlFor='subject'>Subject</label>
 					<input
+						className={`glass-dark-soft-no-gradient`}
 						name='subject'
 						id='subject'
 						type='text'
@@ -72,14 +75,15 @@ export default function Contact() {
 						onChange={(e) => {
 							setSubject(e.target.value);
 						}}
-						placeholder='awww yeeee'
+						placeholder=''
 					/>
 				</div>
 
 				{/* Message Field */}
-				<div>
-					<label htmlFor='message'>What would you need help with?</label>
+				<div className={`${styles['titled-input-field']}`}>
+					<label htmlFor='message'>Message</label>
 					<textarea
+						className={`glass-dark-soft-no-gradient`}
 						name='message'
 						id='message'
 						required
@@ -89,13 +93,15 @@ export default function Contact() {
 						onChange={(e) => {
 							setMessage(e.target.value);
 						}}
-						placeholder='Whatup dog it is ya boi, dirkinson. We out here trying out the Costco samples.'
-					/>
+						placeholder=''
+					>
+					</textarea>
 				</div>
-				<button type='submit' style={{outline: 'solid 1px yellowgreen'}}>
+				<button className={`${styles['submit-button']} glass-dark-primary`} type='submit'>
 					<span>Send Message</span>
 				</button>
 			</form>
+			<Footer/>
 		</div>
 	);
 }

@@ -45,11 +45,6 @@
   will-change: transform;
 }
 
-.footer {
-  height: 100px;
-  scroll-snap-align: end;
-}
-
 /* Disable Scrollbar */
 .scroll-wrapper {
   -ms-overflow-style: none; /* IE and Edge */

@@ -4,9 +4,6 @@ import styles from './page.module.css';
 import { useEffect } from 'react';
 import { useNavbarContext } from '@/components/UI/ActiveSectionContext';
 
-// Components import
-import Footer from '@/components/UI/Footer/Footer';
-
 // Sections import
 import Home from '@/components/Sections/Section-1/Home';
 import Experience from '@/components/Sections/Section-2/Experience';
@@ -86,7 +83,6 @@ export default function Page() {
 				<section id='contact' className={styles['scroll-section']}>
 					<Contact />
 				</section>
-				<Footer />
 			</div>
 		</main>
 	);

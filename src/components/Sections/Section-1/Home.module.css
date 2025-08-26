@@ -86,7 +86,7 @@
 	font-weight: 650;
 	font-size: 1.8em;
 	font-family: 'Jura', sans-serif;
-	text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+	text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 	cursor: pointer;
 
 	user-select: none;
@@ -99,14 +99,14 @@
 	transition: color 0.2s ease-out;
 }
 
+.home-button:hover {
+	color: rgb(225, 255, 248);
+}
+
 .home-button-down-arrow {
 	position: relative;
 	top: 0.05em;
 	filter: invert(1) drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
-}
-
-.home-button:hover {
-	color: rgb(225, 255, 248);
 }
 
 @media (max-height: 900px) and (min-width: 800px) {
