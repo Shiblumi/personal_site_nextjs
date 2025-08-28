@@ -1,0 +1,34 @@
+.fullscreen-video-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1000;
+	width: 100vw;
+	height: 100lvh;
+	/* GPU acceleration */
+	/* transform: translateZ(0);
+	will-change: contents; */
+}
+
+.fullscreen-video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+	z-index: -999;
+	/* Hack for "Why the heck are my backgrounds purple-ish" */
+	filter: hue-rotate(-7deg);
+	/* GPU acceleration */
+	/* transform: translateZ(0);
+	will-change: opacity, transform; */
+}
+
+.fullscreen-video.visible {
+	opacity: 1;
+	/* GPU acceleration*/
+	/* transform: translateZ(0); */
+}

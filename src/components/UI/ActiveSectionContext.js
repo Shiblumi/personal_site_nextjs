@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState } from 'react';
 import Navbar from '@/components/UI/Navbar/Navbar';
-import BackgroundVideo from '@/components/UI/BackgroundVideo';
+import BackgroundVideo from '@/components/UI/BackgroundVideo/BackgroundVideo';
 import ScrollingTimeline from '@/components/UI/ScrollingTimeline/ScrollingTimeline';
 
 export const ActiveSectionContext = createContext();
@@ -26,9 +26,7 @@ export default function NavbarContext({ children }) {
 		<ActiveSectionContext.Provider value={{ activeSection, setActiveSection }}>
 			<Navbar />
 			<ScrollingTimeline />
-
 			<BackgroundVideo />
-
 			{children}
 		</ActiveSectionContext.Provider>
 	);

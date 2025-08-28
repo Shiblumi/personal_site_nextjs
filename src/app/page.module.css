@@ -1,7 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100svh;
   width: 100vw;
   overflow: hidden;
 }
@@ -11,7 +11,7 @@
   top: 0;
   left: 0;
   z-index: -1000;
-  height: 100vh;
+  height: 100svh;
   /* pointer-events: none; */
   /* GPU acceleration */
   transform: translateZ(0);
@@ -20,14 +20,14 @@
 
 .background-scene canvas {
   width: 100vw !important;
-  height: 100vh !important;
+  height: 100svh !important;
   /* GPU acceleration */
   transform: translateZ(0);
   will-change: transform;
 }
 
 .scroll-wrapper {
-  height: 100vh;
+  height: 100svh;
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-behavior: auto;
@@ -37,7 +37,7 @@
 .scroll-section {
   position: relative;
   background: none;
-  height: 100vh;
+  height: 100svh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
   /* GPU acceleration */

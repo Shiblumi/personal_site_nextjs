@@ -54,12 +54,12 @@
 
 .di {
 	color: rgb(146, 255, 253);
-	filter: blur(1.1px);
+	/* filter: blur(1.1px); */
 }
 
 .wi {
 	color: rgb(146, 255, 253);
-	filter: blur(1.1px);
+	/* filter: blur(1.1px); */
 }
 
 .buttons-wrapper {
