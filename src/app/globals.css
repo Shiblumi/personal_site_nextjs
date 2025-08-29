@@ -203,6 +203,38 @@ button:focus {
 	backdrop-filter: blur(6px);
 }
 
+
+/* --- glass-dark-primary-no-hover --- */
+.glass-dark-primary-no-hover {
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(5px); /* Keep the default blur */
+  box-shadow: inset 0px 0px 14px 4px rgba(152, 128, 218, 0.1);
+  border: 1px solid;
+  border-color: rgba(146, 255, 230, 0.2) rgba(146, 255, 230, 0.2)
+    rgba(146, 255, 230, 0.1) rgba(255, 255, 255, 0.1);
+  border-radius: inherit;
+  background-image: radial-gradient(
+      circle at 100% 10%,
+      rgba(19, 7, 87, 0.15) 10%,
+      rgba(59, 62, 255, 0) 45%
+    ),
+    radial-gradient(
+      circle at 10% 100%,
+      rgba(38, 133, 181, 0.1) 10%,
+      rgba(144, 153, 255, 0) 35%
+    ),
+    linear-gradient(190deg, rgba(106, 138, 255, 0.1), rgba(67, 183, 187, 0.15));
+}
+
+.glass-dark-primary-no-hover::after {
+  content: none; /* Disable the hover pseudo-element */
+}
+
+.glass-dark-primary-no-hover:hover {
+  backdrop-filter: blur(5px); /* Prevent hover blur change */
+}
+
 /* --- glass-dark-secondary --- */
 .glass-dark-secondary {
 	position: relative;

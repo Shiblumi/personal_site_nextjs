@@ -40,7 +40,7 @@ export default function Projects() {
 			{/* Project information */}
 			<AnimatePresence mode='wait'>
 				<TextBox
-					styles={{ width: '100%', lineHeight: '1.6' }}
+					styles={{ width: '100%', lineHeight: '1.6', paddingRight: '1em' }}
 					delay='0.3'
 					opacity={0.25}
 				>
@@ -90,6 +90,7 @@ export default function Projects() {
 										textDecoration: 'underline',
 										textUnderlineOffset: '4px',
 										fontSize: '1em',
+										marginRight: 'clamp(0.5em, 2vw, 0.8em)',
 									}}
 								>
 									<span>GitHub</span>
@@ -175,7 +176,7 @@ export default function Projects() {
 							<p
 								style={{
 									lineHeight: '1.6',
-									marginRight: '1em',
+									paddingRight: '1em',
 									whiteSpace: 'pre-wrap',
 								}}
 							>
