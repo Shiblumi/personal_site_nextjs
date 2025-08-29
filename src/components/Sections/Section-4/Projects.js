@@ -80,39 +80,41 @@ export default function Projects() {
 						</p>
 						{/* Tech Stack */}
 						<motion.div
-                            key={`tech-stack-${selectedProject.id}`}
-                            initial='hidden'
-                            animate='visible'
-                            variants={{
-                                hidden: {},
-                                visible: {
-                                    transition: {
-                                        staggerChildren: 0.1,
-                                        delayChildren: 0.2,
-                                    },
-                                },
-                            }}
-                            style={{
-                                display: 'flex',
-                                columnGap: '24px',
-                                rowGap: '12px',
-                                flexWrap: 'wrap',
-                                marginBottom: '4px',
-                            }}
-                        >
-                            {selectedProject.title !== 'Maptodon' &&<strong>Tech Stack:</strong>}
+							key={`tech-stack-${selectedProject.id}`}
+							initial='hidden'
+							animate='visible'
+							variants={{
+								hidden: {},
+								visible: {
+									transition: {
+										staggerChildren: 0.1,
+										delayChildren: 0.2,
+									},
+								},
+							}}
+							style={{
+								display: 'flex',
+								columnGap: '24px',
+								rowGap: '12px',
+								flexWrap: 'wrap',
+								marginBottom: '4px',
+							}}
+						>
+							{selectedProject.title !== 'Maptodon' && (
+								<strong>Tech Stack:</strong>
+							)}
 							{/* Tech Stack: Skill Logos */}
-                            {selectedProject.skills.map((skill, index) => (
-                                <motion.div
-                                    key={`${selectedProject.id}-${skill}-${index}`}
-                                    variants={skillLogoVariants}
-                                    style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: 'clamp(6px, 1vw, 8px)',
-                                        fontSize: '0.8em',
-                                    }}
-                                >
+							{selectedProject.skills.map((skill, index) => (
+								<motion.div
+									key={`${selectedProject.id}-${skill}-${index}`}
+									variants={skillLogoVariants}
+									style={{
+										display: 'flex',
+										alignItems: 'center',
+										gap: 'clamp(6px, 1vw, 8px)',
+										fontSize: '0.8em',
+									}}
+								>
 									<Image
 										src={skillsLogoSrc[skill]}
 										alt={`${skill} logo`}
@@ -131,9 +133,33 @@ export default function Projects() {
 						</motion.div>
 						{/* Description */}
 						<div className={styles['description-container']}>
-							<p style={{ lineHeight: '1.6', marginRight: '1em' }}>
+							<p
+								style={{
+									lineHeight: '1.6',
+									marginRight: '1em',
+									whiteSpace: 'pre-wrap',
+								}}
+							>
 								{selectedProject.description}
 							</p>
+							{selectedProject.keyPoints && (
+								<>
+									<span
+										style={{
+											display: 'block',
+											margin: '2em 0 0.5em 0',
+											fontWeight: 'bold',
+										}}
+									>
+										Key Points:
+									</span>
+									<ul>
+										{selectedProject.keyPoints.map((point, index) => (
+											<li key={`ProjID-${selectedProject.id}-keyPoint-${index}`}>{point}</li>
+										))}
+									</ul>
+								</>
+							)}
 						</div>
 					</motion.div>
 				</TextBox>

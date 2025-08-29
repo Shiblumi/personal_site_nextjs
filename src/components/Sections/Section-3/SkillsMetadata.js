@@ -2,8 +2,8 @@ export const frontendSkills = [
 	{ src: '/images/logos/react-icon.svg', name: 'React' },
 	{ src: '/images/logos/framer-motion-logo.svg', name: 'Motion' },
 	{ src: '/images/logos/javascript-logo.svg', name: 'JavaScript' },
-	{ src: '/images/logos/html-logo.svg', name: 'HTML' },
 	{ src: '/images/logos/CSS3-logo.svg', name: 'CSS' },
+	{ src: '/images/logos/html-logo.svg', name: 'HTML' },
 ];
 
 export const backendSkills = [

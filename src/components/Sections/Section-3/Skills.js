@@ -3,7 +3,12 @@ import TextBox from '@/components/UI/TextBox/TextBox';
 import styles from './Skills.module.css';
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
-import { frontendSkills, backendSkills, generalSkills, learningSkills } from './SkillsMetadata';
+import {
+	frontendSkills,
+	backendSkills,
+	generalSkills,
+	learningSkills,
+} from './SkillsMetadata';
 
 export default function Skills() {
 	const sectionRef = useRef(null);
@@ -11,7 +16,6 @@ export default function Skills() {
 		once: false,
 		amount: 0.75,
 	});
-	
 
 	return (
 		<div ref={sectionRef} className={`${styles['skills-page-container']}`}>
@@ -27,7 +31,13 @@ export default function Skills() {
 				opacity={0.25}
 				delay='0.3'
 			>
-				<h1 style={{ padding: 'clamp(8px, 2vh, 16px) 0 0 clamp(24px, 2vw, 32px)' }}>Skills</h1>
+				<h1
+					style={{
+						padding: 'clamp(8px, 2vh, 16px) 0 0 clamp(24px, 2vw, 32px)',
+					}}
+				>
+					Skills
+				</h1>
 				<div
 					style={{
 						overflowY: 'auto',
@@ -41,20 +51,20 @@ export default function Skills() {
 							rgb(0, 0, 0) clamp(92%, 3vh, 95%),
 							transparent 100%
 						)`,
-						padding: 'clamp(8px, 1vh, 24px) clamp(24px, 2vw, 32px) clamp(8px, 1vh, 24px) clamp(24px, 2vw, 32px)',
-						margin: '0 clamp(8px, 2vw, 16px) clamp(8px, 1vh, 16px) 0'
+						padding:
+							'clamp(8px, 1vh, 24px) clamp(24px, 2vw, 32px) clamp(8px, 1vh, 24px) clamp(24px, 2vw, 32px)',
+						margin: '0 clamp(8px, 2vw, 16px) clamp(8px, 1vh, 16px) 0',
 					}}
 				>
-					<p>
-						Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
-						yardarm. Pinnace holystone mizzenmast quarter crows nest nipperkin
-						grog yardarm hempen halter furl. Swab barque interloper chantey
-						doubloon starboard grog black jack gangway rutters. Deadlights jack
-						lad schooner scallywag dance the hempen jig carouser broadside cable
-						strike colors. Bring a spring upon her cable holystone blow the man
-						down spanker Shiver me timbers to go on account lookout wherry
-						doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm
-						spyglass sheet transom.
+					<p style={{ textIndent: '1em' }}>
+						Over time, I’ve built up a skill set that lets me move fluidly
+						between design and engineering, striving to be a jack of all trades
+						across the development stack. On the frontend, I enjoy working with
+						React and animation libraries to create interfaces that feel alive,
+						while I focus on building APIs and managing data flow with backend
+						frameworks. C++ and Python have given me a strong foundation for
+						tackling complex problems, and I leverage creative tools like Spline3D and
+						emerging AI frameworks to expand the possibilities of a project.
 					</p>
 				</div>
 			</TextBox>

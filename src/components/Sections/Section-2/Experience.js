@@ -229,16 +229,15 @@ export default function Experience(props) {
 						margin: '0 clamp(8px, 2vw, 16px) clamp(8px, 1vh, 16px) 0',
 					}}
 				>
-					<p>
-						Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast
-						yardarm. Pinnace holystone mizzenmast quarter crows nest nipperkin
-						grog yardarm hempen halter furl. Swab barque interloper chantey
-						doubloon starboard grog black jack gangway rutters. Deadlights jack
-						lad schooner scallywag dance the hempen jig carouser broadside cable
-						strike colors. Bring a spring upon her cable holystone blow the man
-						down spanker Shiver me timbers to go on account lookout wherry
-						doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm
-						spyglass sheet transom heave to.
+					<p style={{ textIndent: '1em' }}>
+						My journey as a developer has taken me as a university student doing
+						zero-sleep hackathons and personal projects, to working at SyncQ to
+						develop new features and interacting directly with clients. At
+						SyncQ, I’ve had the chance to work on exciting projects like
+						developing an AI chatbot and expanding our integration to new
+						platforms to reach more users. Outside of professional projects, I
+						enjoy creating 3D animated visuals, combining an artistic eye with a
+						technical mindset.
 					</p>
 				</div>
 			</TextBox>
