@@ -7,12 +7,20 @@ export const metadata = {
 	icons: {
 		icon: '/favicon.ico',
 	},
+	metadataBase: new URL('https://diwi.dev'),
+	
 	openGraph: {
 		title: 'DIWI Portfolio',
 		description: 'Welcome to my swamp level.',
 		url: 'https://diwi.dev',
 		siteName: 'diwi.dev',
 		type: 'website',
+	},
+	
+	twitter: {
+		card: 'summary_large_image',
+		title: 'DIWI Portfolio',
+		description: 'Welcome to my swamp level.',
 	},
 };
 
