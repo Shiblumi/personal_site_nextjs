@@ -66,10 +66,49 @@ export default function Projects() {
 							overflow: 'hidden',
 						}}
 					>
-						{/* Title */}
-						<h2 style={{ color: 'var(--color-primary)' }}>
-							{selectedProject.title}
-						</h2>
+						<div
+							style={{
+								display: 'flex',
+								flexDirection: 'row',
+								justifyContent: 'space-between',
+								alignItems: 'center',
+							}}
+						>
+							{/* Title */}
+							<h2 style={{ color: 'var(--color-primary)' }}>
+								{selectedProject.title}
+							</h2>
+							{/* Github Link */}
+							{selectedProject.link && (
+								<a
+									href={selectedProject.link}
+									target='_blank'
+									rel='noopener noreferrer'
+									style={{
+										color: 'var(--color-secondary)',
+										fontWeight: 'bold',
+										textDecoration: 'underline',
+										textUnderlineOffset: '4px',
+										fontSize: '1em',
+									}}
+								>
+									<span>GitHub</span>
+									<Image
+										src='/images/link-box-icon.svg'
+										alt='link icon'
+										width={25}
+										height={25}
+										style={{
+											display: 'inline-block',
+											width: '0.7em',
+											height: 'auto',
+											marginLeft: '0.3em',
+											verticalAlign: '0%',
+										}}
+									/>
+								</a>
+							)}
+						</div>
 						{/* Role */}
 						<p>
 							<strong>Role:</strong> {selectedProject.role}
@@ -100,7 +139,7 @@ export default function Projects() {
 								marginBottom: '4px',
 							}}
 						>
-							{selectedProject.title !== 'Maptodon' && (
+							{selectedProject.skills.length > 0 && (
 								<strong>Tech Stack:</strong>
 							)}
 							{/* Tech Stack: Skill Logos */}
@@ -155,7 +194,11 @@ export default function Projects() {
 									</span>
 									<ul>
 										{selectedProject.keyPoints.map((point, index) => (
-											<li key={`ProjID-${selectedProject.id}-keyPoint-${index}`}>{point}</li>
+											<li
+												key={`ProjID-${selectedProject.id}-keyPoint-${index}`}
+											>
+												{point}
+											</li>
 										))}
 									</ul>
 								</>

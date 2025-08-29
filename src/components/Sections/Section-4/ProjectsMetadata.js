@@ -13,9 +13,9 @@ export const projectsData = [
 		],
 		skills: ['NextJS', 'React', 'Motion', 'JS', 'CSS', 'HTML', 'Spline3D'],
 		role: 'Developer & 3D Artist',
-		date: 'Aug 2025',
+		date: 'Jun 2025',
 		image: '/images/project2.jpg',
-		link: '/projects/project-two',
+		link: 'https://github.com/Shiblumi/personal_site_nextjs',
 	},
 	{
 		id: 2,
@@ -31,7 +31,7 @@ export const projectsData = [
 		role: 'R&D Engineer',
 		date: 'Feb 2025',
 		image: '/images/project2.jpg',
-		link: '/projects/project-two',
+		link: '',
 	},
 	{
 		id: 3,
@@ -47,7 +47,7 @@ export const projectsData = [
 		role: 'Front-End Developer',
 		date: 'Jan 2024',
 		image: '/images/project2.jpg',
-		link: '/projects/project-two',
+		link: 'https://github.com/masaishi/Sitegeist',
 	},
 	{
 		id: 4,
@@ -63,7 +63,7 @@ export const projectsData = [
 		role: 'Full-Stack Developer',
 		date: 'Dec 2023',
 		image: '/images/project2.jpg',
-		link: '/projects/project-two',
+		link: 'https://github.com/Shiblumi/SlugMeter',
 	},
 	{
 		id: 5,
@@ -79,13 +79,13 @@ export const projectsData = [
 		role: 'Developer',
 		date: 'Nov 2023',
 		image: '/images/project2.jpg',
-		link: '/projects/project-two',
+		link: 'https://github.com/Shiblumi/PediBeat',
 	},
 	{
 		id: 6,
 		title: 'Maptodon',
 		description:
-			'\tMaptodon is an open-source ecosystem that empowers individuals and communities to create, update, and explore detailed 3D maps. Leveraging an iOS app for efficient scanning, a sophisticated AI pipeline for 3D data generation, and an intuitive web app for viewing, Maptodon enables the democratization of 3D mapping.\n\n\tThis was my first hackathon experience, where I contributed by collecting image data of objects and environments to feed into our app, and by creating and presenting the team’s slides to the judges. Through this, I gained firsthand insight into effective team collaboration and communication in a fast-paced development setting.',
+			'\tCreated during the TEDAI hackathon, Maptodon is an open-source ecosystem that empowers individuals and communities to create, update, and explore detailed 3D maps. Leveraging an iOS app for efficient scanning, a sophisticated AI pipeline for 3D data generation, and an intuitive web app for viewing, Maptodon enables the democratization of 3D mapping.\n\n\tThis was my first hackathon experience, where I contributed by collecting image data of objects and environments to feed into our app, and by creating and presenting the team’s slides to the judges. Through this, I gained firsthand insight into effective team collaboration and communication in a fast-paced development setting.',
 		keyPoints: [
 			'Data Collection',
 			'Team Collaboration',
@@ -94,7 +94,7 @@ export const projectsData = [
 		role: 'Data Collection & Tester',
 		date: 'Oct 2023',
 		image: '/images/project1.jpg',
-		link: '/projects/project-one',
+		link: 'https://github.com/tedai-hackathon/maptodon',
 	},
 ];
 
