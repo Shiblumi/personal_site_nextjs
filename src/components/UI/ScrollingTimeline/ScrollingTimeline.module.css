@@ -13,22 +13,14 @@
 }
 
 .timeline-dot {
-	transition: all 0.3s ease-out;
 	border: 2px solid rgba(var(--logo-rgb), 0.6);
 	border-radius: 50%;
-	background-color: none;
+	background-color: transparent;
 	width: 14px;
 	height: 14px;
 	/* GPU acceleration */
 	transform: translateZ(0);
 	will-change: transform, opacity;
-}
-
-.timeline-dot.active {
-	box-shadow: 0 0 10px rgba(var(--logo-rgb), 0.6),
-		0 0 20px rgba(var(--logo-rgb), 0.4), 0 0 30px rgba(var(--logo-rgb), 0.2);
-	border-color: rgb(var(--logo-rgb));
-	background-color: rgb(var(--logo-rgb));
 }
 
 @media (max-width: 1600px) {

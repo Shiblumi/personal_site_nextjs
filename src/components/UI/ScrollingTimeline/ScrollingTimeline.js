@@ -1,6 +1,39 @@
 import { motion } from 'motion/react';
 import { useNavbarContext } from '@/components/UI/ActiveSectionContext';
+import { memo } from 'react';
 import styles from './ScrollingTimeline.module.css';
+
+const TimelineDot = memo(({ isActive }) => {
+	return (
+		<motion.div
+			className={styles['timeline-dot']}
+			initial={{ scale: 0.8, opacity: 0.4 }}
+			animate={{
+				scale: isActive ? 1.2 : 0.8,
+				opacity: isActive ? 1 : 0.4,
+				boxShadow: isActive 
+					? [
+						'0 0 10px rgba(var(--logo-rgb), 0.6)',
+						'0 0 20px rgba(var(--logo-rgb), 0.4)', 
+						'0 0 30px rgba(var(--logo-rgb), 0.2)'
+					].join(', ')
+					: 'none',
+				borderColor: isActive 
+					? 'rgb(var(--logo-rgb))' 
+					: 'rgba(var(--logo-rgb), 0.6)',
+				backgroundColor: isActive 
+					? 'rgb(var(--logo-rgb))' 
+					: 'transparent',
+			}}
+			transition={{
+				duration: 0.5,
+				ease: 'easeOut',
+			}}
+		/>
+	);
+});
+
+TimelineDot.displayName = 'TimelineDot';
 
 export default function ScrollingTimeline() {
 	const { activeSection } = useNavbarContext();
@@ -13,24 +46,13 @@ export default function ScrollingTimeline() {
 		{ id: 5, name: 'contact' },
 	];
 
-	// FIXME: 5th dot flickers when navigating between sections 3-4 due to Framer Motion re-evaluating all animate props
 	return (
 		<div className={`${styles['section-timeline-wrapper']}`}>
 			{sections.map((section) => (
-				<motion.div
+				<TimelineDot 
 					key={section.id}
-					className={`${styles['timeline-dot']} ${
-						activeSection === section.id ? styles['active'] : ''
-					}`}
-					initial={{ scale: 0.8, opacity: 0.4 }}
-					animate={{
-						scale: activeSection === section.id ? 1.2 : 0.8,
-						opacity: activeSection === section.id ? 1 : 0.4,
-					}}
-					transition={{
-						duration: 0.3,
-						ease: 'easeOut',
-					}}
+					section={section}
+					isActive={activeSection === section.id}
 				/>
 			))}
 		</div>

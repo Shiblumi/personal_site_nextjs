@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, memo } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Navbar.module.css';
@@ -179,6 +179,22 @@ export default function Navbar() {
 		},
 	};
 
+	// Memoized Navbar Link component
+	const NavbarLink = memo(({ link }) => {
+		return (
+			<Link
+				key={link.section}
+				href={link.href}
+				className={`${styles['navbar-link']}`}
+				onClick={handleLinkClick}
+			>
+				<ChromaticText isActive={activeSection === link.section}>
+					{link.label}
+				</ChromaticText>
+			</Link>
+		);
+	});
+
 	return (
 		<nav className={`${styles['navbar']}`}>
 			<div className={styles['navbar-content']}>
@@ -193,16 +209,7 @@ export default function Navbar() {
 				{/* Desktop Navbar */}
 				<div className={`${styles['navbar-link-container']}`}>
 					{navLinks.map((link) => (
-						<Link
-							key={link.section}
-							href={link.href}
-							className={`${styles['navbar-link']}`}
-							onClick={handleLinkClick}
-						>
-							<ChromaticText isActive={activeSection === link.section}>
-								{link.label}
-							</ChromaticText>
-						</Link>
+						<NavbarLink key={link.section} link={link} />
 					))}
 				</div>
 
