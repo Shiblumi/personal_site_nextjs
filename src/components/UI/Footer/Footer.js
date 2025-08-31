@@ -97,7 +97,7 @@ export default function Footer() {
 			</motion.a>
 
 			<motion.a
-				href='/documents/Wilson_Dirk_Resume.pdf'
+				href='/documents/Dirk_Wilson_Resume.pdf'
 				target='_blank'
 				whileHover='hover'
 				whileTap='tap'

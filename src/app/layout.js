@@ -3,14 +3,14 @@ import ActiveSectionContext from '@/components/UI/ActiveSectionContext';
 
 export const metadata = {
 	title: 'Dirk Wilson Portfolio',
-	description: 'Welcome to my swamp level.',
+	description: 'Personal website of Dirk Wilson; showcasing experience, skills, and projects.',
 	icons: {
 		icon: '/favicon.ico',
 	},
 	metadataBase: new URL('https://diwi.dev'),
 	
 	openGraph: {
-		title: 'DIWI Portfolio',
+		title: 'Dirk Wilson Portfolio',
 		description: 'Welcome to my swamp level.',
 		url: 'https://diwi.dev',
 		siteName: 'diwi.dev',
@@ -19,7 +19,7 @@ export const metadata = {
 	
 	twitter: {
 		card: 'summary_large_image',
-		title: 'DIWI Portfolio',
+		title: 'Dirk Wilson Portfolio',
 		description: 'Welcome to my swamp level.',
 	},
 };
