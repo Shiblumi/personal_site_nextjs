@@ -67,7 +67,7 @@ export default function Page() {
 
 	return (
 		<main className={styles['main']}>
-			{isMobile && <PopupNotification duration={6} delay={2}>Mobile resolution detected. <br />Backgrounds will not be animated.</PopupNotification>}
+			{isMobile && <PopupNotification duration={6} delay={2}>Mobile resolution detected. <br />Animated backgrounds will be disabled.</PopupNotification>}
 			<div className={styles['scroll-wrapper']}>
 				{/* Home */}
 				<section id='home' className={styles['scroll-section']}>

@@ -52,9 +52,8 @@ export default function Contact() {
 				);
 			}
 		} catch (error) {
-			console.error('Error sending email:', error.message);
 			setPopupType('error');
-			setPopupMessage('An error occurred while sending the email.');
+			setPopupMessage('An error occurred. Please try again later.');
 			setShowPopup(true);
 		} finally {
 			setIsLoading(false);

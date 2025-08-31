@@ -66,7 +66,7 @@ export default function ProjectGallery({
 			initial='hidden'
 			animate={isInView ? 'visible' : 'hidden'}
 		>
-			<h1 style={{ color: 'var(--color-secondary)', lineHeight: '12px' }}>
+			<h1 style={{ color: 'var(--color-secondary)'}}>
 				Projects
 			</h1>
 			<motion.div

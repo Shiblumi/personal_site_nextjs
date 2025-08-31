@@ -129,7 +129,7 @@ export default function Home() {
 							}}
 							style={{ backdropFilter: 'none' }}
 						>
-							Learn More
+							About Me
 							<Image
 								className={`${styles['home-button-down-arrow']}`}
 								src='/images/down-arrow.svg'

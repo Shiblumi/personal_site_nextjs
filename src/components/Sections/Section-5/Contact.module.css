@@ -50,6 +50,7 @@
 
 .titled-input-field input,
 .titled-input-field textarea {
+	color: white !important;
 	padding: 0.5em 1em 0.5em 1em;
 	border-radius: 6px;
 	background: none;

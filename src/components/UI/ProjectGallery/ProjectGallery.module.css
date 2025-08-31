@@ -3,13 +3,13 @@
 	flex-direction: column;
 	justify-content: center;
 	justify-content: flex-start;
-	gap: 24px;
+	gap: clamp(16px, 2vw, 24px);
 	border-radius: 12px;
-	padding: 20px;
+	padding: 14px 20px;
 	width: 400px !important;
 	max-width: 800px;
 	height: 400px;
-	font-size: clamp(0.6rem, 2.5vw, 1rem);
+	font-size: 1em;
 	background-color: rgba(7, 9, 42, 0.25);
 	/* GPU acceleration */
 	transform: translateZ(0);
@@ -63,14 +63,15 @@
 
 @media (max-width: 1600px) {
 	.project-gallery-container {
-		padding: clamp(15px, 3vw, 20px);
+		padding: clamp(8px, 2vw, 16px) clamp(12px, 2.5vw, 24px);
 		width: clamp(200px, 100%, 700px) !important;
 		height: 300px;
+		gap: 16px;
 	}
 
 	.project-gallery-container h1 {
-		font-size: 1.2em;
-		line-height: 1.4;
+		font-size: 1.4em;
+		line-height: 1;
 	}
 
 	.project-gallery-grid {
@@ -90,12 +91,14 @@
 	}
 }
 
-@media (max-height: 800px) and (max-width: 1600px) {
+@media (max-height: 1000px) and (max-width: 1600px) {
 	.project-gallery-container {
 		height: clamp(150px, 20vh, 400px) !important;
 	}
 	.project-gallery-container h1 {
-		font-size: 1.1em;
+		font-size: clamp(1rem, 2.5vw, 1.1em);
+		padding-top: 8px;
+		padding-bottom: 4px;
 		line-height: 0 !important;
 	}
 }
