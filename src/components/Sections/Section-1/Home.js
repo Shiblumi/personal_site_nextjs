@@ -2,7 +2,6 @@
 
 import styles from './Home.module.css';
 import AlternatingText from '../../UI/AlternatingText/AlternatingText';
-import TextBox from '@/components/UI/TextBox/TextBox';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';

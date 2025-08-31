@@ -1,0 +1,62 @@
+.popup-container {
+	display: flex;
+	z-index: 9999;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	align-items: flex-start;
+	justify-content: center;
+	margin-top: 40px;
+	padding: clamp(0.75rem, 2vw, 1.5rem);
+	pointer-events: none;
+	user-select: none;
+}
+
+.popup {
+	width: 100%;
+	max-width: clamp(280px, 90vw, 500px);
+	margin-top: clamp(0.5rem, 2vh, 1rem);
+	border-radius: clamp(0.5rem, 1.5vw, 1rem);
+	pointer-events: auto;
+	user-select: none;
+}
+
+.info {
+	background-color: rgba(7, 9, 42, 0.4);
+	color: white;
+}
+
+.success {
+	border-color: rgb(154, 255, 205, 0.4);
+	background-color: rgba(14, 96, 55, 0.4);
+	color: rgb(178, 255, 216);
+}
+
+.error {
+	border-color: rgb(255, 154, 186, 0.4);
+	background-color: rgba(42, 7, 16, 0.5);
+	box-shadow: 0px 0px 10px 5px rgba(255, 154, 186, 0.3);
+	box-shadow: 0px 0px 20px 5px rgba(255, 154, 186, 0.2);
+	box-shadow: 0px 0px 30px 5px rgba(255, 154, 186, 0.1);
+	color: rgb(255, 154, 186);
+}
+
+.content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: clamp(1rem, 3vw, 1.5rem);
+	gap: clamp(0.75rem, 2vw, 1rem);
+	user-select: none;
+}
+
+.message {
+	margin: 0;
+	font-weight: bold;
+	font-size: clamp(0.875rem, 2.5vw, 1rem);
+	line-height: 1.5;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+	word-wrap: break-word;
+	user-select: none;
+}

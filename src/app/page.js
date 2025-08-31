@@ -1,7 +1,7 @@
 'use client';
 
 import styles from './page.module.css';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavbarContext } from '@/components/UI/ActiveSectionContext';
 
 // Sections import
@@ -10,13 +10,23 @@ import Experience from '@/components/Sections/Section-2/Experience';
 import Skills from '@/components/Sections/Section-3/Skills';
 import Projects from '@/components/Sections/Section-4/Projects';
 import Contact from '@/components/Sections/Section-5/Contact';
+import PopupNotification from '@/components/UI/PopupNotification/PopupNotification';
+
+function useInitialViewport() {
+	const [isMobile, setIsMobile] = useState(null);
+
+	useEffect(() => {
+		setIsMobile(window.innerWidth < 768);
+	}, []);
+
+	return isMobile;
+}
 
 export default function Page() {
 	const { setActiveSection } = useNavbarContext();
-	// const scrollWrapperRef = useRef(null);
+	const isMobile = useInitialViewport();
 
 	useEffect(() => {
-		// Spline takes an int for identifying scenes.
 		const sectionNameID = {
 			home: 1,
 			exp: 2,
@@ -57,7 +67,7 @@ export default function Page() {
 
 	return (
 		<main className={styles['main']}>
-			<div className={styles['background-scene']}></div>
+			{isMobile && <PopupNotification duration={6} delay={2}>Mobile resolution detected. <br />Backgrounds will not be animated.</PopupNotification>}
 			<div className={styles['scroll-wrapper']}>
 				{/* Home */}
 				<section id='home' className={styles['scroll-section']}>

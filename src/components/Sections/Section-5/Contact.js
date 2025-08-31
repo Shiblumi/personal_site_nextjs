@@ -5,28 +5,95 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import styles from './Contact.module.css';
 import Footer from '@/components/UI/Footer/Footer';
+import PopupNotification from '@/components/UI/PopupNotification/PopupNotification';
 
 export default function Contact() {
 	const [senderEmail, setSenderEmail] = useState('');
 	const [subject, setSubject] = useState('');
 	const [message, setMessage] = useState('');
+	const [isLoading, setIsLoading] = useState(false);
+	const [showPopup, setShowPopup] = useState(false);
+	const [popupType, setPopupType] = useState('info');
+	const [popupMessage, setPopupMessage] = useState('');
 
 	const sendMail = async (e) => {
 		e.preventDefault();
-		const res = await fetch('/api/sendEmail', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({
-				senderEmail: senderEmail,
-				subject: subject,
-				message: message,
-			}),
-		});
-		const data = await res.json();
-		console.log(data);
+		setIsLoading(true);
+
+		try {
+			const res = await fetch('/api/sendEmail', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					senderEmail: senderEmail,
+					subject: subject,
+					message: message,
+				}),
+			});
+
+			const data = await res.json();
+
+			if (res.ok) {
+				console.log(data);
+				setPopupType('success');
+				setPopupMessage('Email sent successfully!');
+				setShowPopup(true);
+				setSenderEmail('');
+				setSubject('');
+				setMessage('');
+			} else {
+				setPopupType('error');
+				setPopupMessage(`Failed to send email. Code: ${res.status}`);
+				setShowPopup(true);
+				throw new Error(
+					`Failed to send email: ${res.status} ${res.statusText}`
+				);
+			}
+		} catch (error) {
+			console.error('Error sending email:', error.message);
+			setPopupType('error');
+			setPopupMessage('An error occurred while sending the email.');
+			setShowPopup(true);
+		} finally {
+			setIsLoading(false);
+		}
 	};
+
+	// --------------- TEST --------------
+
+	// const sendMail = async (e) => {
+	// 	e.preventDefault();
+	// 	setIsLoading(true);
+
+	// 	try {
+	// 		await new Promise((resolve) => {
+	// 			setTimeout(() => {
+	// 				resolve();
+	// 			}, 2000);
+	// 		});
+
+	// 		// Simulate response
+	// 		// throw new Error('Simulated failure');
+
+	// 		setPopupType('success');
+	// 		setPopupMessage('Email sent successfully!');
+	// 		setShowPopup(true);
+	// 		// setSenderEmail('');
+	// 		// setSubject('');
+	// 		// setMessage('');
+	// 	} catch (error) {
+	// 		console.error('Error sending email:', error.message);
+	// 		setPopupType('error');
+	// 		setPopupMessage('Email failed to send. Please try again later.');
+	// 		setShowPopup(true);
+	// 	} finally {
+	// 		setIsLoading(false);
+	// 	}
+	// };
+
+	// --------------- END TEST --------------
 
 	const sectionRef = useRef(null);
 	const isInView = useInView(sectionRef, {
@@ -34,7 +101,6 @@ export default function Contact() {
 		amount: 0.75,
 	});
 
-	// Container animation variants
 	const containerVariants = {
 		hidden: {
 			opacity: 0,
@@ -50,7 +116,6 @@ export default function Contact() {
 		},
 	};
 
-	// Form animation variants
 	const formVariants = {
 		hidden: {
 			opacity: 0,
@@ -67,7 +132,6 @@ export default function Contact() {
 		},
 	};
 
-	// Form group animation (for each label-input pair)
 	const formGroupVariants = {
 		hidden: {
 			opacity: 1,
@@ -79,12 +143,11 @@ export default function Contact() {
 			transition: {
 				duration: 0.5,
 				ease: 'easeOut',
-				staggerChildren: 0.1, // Small stagger within each field group
+				staggerChildren: 0.1,
 			},
 		},
 	};
 
-	// Field title animation variants (no backdrop filter)
 	const formTitleVariants = {
 		hidden: {
 			opacity: 0,
@@ -100,7 +163,6 @@ export default function Contact() {
 		},
 	};
 
-	// Field animation variants (with backdrop filter)
 	const formFieldVariants = {
 		hidden: {
 			opacity: 0,
@@ -119,15 +181,44 @@ export default function Contact() {
 	};
 
 	const formButtonVariants = {
-		hidden: { opacity: 0, scale: 0.98, backdropFilter: 'blur(0px)' },
+		hidden: { opacity: 0, backdropFilter: 'blur(0px)' },
 		visible: {
 			opacity: 1,
-			scale: 1,
 			backdropFilter: 'blur(5px)',
 			transition: {
 				duration: 0.5,
 				ease: 'easeOut',
 				delay: 1.1,
+			},
+		},
+		tap: {
+			scale: 0.98,
+			transition: {
+				duration: 0.1,
+				ease: 'easeOut',
+			},
+		},
+	};
+
+	const spinnerVariants = {
+		hidden: {
+			opacity: 0,
+			rotate: 0,
+		},
+		visible: {
+			opacity: 1,
+			rotate: 360,
+			transition: {
+				opacity: {
+					duration: 0.2,
+					ease: 'easeOut',
+				},
+				rotate: {
+					repeat: Infinity,
+					duration: 1,
+					ease: 'linear',
+					repeatType: 'loop',
+				},
 			},
 		},
 	};
@@ -238,10 +329,36 @@ export default function Contact() {
 					className={`${styles['submit-button']} glass-dark-primary`}
 					type='submit'
 					variants={formButtonVariants}
+					initial='hidden'
+					animate={isInView ? 'visible' : 'hidden'}
+					disabled={isLoading}
+					whileTap='tap'
 				>
-					<motion.span>Send Message</motion.span>
+					{isLoading ? (
+						<motion.div
+							className={styles['spinner']}
+							variants={spinnerVariants}
+							initial='hidden'
+							animate='visible'
+						/>
+					) : (
+						<motion.span>Send Message</motion.span>
+					)}
 				</motion.button>
 			</motion.form>
+
+			{/* Popup Notification */}
+			{showPopup && (
+				<PopupNotification
+					type={popupType}
+					duration={6}
+					onClose={() => setShowPopup(false)}
+				>
+					{popupMessage}
+				</PopupNotification>
+			)}
+
+			{/* Footer */}
 			<Footer />
 		</motion.div>
 	);

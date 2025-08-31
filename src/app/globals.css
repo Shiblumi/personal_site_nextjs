@@ -20,6 +20,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Anta&family=Audiowide&family=Doto:wght@100..900&family=Hubballi&family=Jura:wght@300..700&family=Kdam+Thmor+Pro&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Michroma&family=Orbitron:wght@400..900&family=Righteous&family=Syncopate:wght@400;700&family=Train+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
+@media (prefers-color-scheme: dark) {
+	html {
+		color-scheme: dark;
+		background-color: rgb(var(--bg-dark-rgb));
+		color: #ffffff;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	html {
+		color-scheme: light;
+		background-color: rgb(var(--bg-dark-rgb));
+		color: #ffffff;
+	}
+}
+
 :root {
 	none: rgba(146, 255, 253);
 	none: rgba(148, 200, 255);

@@ -31,7 +31,8 @@
 .white-layer.active {
 	color: rgb(255, 255, 255);
 	text-shadow: 0 0 4px rgba(var(--secondary-rgb), 1),
-		0 0 8px rgba(var(--secondary-rgb), 0.9);
+		0 0 8px rgba(var(--secondary-rgb), 0.9),
+		0 0 16px rgba(var(--secondary-rgb), 0.8);
 }
 
 .red-layer {
