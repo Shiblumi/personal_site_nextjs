@@ -11,7 +11,7 @@
 	color: rgba(148, 200, 255, 0.8);
 	font-weight: 400;
 	font-size: 3.6em;
-	font-family: 'Montserrat', sans-serif;
+	font-family: var(--font-montserrat);
 	user-select: none;
 	text-shadow: 0px 0px 18px rgba(5, 0, 16, 0.2),
 		0px 0px 24px rgba(5, 0, 16, 0.4);

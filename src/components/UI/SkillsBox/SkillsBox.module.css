@@ -27,7 +27,7 @@
 	color: rgba(var(--secondary-rgb));
 	font-weight: 600;
 	font-size: clamp(0.9em, 2.5vw, 1.4em);
-	font-family: 'Jura';
+	font-family: var(--font-jura);
 	user-select: none;
 	text-shadow: 0 0 8px rgba(5, 0, 16), 0 0 16px rgba(5, 0, 16);
 }

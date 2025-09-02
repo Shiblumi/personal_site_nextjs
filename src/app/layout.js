@@ -1,5 +1,6 @@
 import '@/app/globals.css';
 import ActiveSectionContext from '@/components/UI/ActiveSectionContext';
+import { jura, michroma, montserrat } from '@/config/fonts';
 
 export const metadata = {
 	title: 'Dirk Wilson Portfolio',
@@ -26,8 +27,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang='en'>
-			<body>
+		<html lang='en' className={`${jura.variable} ${michroma.variable} ${montserrat.variable}`}>
+			<body className={jura.className}>
 				<ActiveSectionContext>{children}</ActiveSectionContext>
 			</body>
 		</html>

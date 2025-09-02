@@ -10,7 +10,7 @@
 	padding: 0px 80px 0px 80px;
 	transform: translateX(-50%);
 	font-size: 1.3em;
-	font-family: 'Montserrat', sans-serif;
+	font-family: var(--font-montserrat);
 	text-shadow: 0px 0px 20px rgb(5, 0, 16, 0.7);
 }
 
@@ -50,7 +50,7 @@
 	color: rgb(var(--logo-rgb));
 	font-weight: 600;
 	font-size: 2.5rem;
-	font-family: 'Michroma', 'sans serif';
+	font-family: var(--font-michroma);
 	letter-spacing: 0.15rem;
 	text-shadow: 0px 0px 18px rgba(var(--logo-rgb), 0.45),
 		0px 0px 24px rgba(99, 50, 204, 0.3);
@@ -122,7 +122,7 @@
 
 .mobile-menu-link {
 	display: block;
-	font-family: 'Jura', sans-serif;
+	font-family: var(--font-jura);
 	font-weight: 500;
 	font-size: 1.1em;
 	text-align: center;

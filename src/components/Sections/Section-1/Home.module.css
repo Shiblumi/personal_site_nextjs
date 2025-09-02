@@ -30,7 +30,7 @@
 	color: rgba(148, 200, 255, 0.65);
 	font-weight: 500;
 	font-size: 12em;
-	font-family: 'Jura', 'Montserrat', sans-serif;
+	font-family: var(--font-jura);
 	text-shadow: 0px 0px 18px rgba(5, 0, 16, 0.2),
 		0px 0px 24px rgba(5, 0, 16, 0.4);
 	user-select: none;
@@ -85,7 +85,7 @@
 	color: rgb(202, 255, 243);
 	font-weight: 650;
 	font-size: 1.8em;
-	font-family: 'Jura', sans-serif;
+	font-family: var(--font-jura);
 	text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 	cursor: pointer;
 
@@ -106,7 +106,7 @@
 .home-button-down-arrow {
 	position: relative;
 	top: 0.05em;
-	filter: invert(1) drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
+	filter: drop-shadow(0 0 3px rgba(202, 255, 243, 1));
 }
 
 @media (max-height: 900px) and (min-width: 800px) {

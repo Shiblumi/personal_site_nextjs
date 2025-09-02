@@ -56,7 +56,7 @@
 	background: none;
 	font-size: 0.8em;
 	line-height: 1.6em;
-	font-family: 'Montserrat', sans-serif;
+	font-family: var(--font-montserrat);
 	resize: none;
 	user-select: auto;
 	/* background: rgba(7, 9, 42, 0.4); */
@@ -105,7 +105,7 @@
 	color: rgb(202, 255, 243);
 	font-weight: 650;
 	font-size: 1.2em;
-	font-family: 'Jura', sans-serif;
+	font-family: var(--font-jura);
 	text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 	cursor: pointer;
 

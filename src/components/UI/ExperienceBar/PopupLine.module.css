@@ -10,7 +10,7 @@
 	border-radius: 6px;
 	font-size: 1.1em;
 	line-height: 22px;
-	font-family: 'Jura';
+	font-family: var(--font-jura);
 	white-space: nowrap;
 	background-color: rgba(var(--bg-dark-rgb), 0.4);
 	/* GPU acceleration */

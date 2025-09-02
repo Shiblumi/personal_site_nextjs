@@ -1,24 +1,14 @@
-/* @import url("https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"); */
-/* @import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Hubballi&family=Jura:wght@300..700&display=swap"); */
 /*
-  Google Fonts Imported:
+	Font imports:
+	1. Jura (weights: 300–700) - Primary font
+	2. Michroma - Logo text font
+	3. Montserrat (weights: 100–900) - UI elements font
 
-  1. Anta
-  2. Audiowide
-  3. Doto (weights: 100–900)
-  4. Hubballi
-  5. Jura (weights: 300–700)
-  6. Kdam Thmor Pro
-  7. Lato (weights: 100, 300, 400, 700, 900; italics: 100, 300, 400, 700, 900)
-  8. Michroma
-  9. Orbitron (weights: 400–900)
-  10. Righteous
-  11. Syncopate (weights: 400, 700)
-  12. Train One
-  13. Montserrat (weights: 100–900)
+	Font variables:
+	- var(--font-jura)
+	- var(--font-michroma)
+	- var(--font-montserrat)
 */
-@import url('https://fonts.googleapis.com/css2?family=Anta&family=Audiowide&family=Doto:wght@100..900&family=Hubballi&family=Jura:wght@300..700&family=Kdam+Thmor+Pro&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Michroma&family=Orbitron:wght@400..900&family=Righteous&family=Syncopate:wght@400;700&family=Train+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 
 @media (prefers-color-scheme: dark) {
 	html {
@@ -48,7 +38,6 @@
 	--color-primary: rgb(var(--primary-rgb));
 	--color-secondary: rgb(var(--secondary-rgb));
 	--bg-dark: rgb(var(--bg-dark-rgb));
-	font-family: 'Jura';
 }
 
 * {
@@ -219,36 +208,27 @@ button:focus {
 	backdrop-filter: blur(6px);
 }
 
-
 /* --- glass-dark-primary-no-hover --- */
 .glass-dark-primary-no-hover {
-  position: relative;
-  z-index: 1;
-  backdrop-filter: blur(5px); /* Keep the default blur */
-  box-shadow: inset 0px 0px 14px 4px rgba(152, 128, 218, 0.1);
-  border: 1px solid;
-  border-color: rgba(146, 255, 230, 0.2) rgba(146, 255, 230, 0.2)
-    rgba(146, 255, 230, 0.1) rgba(255, 255, 255, 0.1);
-  border-radius: inherit;
-  background-image: radial-gradient(
-      circle at 100% 10%,
-      rgba(19, 7, 87, 0.15) 10%,
-      rgba(59, 62, 255, 0) 45%
-    ),
-    radial-gradient(
-      circle at 10% 100%,
-      rgba(38, 133, 181, 0.1) 10%,
-      rgba(144, 153, 255, 0) 35%
-    ),
-    linear-gradient(190deg, rgba(106, 138, 255, 0.1), rgba(67, 183, 187, 0.15));
-}
-
-.glass-dark-primary-no-hover::after {
-  content: none; /* Disable the hover pseudo-element */
-}
-
-.glass-dark-primary-no-hover:hover {
-  backdrop-filter: blur(5px); /* Prevent hover blur change */
+	position: relative;
+	z-index: 1;
+	backdrop-filter: blur(5px);
+	box-shadow: inset 0px 0px 14px 4px rgba(152, 128, 218, 0.1);
+	border: 1px solid;
+	border-color: rgba(146, 255, 230, 0.2) rgba(146, 255, 230, 0.2)
+		rgba(146, 255, 230, 0.1) rgba(255, 255, 255, 0.1);
+	border-radius: inherit;
+	background-image: radial-gradient(
+			circle at 100% 10%,
+			rgba(19, 7, 87, 0.15) 10%,
+			rgba(59, 62, 255, 0) 45%
+		),
+		radial-gradient(
+			circle at 10% 100%,
+			rgba(38, 133, 181, 0.1) 10%,
+			rgba(144, 153, 255, 0) 35%
+		),
+		linear-gradient(190deg, rgba(106, 138, 255, 0.1), rgba(67, 183, 187, 0.15));
 }
 
 /* --- glass-dark-secondary --- */
