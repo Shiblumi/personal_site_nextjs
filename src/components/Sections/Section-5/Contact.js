@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import styles from './Contact.module.css';
 import Footer from '@/components/UI/Footer/Footer';
@@ -347,15 +347,17 @@ export default function Contact() {
 			</motion.form>
 
 			{/* Popup Notification */}
-			{showPopup && (
-				<PopupNotification
-					type={popupType}
-					duration={6}
-					onClose={() => setShowPopup(false)}
-				>
-					{popupMessage}
-				</PopupNotification>
-			)}
+			<AnimatePresence>
+				{showPopup && (
+					<PopupNotification
+						type={popupType}
+						duration={6}
+						onClose={() => setShowPopup(false)}
+					>
+						{popupMessage}
+					</PopupNotification>
+				)}
+			</AnimatePresence>
 
 			{/* Footer */}
 			<Footer />
