@@ -31,13 +31,13 @@ export default function Skills() {
 				opacity={0.25}
 				delay='0.3'
 			>
-				<h1
+				<h2
 					style={{
 						padding: 'clamp(8px, 2vh, 16px) 0 0 clamp(24px, 2vw, 32px)',
 					}}
 				>
 					Skills
-				</h1>
+				</h2>
 				<div
 					style={{
 						overflowY: 'auto',
@@ -88,7 +88,7 @@ export default function Skills() {
 					isInView={isInView}
 				/>
 				<SkillsBox
-					title='Learning...'
+					title='Soon...'
 					logos={learningSkills}
 					delay='0.75'
 					isInView={isInView}

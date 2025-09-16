@@ -204,13 +204,13 @@ export default function Experience(props) {
 				delay='0.65'
 				sectionNum={2}
 			>
-				<h1
+				<h2
 					style={{
 						padding: 'clamp(8px, 2vh, 16px) 0 0 clamp(24px, 2vw, 32px)',
 					}}
 				>
 					Experience
-				</h1>
+				</h2>
 				<div
 					style={{
 						overflowY: 'auto',

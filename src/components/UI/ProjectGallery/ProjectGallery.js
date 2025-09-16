@@ -66,9 +66,9 @@ export default function ProjectGallery({
 			initial='hidden'
 			animate={isInView ? 'visible' : 'hidden'}
 		>
-			<h1 style={{ color: 'var(--color-secondary)'}}>
+			<h2 style={{ color: 'var(--color-secondary)'}}>
 				Projects
-			</h1>
+			</h2>
 			<motion.div
 				className={`${styles['project-gallery-grid']}`}
 				variants={projectGalleryVariants}

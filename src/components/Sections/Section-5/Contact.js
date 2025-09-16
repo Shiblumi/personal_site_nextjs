@@ -238,7 +238,7 @@ export default function Contact() {
 			>
 				{/* Title */}
 				<motion.div variants={formGroupVariants}>
-					<h1 style={{ marginBottom: '12px' }}>Contact</h1>
+					<h2 style={{ marginBottom: '12px' }}>Contact</h2>
 				</motion.div>
 
 				{/* Email Field Group */}
