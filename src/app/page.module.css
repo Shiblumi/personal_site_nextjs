@@ -1,7 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  height: 100dvh;
+  height: 100svh;
   width: 100vw;
   overflow: hidden;
 }
@@ -52,4 +52,16 @@
 }
 .scroll-wrapper::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
+}
+
+/* Instagram browser specific fixes */
+.instagram-browser .main,
+.instagram-browser .scroll-wrapper,
+.instagram-browser .scroll-section,
+.instagram-browser .background-scene {
+  height: calc(100vh - 80px) !important;
+}
+
+.instagram-browser .background-scene canvas {
+  height: calc(100vh - 80px) !important;
 }

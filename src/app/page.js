@@ -22,9 +22,23 @@ function useInitialViewport() {
 	return isMobile;
 }
 
+
 export default function Page() {
 	const { setActiveSection } = useNavbarContext();
 	const isMobile = useInitialViewport();
+	
+	// Detect Instagram in-app browser
+	useEffect(() => {
+	  const isInstagramBrowser = /Instagram|FBAN|FBAV/.test(navigator.userAgent);
+	  
+	  if (isInstagramBrowser) {
+		document.body.classList.add('instagram-browser');
+		
+		return () => {
+		  document.body.classList.remove('instagram-browser');
+		};
+	  }
+	}, []);
 
 	useEffect(() => {
 		const sectionNameID = {
