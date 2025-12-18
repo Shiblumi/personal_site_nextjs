@@ -77,7 +77,7 @@ export default function BackgroundVideo() {
 							alt={`Background ${imageNum}`}
 							fill
 							sizes='100vw'
-							quality={75}
+							quality={95}
 							priority={imageNum === 1}
 							loading={imageNum === 1 ? 'eager' : 'lazy'}
 							placeholder='blur'
