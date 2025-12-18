@@ -3,7 +3,7 @@ import { useNavbarContext } from '@/components/UI/ActiveSectionContext';
 import { memo } from 'react';
 import styles from './ScrollingTimeline.module.css';
 
-const TimelineDot = memo(({ isActive, href }) => {
+const TimelineDot = memo(({ isActive }) => {
 	return (
 		<motion.a
 			className={styles['timeline-dot']}

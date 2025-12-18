@@ -56,6 +56,15 @@ body {
 body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	::selection {
+		background: rgba(var(--secondary-rgb), 0.25);
+		color: rgba(var(--secondary-rgb), 1);
+	}
+
+	::-moz-selection {
+		background: rgba(var(--secondary-rgb), 0.25);
+		color: rgba(var(--secondary-rgb), 1);
+	}
 }
 
 a {
