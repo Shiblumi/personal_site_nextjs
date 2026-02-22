@@ -1,9 +1,8 @@
 import styles from './Experience.module.css';
-import { motion, useInView } from 'framer-motion';
+import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import PopupLine from '../../UI/ExperienceBar/PopupLine';
-import DateLine from '../../UI/ExperienceBar/ExpBarDateLine';
 import TextBox from '@/components/UI/TextBox/TextBox';
+import ExpBar from '@/components/UI/ExperienceBar/ExpBar';
 
 export default function Experience(props) {
 	const sectionRef = useRef(null);
@@ -12,185 +11,9 @@ export default function Experience(props) {
 		amount: 0.75,
 	});
 
-	const expBarVariants = {
-		hidden: { scaleX: 0, transition: { duration: 0.2 } },
-		visible: {
-			scaleX: 1,
-			transition: { duration: 2, delay: 0.3, ease: 'easeInOut' },
-		},
-	};
-
-	const trailingDotVariants = {
-		hidden: { opacity: 0, scale: 0.8, transition: { duration: 0.2 } },
-		visible: { opacity: 1, scale: 1 },
-	};
-
-	/* 	
-		13.6% Ted AI: Oct 2023
-		18.2% PediBeat: Nov 2023
-		22.7% SlugMeter: Dec 2023 
-		27.2% Sitegeist: Jan 2024
-		54.5% SyncQ: Jul 2024
-		77.3% Graduate: Dec 2024
-		86.4% SyncQ Chatbot: Feb 2025
-	*/
 	return (
 		<div ref={sectionRef} className={`${styles['experience-container']}`}>
-			<div className={styles['exp-bar-and-trailing-dots-container']}>
-				<div className={`${styles['exp-bar-wrapper']}`}>
-					<PopupLine
-						positionLeft='13.6%'
-						lineDirection='up'
-						textDirection='left'
-						delay='0.8'
-						isInView={isInView}
-					>
-						<strong>Ted AI Hackathon</strong>
-						Project: Maptodon
-						<br />
-						<em>Oct 2023</em>
-					</PopupLine>
-					<PopupLine
-						positionLeft='18.2%'
-						lineDirection='down'
-						textDirection='left'
-						delay='0.9'
-						isInView={isInView}
-					>
-						<strong>CalHacks 10.0</strong>
-						Project: PediBeat
-						<br />
-						<em>Nov 2023</em>
-					</PopupLine>
-					<PopupLine
-						positionLeft='22.7%'
-						lineDirection='up'
-						textDirection='right'
-						delay='1'
-						isInView={isInView}
-					>
-						<strong>Project: Slug Meter</strong>
-						Front-End Developer
-						<br />
-						<em>Dec 2023</em>
-					</PopupLine>
-					<PopupLine
-						positionLeft='27.2%'
-						lineDirection='down'
-						textDirection='right'
-						delay='1.1'
-						isInView={isInView}
-					>
-						<strong>CruzHacks</strong>
-						Project: Sitegeist
-						<br />
-						<em>Jan 2024</em>
-					</PopupLine>
-					<PopupLine
-						positionLeft='54.54%'
-						lineDirection='up'
-						textDirection='right'
-						delay='1.35'
-						isInView={isInView}
-					>
-						<strong>Company: SyncQ</strong>
-						Software Developer
-						<br />
-						<em>Jul 2024 - Present</em>
-					</PopupLine>
-					<PopupLine
-						positionLeft='77.3%'
-						lineDirection='down'
-						textDirection='left'
-						delay='1.65'
-						isInView={isInView}
-					>
-						<strong>Graduate: UC Santa Cruz</strong>
-						B.S. Computer Science
-						<br />
-						<em>Dec 2024</em>
-					</PopupLine>
-					<PopupLine
-						positionLeft='86.4%'
-						lineDirection='up'
-						textDirection='right'
-						delay='1.8'
-						isInView={isInView}
-					>
-						<strong>SyncQ Chatbot</strong>
-						Feature <span style={{ letterSpacing: '0.5px' }}>R&D</span>
-						<br />
-						<em>Feb 2025</em>
-					</PopupLine>
-
-					{/* The Experience Bar */}
-					{/* TODO: Make me a component */}
-					<motion.div
-						className={styles['exp-bar']}
-						variants={expBarVariants}
-						initial='hidden'
-						animate={isInView ? 'visible' : 'hidden'}
-						style={{
-							originX: 0,
-						}}
-					/>
-
-					{/* Date Lines (Years) */}
-					<DateLine
-						positionLeft='27.27%'
-						delay='1.1'
-						date='2024'
-						isInView={isInView}
-					/>
-					<DateLine
-						positionLeft='81.81%'
-						delay='1.7'
-						date='2025'
-						isInView={isInView}
-					/>
-				</div>
-
-				{/* Exp-Bar Trailing Dots */}
-				{/* TODO: Make me a component */}
-				<div className={`${styles['trailing-dots-container']}`}>
-					<motion.div
-						className={`${styles['exp-bar-trailing-dots']}`}
-						variants={trailingDotVariants}
-						initial='hidden'
-						animate={isInView ? 'visible' : 'hidden'}
-						transition={{
-							duration: 0.2,
-							delay: 2.25,
-							ease: 'easeOut',
-						}}
-						style={{ '--position-right': '-20px' }}
-					/>
-					<motion.div
-						className={`${styles['exp-bar-trailing-dots']}`}
-						variants={trailingDotVariants}
-						initial='hidden'
-						animate={isInView ? 'visible' : 'hidden'}
-						transition={{
-							duration: 0.2,
-							delay: 2.45,
-							ease: 'easeOut',
-						}}
-						style={{ '--position-right': '-40px' }}
-					/>
-					<motion.div
-						className={`${styles['exp-bar-trailing-dots']}`}
-						variants={trailingDotVariants}
-						initial='hidden'
-						animate={isInView ? 'visible' : 'hidden'}
-						transition={{
-							duration: 0.2,
-							delay: 2.65,
-							ease: 'easeOut',
-						}}
-						style={{ '--position-right': '-60px' }}
-					/>
-				</div>
-			</div>
+			<ExpBar isInView={isInView} />
 			<TextBox
 				styles={{
 					width: '100%',
@@ -233,7 +56,7 @@ export default function Experience(props) {
 						My journey as a developer has taken me as a university student doing
 						zero-sleep hackathons and personal projects, to working at SyncQ to
 						develop new features and interacting directly with clients. At
-						SyncQ, I’ve had the chance to work on exciting projects like
+						SyncQ, I've had the chance to work on exciting projects like
 						developing an AI chatbot and expanding our integration to new
 						platforms to reach more users. Outside of professional projects, I
 						enjoy creating 3D animated visuals, combining an artistic eye with a
