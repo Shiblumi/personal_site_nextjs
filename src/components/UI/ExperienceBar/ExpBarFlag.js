@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import styles from './PopupLine.module.css';
+import styles from './ExpBarFlag.module.css';
 
 const lineDirections = {
 	up: { bottom: '50%' },

@@ -1,7 +1,9 @@
-import styles from './ExpBar.module.css';
+import styles from '@/components/UI/ExperienceBar/ExpBar.module.css';
 import { motion } from 'framer-motion';
-import PopupLine from '@/components/UI/ExperienceBar/PopupLine';
-import DateLine from '@/components/UI/ExperienceBar/ExpBarDateLine';
+import ExpBarFlag from '@/components/UI/ExperienceBar/ExpBarFlag';
+import YearMarker from '@/components/UI/ExperienceBar/ExpBarYearMarker';
+import { calculateFlagPosition, calculateDelayForPosition } from '@/components/UI/ExperienceBar/ExpBarUtils';
+import ExpBarContent from '@/components/UI/ExperienceBar/ExpBarMetadata';
 
 export default function ExpBarSection({ isInView }) {
 	const expBarVariants = {
@@ -19,10 +21,62 @@ export default function ExpBarSection({ isInView }) {
 
 	return (
 		<div className={styles['exp-bar-and-trailing-dots-container']}>
-
-			{/* The Experience Bar */}
 			<div className={styles['exp-bar-wrapper']}>
-				<PopupLine
+				{/* Exp-Bar Line */}
+				<motion.div
+					className={styles['exp-bar']}
+					variants={expBarVariants}
+					initial='hidden'
+					animate={isInView ? 'visible' : 'hidden'}
+					style={{ originX: 0 }}
+				/>
+
+				{/* Exp-Bar Year Markers */}
+				<YearMarker
+					// positionLeft='27.27%'
+					positionLeft={calculateFlagPosition('Jan', 2024) + '%'}
+					delay={calculateDelayForPosition(parseFloat(calculateFlagPosition('Jan', 2024)), 2, 0.3)}
+					date='2024'
+					isInView={isInView}
+				/>
+				<YearMarker
+					positionLeft={calculateFlagPosition('Jan', 2025) + '%'}
+					delay={calculateDelayForPosition(parseFloat(calculateFlagPosition('Jan', 2025)), 2, 0.3)}
+					date='2025'
+					isInView={isInView}
+				/>
+				<YearMarker
+					positionLeft={calculateFlagPosition('Jan', 2026) + '%'}
+					delay={calculateDelayForPosition(parseFloat(calculateFlagPosition('Jan', 2026)), 2, 0.3)}
+					date='2026'
+					isInView={isInView}
+				/>
+
+				{/* Exp-Bar Flags */}
+				{ExpBarContent.map((item, index) => {
+                    const positionLeft = calculateFlagPosition(item.dateStart.month, item.dateStart.year);
+                    const delay = calculateDelayForPosition(parseFloat(positionLeft), 2, 0.3);
+
+                    return (
+                        <ExpBarFlag
+                            key={index}
+                            positionLeft={positionLeft + '%'}
+                            lineDirection={item.lineDirection}
+                            textDirection={item.textDirection}
+                            delay={delay}
+                            isInView={isInView}
+                        >
+                            <strong>{item.title}</strong>
+                            {item.description}
+                            <br />
+                            <em>
+                                {item.dateStart.month} {item.dateStart.year}
+                                {item.dateEnd && item.dateEnd.month ? ` - ${item.dateEnd.month} ${item.dateEnd.year}` : ''}
+                            </em>
+                        </ExpBarFlag>
+                    );
+                })}
+				{/* <ExpBarFlag
 					positionLeft='13.6%'
 					lineDirection='up'
 					textDirection='left'
@@ -33,8 +87,8 @@ export default function ExpBarSection({ isInView }) {
 					Project: Maptodon
 					<br />
 					<em>Oct 2023</em>
-				</PopupLine>
-				<PopupLine
+				</ExpBarFlag>
+				<ExpBarFlag
 					positionLeft='18.2%'
 					lineDirection='down'
 					textDirection='left'
@@ -45,8 +99,8 @@ export default function ExpBarSection({ isInView }) {
 					Project: PediBeat
 					<br />
 					<em>Nov 2023</em>
-				</PopupLine>
-				<PopupLine
+				</ExpBarFlag>
+				<ExpBarFlag
 					positionLeft='22.7%'
 					lineDirection='up'
 					textDirection='right'
@@ -57,8 +111,8 @@ export default function ExpBarSection({ isInView }) {
 					Front-End Developer
 					<br />
 					<em>Dec 2023</em>
-				</PopupLine>
-				<PopupLine
+				</ExpBarFlag>
+				<ExpBarFlag
 					positionLeft='27.2%'
 					lineDirection='down'
 					textDirection='right'
@@ -69,8 +123,8 @@ export default function ExpBarSection({ isInView }) {
 					Project: Sitegeist
 					<br />
 					<em>Jan 2024</em>
-				</PopupLine>
-				<PopupLine
+				</ExpBarFlag>
+				<ExpBarFlag
 					positionLeft='54.54%'
 					lineDirection='up'
 					textDirection='right'
@@ -81,8 +135,8 @@ export default function ExpBarSection({ isInView }) {
 					Software Developer
 					<br />
 					<em>Jul 2024 - Present</em>
-				</PopupLine>
-				<PopupLine
+				</ExpBarFlag>
+				<ExpBarFlag
 					positionLeft='77.3%'
 					lineDirection='down'
 					textDirection='left'
@@ -93,8 +147,8 @@ export default function ExpBarSection({ isInView }) {
 					B.S. Computer Science
 					<br />
 					<em>Dec 2024</em>
-				</PopupLine>
-				<PopupLine
+				</ExpBarFlag>
+				<ExpBarFlag
 					positionLeft='86.4%'
 					lineDirection='up'
 					textDirection='right'
@@ -105,29 +159,7 @@ export default function ExpBarSection({ isInView }) {
 					Feature <span style={{ letterSpacing: '0.5px' }}>R&D</span>
 					<br />
 					<em>Feb 2025</em>
-				</PopupLine>
-
-				<motion.div
-					className={styles['exp-bar']}
-					variants={expBarVariants}
-					initial='hidden'
-					animate={isInView ? 'visible' : 'hidden'}
-					style={{ originX: 0 }}
-				/>
-
-				{/* Date Lines (Years) */}
-				<DateLine
-					positionLeft='27.27%'
-					delay='1.1'
-					date='2024'
-					isInView={isInView}
-				/>
-				<DateLine
-					positionLeft='81.81%'
-					delay='1.7'
-					date='2025'
-					isInView={isInView}
-				/>
+				</ExpBarFlag> */}
 			</div>
 
 			{/* Exp-Bar Trailing Dots */}

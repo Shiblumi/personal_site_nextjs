@@ -93,7 +93,7 @@ export default function Footer() {
 						height={28}
 					/>
 				</motion.div>
-				dirktaku@gmail.com
+				DirkTaku@gmail.com
 			</motion.a>
 
 			<motion.a
@@ -114,7 +114,7 @@ export default function Footer() {
 				Resume
 			</motion.a>
 
-			<motion.span>© 2025 Dirk Wilson</motion.span>
+			<motion.span>© 2026 Dirk Wilson</motion.span>
 		</motion.footer>
 	);
 }

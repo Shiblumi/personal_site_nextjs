@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 
 export default function DateLine({ positionLeft, delay, date = '2049', isInView = false }) {
-	const dateLineVariants = {
+	const yearMarkerVariants = {
 		hidden: { opacity: 0, scale: 0.9, height: 0, transition: { duration: 0.2 } },
 		visible: {
 			opacity: 1,
@@ -15,7 +15,7 @@ export default function DateLine({ positionLeft, delay, date = '2049', isInView 
 		},
 	};
 
-	const dateTextVariants = {
+	const yearTextVariants = {
 		hidden: { opacity: 0, transition: { duration: 0.2 } },
 		visible: {
 			opacity: 1,
@@ -33,13 +33,12 @@ export default function DateLine({ positionLeft, delay, date = '2049', isInView 
 				style={{
 					position: 'absolute',
 					left: positionLeft,
-					width: '2px',
+					width: '3px',
 					height: '28px',
 					borderRadius: '3px',
 					background: 'rgba(148, 200, 255, 1)',
-					filter: 'blur(1px)',
 				}}
-				variants={dateLineVariants}
+				variants={yearMarkerVariants}
 				initial='hidden'
 				animate={isInView ? 'visible' : 'hidden'}
 			/>
@@ -56,7 +55,7 @@ export default function DateLine({ positionLeft, delay, date = '2049', isInView 
 					color: 'rgba(var(--secondary-rgb), 0.9)',
 					textAlign: 'center',
 				}}
-				variants={dateTextVariants}
+				variants={yearTextVariants}
 				initial='hidden'
 				animate={isInView ? 'visible' : 'hidden'}
 			>

@@ -8,19 +8,21 @@
 	height: 100%;
 	margin: 0 auto;
 	padding: 200px 0 4vh 0;
-	gap: clamp(12px, 20vh, 256px);
+	/* gap: clamp(100px, 20vh, 300px); */
+	gap: 10vh;
 }
 
 @media (max-width: 1400px) {
 	.experience-container {
 		padding: 16vh 3vw 8vh 3vw;
-		gap: clamp(12px, 4vh, 64px);
+		gap: 5vh;
 	}
 }
 
 @media (max-width: 900px) {
 	.experience-container {
 		padding: 8vh 2vw 4vh 2vw;
+		gap: 2vh;
 	}
 }
 
@@ -33,5 +35,11 @@
 @media (max-height: 800px) and (max-width: 900px) {
 	.experience-container {
 		padding: 75px 2vw 4vh 2vw;
+	}
+}
+
+@media (max-width: 400px) {
+	.experience-container {
+		gap: 0;
 	}
 }

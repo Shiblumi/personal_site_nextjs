@@ -111,16 +111,16 @@
 	}
 }
 
-@media (min-width: 900px) and (max-width: 1400px) {
+@media (min-width: 900px) and (max-width: 2000px) {
 	.popup-line-container {
-		height: clamp(100px, 11vh, 150px);
+		height: clamp(115px, 12vh, 125px);
 	}
 	.popup-line {
-		height: clamp(100px, 11vh, 150px);
+		height: clamp(115px, 12vh, 125px);
 	}
 	.text-container {
 		padding: 0.5em 1em;
-		font-size: clamp(0.5em, 1.2vw, 1em);
+		font-size: clamp(0.8em, 0.95vw, 1em);
 		line-height: clamp(1.1em, 1.2vh, 1.2em);
 	}
 	.text-container > strong:first-child {
