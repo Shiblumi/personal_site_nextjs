@@ -22,20 +22,20 @@ function calculateExpBarRange() {
 	const { month: latestMonth, year: latestYear } = ExpBarContent[ExpBarContent.length - 1].dateStart;
 
 	// Calculate the number of months in total range
-	const monthsRange = (latestYear - earliestYear) * 12 - monthToInt[earliestMonth] + monthToInt[latestMonth];
+	let monthsRange = (latestYear - earliestYear) * 12 - monthToInt[earliestMonth] + monthToInt[latestMonth];
 
 	return monthsRange;
 }
 
-// Calculate (in percentage) the distance from the start of ExpBar's range for a given month and year
+// For a given month and year, calculate (in percentage) the distance from the start of ExpBar's range
 export function calculateFlagPosition(month = 'Jan', year = 2024) {
 	const { month: earliestMonth, year: earliestYear } = ExpBarContent[0].dateStart;
 
 	let expBarRange = calculateExpBarRange();
-	expBarRange += 4; // Add left/right padding to the Exp-Bar range
+	expBarRange += 4; // Adds padding to the right of the Exp-Bar
 
 	let monthsFromStart = (year - earliestYear) * 12 + (monthToInt[month] - monthToInt[earliestMonth]);
-	monthsFromStart += 3; // Shift flag to the right by specified month(s)
+	monthsFromStart += 3; // Shifts flag to the right by n month(s)
 
 	let positionPercent = (monthsFromStart / expBarRange) * 100;
 
@@ -44,10 +44,11 @@ export function calculateFlagPosition(month = 'Jan', year = 2024) {
 
 // Calculate the animation delay for a flag based on its position
 export function calculateDelayForPosition(positionLeftPercent = 0.50, animationDuration = 2, initialDelay = 0.3) {
-    const p = positionLeftPercent / 100;
+    let p = positionLeftPercent / 100;
 
-    // easeInOut cosine func [p = (1 - cos(t * π)) / 2] solved for time (t) given progress (p)
-    const t = Math.acos(1 - 2 * p) / Math.PI;
+    // easeInOut cosine func [p = (1 - cos(t * π)) / 2] solved for time (t) given position (p)
+    let t = Math.acos(1 - 2 * p) / Math.PI;
+	let delay = (initialDelay + t * animationDuration);
 
-    return (initialDelay + t * animationDuration).toFixed(2);
+    return delay.toFixed(2);
 }

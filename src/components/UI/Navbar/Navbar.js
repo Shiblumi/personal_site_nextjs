@@ -6,9 +6,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Navbar.module.css';
 import { useNavbarContext } from '../ActiveSectionContext';
 import ChromaticText from '@/components/UI/ChromaticText/ChromaticText';
+import ToggleSwitch from '@/components/UI/ToggleSwitch/ToggleSwitch';
 
 export default function Navbar() {
 	const { activeSection } = useNavbarContext();
+	const { showUI, setShowUI } = useNavbarContext();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isMobile, setIsMobile] = useState(false);
 
@@ -53,6 +55,11 @@ export default function Navbar() {
 			document.body.style.overflow = 'unset';
 		};
 	}, [isMenuOpen, isMobile]);
+
+	// Toggle UI visibility
+	const handleUIToggle = (isOn) => {
+		setShowUI(isOn);
+	};
 
 	// Hamburger animation variants for each line
 	const topLineVariants = {
@@ -211,6 +218,10 @@ export default function Navbar() {
 					{navLinks.map((link) => (
 						<NavbarLink key={link.section} link={link} />
 					))}
+					<div className={styles['navbar-divider']} />
+					<div style={{marginLeft: '9px'}}>
+						<ToggleSwitch onToggle={handleUIToggle} thumbText='ui' />
+					</div>
 				</div>
 
 				{/* Hamburger Menu */}

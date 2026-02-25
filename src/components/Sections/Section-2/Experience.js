@@ -53,14 +53,17 @@ export default function Experience(props) {
 					}}
 				>
 					<p style={{ textIndent: '1em' }}>
-						My journey as a developer has taken me as a university student doing
-						zero-sleep hackathons and personal projects, to working at SyncQ to
-						develop new features and interacting directly with clients. At
-						SyncQ, I've had the chance to work on exciting projects like
-						developing an AI chatbot and expanding our integration to new
-						platforms to reach more users. Outside of professional projects, I
-						enjoy creating 3D animated visuals, combining an artistic eye with a
-						technical mindset.
+						I began my journey as a university student participating in
+						hackathons in teams of friends. Since then, I've had the
+						opportunity to work on collaborative teams at companies such as
+						SyncQ and C3 AI. At SyncQ, I developed new features and expanded
+						integrations between CRM and accounting platforms while working
+						directly with clients to understand their workflows and translate
+						business requirements into technical solutions. At C3 AI, I
+						contributed within their enterprise-level AI platform by evaluating
+						core tools and overall platform reliability while building new
+						features within their applications, deepening my
+						understanding of large-scale systems and thoughtful platform design.
 					</p>
 				</div>
 			</TextBox>

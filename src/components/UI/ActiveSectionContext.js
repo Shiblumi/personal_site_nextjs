@@ -21,9 +21,10 @@ export const useNavbarContext = () => {
 // Sets context provider above Navbar and Page components.
 export default function NavbarContext({ children }) {
 	const [activeSection, setActiveSection] = useState(1);
-
+	const [showUI, setShowUI] = useState(true);
+	
 	return (
-		<ActiveSectionContext.Provider value={{ activeSection, setActiveSection }}>
+		<ActiveSectionContext.Provider value={{ activeSection, setActiveSection, showUI, setShowUI }}>
 			<Navbar />
 			<ScrollingTimeline />
 			<BackgroundVideo />

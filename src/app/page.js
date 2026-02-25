@@ -25,6 +25,7 @@ function useInitialViewport() {
 
 export default function Page() {
 	const { setActiveSection } = useNavbarContext();
+	const { showUI } = useNavbarContext();
 	const isMobile = useInitialViewport();
 	
 	// Detect Instagram in-app browser
@@ -85,27 +86,27 @@ export default function Page() {
 			<div className={styles['scroll-wrapper']}>
 				{/* Home */}
 				<section id='home' className={styles['scroll-section']}>
-					<Home />
+					{showUI && <Home />}
 				</section>
 
 				{/* Experience */}
 				<section id='exp' className={styles['scroll-section']}>
-					<Experience />
+					{showUI && <Experience />}
 				</section>
 
 				{/* Skills */}
 				<section id='skills' className={styles['scroll-section']}>
-					<Skills />
+					{showUI && <Skills />}
 				</section>
 
 				{/* Projects */}
 				<section id='projects' className={styles['scroll-section']}>
-					<Projects />
+					{showUI && <Projects />}
 				</section>
 
 				{/* Contact */}
 				<section id='contact' className={styles['scroll-section']}>
-					<Contact />
+					{showUI && <Contact />}
 				</section>
 			</div>
 		</main>

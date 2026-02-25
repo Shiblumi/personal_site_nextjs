@@ -65,6 +65,12 @@
 	font-weight: 500;
 }
 
+.navbar-divider {
+	width: 2px;
+	height: 24px;
+	background-color: rgba(var(--secondary-rgb), 0.5);
+}
+
 /* Hamburger Menu Styles */
 .hamburger {
 	display: none;

@@ -6,11 +6,14 @@ import { calculateFlagPosition, calculateDelayForPosition } from '@/components/U
 import ExpBarContent from '@/components/UI/ExperienceBar/ExpBarMetadata';
 
 export default function ExpBarSection({ isInView }) {
+	const EXP_ANIM_DURATION = 2;
+	const EXP_ANIM_DELAY = 0.3;
+
 	const expBarVariants = {
 		hidden: { scaleX: 0, transition: { duration: 0.2 } },
 		visible: {
 			scaleX: 1,
-			transition: { duration: 2, delay: 0.3, ease: 'easeInOut' },
+			transition: { duration: EXP_ANIM_DURATION, delay: EXP_ANIM_DELAY, ease: 'easeInOut' },
 		},
 	};
 
@@ -33,21 +36,20 @@ export default function ExpBarSection({ isInView }) {
 
 				{/* Exp-Bar Year Markers */}
 				<YearMarker
-					// positionLeft='27.27%'
 					positionLeft={calculateFlagPosition('Jan', 2024) + '%'}
-					delay={calculateDelayForPosition(parseFloat(calculateFlagPosition('Jan', 2024)), 2, 0.3)}
+					delay={calculateDelayForPosition(parseFloat(calculateFlagPosition('Jan', 2024)), EXP_ANIM_DURATION, EXP_ANIM_DELAY)}
 					date='2024'
 					isInView={isInView}
 				/>
 				<YearMarker
 					positionLeft={calculateFlagPosition('Jan', 2025) + '%'}
-					delay={calculateDelayForPosition(parseFloat(calculateFlagPosition('Jan', 2025)), 2, 0.3)}
+					delay={calculateDelayForPosition(parseFloat(calculateFlagPosition('Jan', 2025)), EXP_ANIM_DURATION, EXP_ANIM_DELAY)}
 					date='2025'
 					isInView={isInView}
 				/>
 				<YearMarker
 					positionLeft={calculateFlagPosition('Jan', 2026) + '%'}
-					delay={calculateDelayForPosition(parseFloat(calculateFlagPosition('Jan', 2026)), 2, 0.3)}
+					delay={calculateDelayForPosition(parseFloat(calculateFlagPosition('Jan', 2026)), EXP_ANIM_DURATION, EXP_ANIM_DELAY)}
 					date='2026'
 					isInView={isInView}
 				/>
@@ -55,7 +57,7 @@ export default function ExpBarSection({ isInView }) {
 				{/* Exp-Bar Flags */}
 				{ExpBarContent.map((item, index) => {
                     const positionLeft = calculateFlagPosition(item.dateStart.month, item.dateStart.year);
-                    const delay = calculateDelayForPosition(parseFloat(positionLeft), 2, 0.3);
+                    const delay = calculateDelayForPosition(parseFloat(positionLeft), EXP_ANIM_DURATION, EXP_ANIM_DELAY);
 
                     return (
                         <ExpBarFlag
@@ -76,90 +78,6 @@ export default function ExpBarSection({ isInView }) {
                         </ExpBarFlag>
                     );
                 })}
-				{/* <ExpBarFlag
-					positionLeft='13.6%'
-					lineDirection='up'
-					textDirection='left'
-					delay='0.8'
-					isInView={isInView}
-				>
-					<strong>Ted AI Hackathon</strong>
-					Project: Maptodon
-					<br />
-					<em>Oct 2023</em>
-				</ExpBarFlag>
-				<ExpBarFlag
-					positionLeft='18.2%'
-					lineDirection='down'
-					textDirection='left'
-					delay='0.9'
-					isInView={isInView}
-				>
-					<strong>CalHacks 10.0</strong>
-					Project: PediBeat
-					<br />
-					<em>Nov 2023</em>
-				</ExpBarFlag>
-				<ExpBarFlag
-					positionLeft='22.7%'
-					lineDirection='up'
-					textDirection='right'
-					delay='1'
-					isInView={isInView}
-				>
-					<strong>Project: Slug Meter</strong>
-					Front-End Developer
-					<br />
-					<em>Dec 2023</em>
-				</ExpBarFlag>
-				<ExpBarFlag
-					positionLeft='27.2%'
-					lineDirection='down'
-					textDirection='right'
-					delay='1.1'
-					isInView={isInView}
-				>
-					<strong>CruzHacks</strong>
-					Project: Sitegeist
-					<br />
-					<em>Jan 2024</em>
-				</ExpBarFlag>
-				<ExpBarFlag
-					positionLeft='54.54%'
-					lineDirection='up'
-					textDirection='right'
-					delay='1.35'
-					isInView={isInView}
-				>
-					<strong>Company: SyncQ</strong>
-					Software Developer
-					<br />
-					<em>Jul 2024 - Present</em>
-				</ExpBarFlag>
-				<ExpBarFlag
-					positionLeft='77.3%'
-					lineDirection='down'
-					textDirection='left'
-					delay='1.65'
-					isInView={isInView}
-				>
-					<strong>Graduate: UC Santa Cruz</strong>
-					B.S. Computer Science
-					<br />
-					<em>Dec 2024</em>
-				</ExpBarFlag>
-				<ExpBarFlag
-					positionLeft='86.4%'
-					lineDirection='up'
-					textDirection='right'
-					delay='1.8'
-					isInView={isInView}
-				>
-					<strong>SyncQ Chatbot</strong>
-					Feature <span style={{ letterSpacing: '0.5px' }}>R&D</span>
-					<br />
-					<em>Feb 2025</em>
-				</ExpBarFlag> */}
 			</div>
 
 			{/* Exp-Bar Trailing Dots */}
