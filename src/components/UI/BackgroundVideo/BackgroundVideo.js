@@ -8,10 +8,11 @@ import BG1 from '@/../public/backgrounds/stills/BG1.jpg';
 import BG2 from '@/../public/backgrounds/stills/BG2.jpg';
 import BG3 from '@/../public/backgrounds/stills/BG3.jpg';
 import BG4 from '@/../public/backgrounds/stills/BG4.jpg';
+import BG5 from '@/../public/backgrounds/stills/BG5.jpg';
 
-const sectionToVideoMap = [1, 2, 3, 3, 4];
-const videoNumbers = [1, 2, 3, 4];
-const backgroundImages = [BG1, BG2, BG3, BG4];
+const sectionToVideoMap = [1, 2, 3, 4, 5];
+const videoNumbers = [1, 2, 3, 4, 5];
+const backgroundImages = [BG1, BG2, BG3, BG4, BG5];
 
 // Check viewport resolution on initial mount.
 function useInitialViewport() {
