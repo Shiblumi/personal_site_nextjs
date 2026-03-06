@@ -68,7 +68,7 @@ export default function BackgroundVideo() {
 		<div className={styles['fullscreen-video-container']}>
 			{isMobile
 				? // Render images for mobile.
-				  videoNumbers.map((imageNum, index) => (
+					videoNumbers.map((imageNum, index) => (
 						<Image
 							className={`${styles['fullscreen-image']} ${
 								activeImage === imageNum ? styles['visible'] : ''
@@ -84,22 +84,30 @@ export default function BackgroundVideo() {
 							placeholder='blur'
 							style={{ objectFit: 'cover' }}
 						/>
-				  ))
+					))
 				: // Render videos for desktop.
-				  videoNumbers.map((videoNum, index) => (
+					videoNumbers.map((videoNum, index) => (
 						<video
 							className={`${styles['fullscreen-video']} ${
 								playingVideo === videoNum ? styles['visible'] : ''
 							}`}
 							key={`desktop-BG${videoNum}`}
 							ref={(e) => (videoRefs.current[index] = e)}
-							src={`/backgrounds/desktop/BG${videoNum}.webm`}
 							loop
 							muted
 							playsInline
 							preload='auto'
-						/>
-				  ))}
+						>
+							<source
+								src={`/backgrounds/desktop/BG${videoNum}.webm`}
+								type='video/webm; codecs=vp9'
+							/>
+							<source
+								src={`/backgrounds/desktop/BG${videoNum}.mp4`}
+								type='video/mp4; codecs=avc1.42E01E'
+							/>
+						</video>
+					))}
 		</div>
 	);
 }
